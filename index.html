@@ -666,6 +666,16 @@ const leaguePlayers = [
   {n:'Sam Darnold',pos:'QB',team:'SEA',age:28,ovr:72,ktc:3800},
   {n:'Baker Mayfield',pos:'QB',team:'TB',age:30,ovr:72,ktc:3600},
   {n:'Kirk Cousins',pos:'QB',team:'ATL',age:37,ovr:68,ktc:2400},
+  {n:'Trevor Lawrence',pos:'QB',team:'JAX',age:26,ovr:84,ktc:6800},
+  {n:'Lamar Jackson',pos:'QB',team:'BAL',age:29,ovr:98,ktc:9800},
+  {n:'Geno Smith',pos:'QB',team:'SEA',age:35,ovr:66,ktc:2200},
+  {n:'Matthew Stafford',pos:'QB',team:'LAR',age:37,ovr:68,ktc:2000},
+  {n:'Tua Tagovailoa',pos:'QB',team:'MIA',age:27,ovr:80,ktc:5600},
+  {n:'Justin Fields',pos:'QB',team:'PIT',age:27,ovr:78,ktc:5000},
+  {n:'Will Levis',pos:'QB',team:'TEN',age:26,ovr:74,ktc:4200},
+  {n:'Michael Penix Jr.',pos:'QB',team:'ATL',age:25,ovr:76,ktc:4600},
+  {n:'JJ McCarthy',pos:'QB',team:'MIN',age:23,ovr:78,ktc:5400},
+  {n:'Arch Manning',pos:'QB',team:'NO',age:23,ovr:72,ktc:4800},
   {n:'Bijan Robinson',pos:'RB',team:'ATL',age:24,ovr:94,ktc:9000},
   {n:'Jahmyr Gibbs',pos:'RB',team:'DET',age:24,ovr:93,ktc:8800},
   {n:'Breece Hall',pos:'RB',team:'NYJ',age:24,ovr:91,ktc:8400},
@@ -707,6 +717,23 @@ const leaguePlayers = [
   {n:'Terry McLaurin',pos:'WR',team:'WAS',age:30,ovr:75,ktc:4200},
   {n:'Diontae Johnson',pos:'WR',team:'HOU',age:29,ovr:68,ktc:3200},
   {n:'Rashod Bateman',pos:'WR',team:'BAL',age:25,ovr:69,ktc:3400},
+  {n:'Stefon Diggs',pos:'WR',team:'NE',age:32,ovr:72,ktc:3200},
+  {n:'Jaylen Waddle',pos:'WR',team:'MIA',age:26,ovr:82,ktc:6400},
+  {n:'Mike Evans',pos:'WR',team:'TB',age:32,ovr:73,ktc:4200},
+  {n:'Tee Higgins',pos:'WR',team:'CIN',age:27,ovr:88,ktc:7200},
+  {n:'Jalen McMillan',pos:'WR',team:'TB',age:23,ovr:74,ktc:4200},
+  {n:'Marvin Harrison Jr.',pos:'WR',team:'ARI',age:23,ovr:85,ktc:7400},
+  {n:'Ladd McConkey',pos:'WR',team:'LAC',age:24,ovr:79,ktc:5400},
+  {n:'Jameson Williams',pos:'WR',team:'DET',age:25,ovr:85,ktc:6800},
+  {n:'Javonte Williams',pos:'RB',team:'DAL',age:26,ovr:78,ktc:5800},
+  {n:'Travis Etienne',pos:'RB',team:'NO',age:27,ovr:81,ktc:6600},
+  {n:"De'Von Achane",pos:'RB',team:'MIA',age:24,ovr:92,ktc:8200},
+  {n:'Cam Skattebo',pos:'RB',team:'NYG',age:25,ovr:80,ktc:6000},
+  {n:'Travis Hunter',pos:'WR',team:'JAX',age:22,ovr:82,ktc:4100},
+  {n:'Mark Andrews',pos:'TE',team:'BAL',age:30,ovr:91,ktc:7800},
+  {n:'Dalton Kincaid',pos:'TE',team:'BUF',age:26,ovr:76,ktc:4600},
+  {n:'Dawson Knox',pos:'TE',team:'BUF',age:29,ovr:74,ktc:3800},
+  {n:'Cole Kmet',pos:'TE',team:'CHI',age:26,ovr:80,ktc:5200},
   {n:'Brock Bowers',pos:'TE',team:'LV',age:23,ovr:92,ktc:8800},
   {n:'Trey McBride',pos:'TE',team:'ARI',age:26,ovr:88,ktc:7800},
   {n:'Sam LaPorta',pos:'TE',team:'DET',age:25,ovr:86,ktc:7200},
@@ -1042,7 +1069,7 @@ function filterDropdown(side){
   if(!results.length){dd.classList.remove('open');return;}
   dd.innerHTML=results.map(a=>{
     const meta=a.type==='player'?`${a.pos} \xb7 ${a.nfl} \xb7 Age ${a.age}`:`${a.confidence} \xb7 ${a.ktc.toLocaleString()} KTC`;
-    return `<div class="trade-option" onclick="addToTrade('${side}','${a.id}')">
+    return `<div class="trade-option" onmousedown="addToTrade('${side}','${a.id}')">
       <div><div class="trade-opt-name">${a.name}</div><div class="trade-opt-meta">${meta}</div></div>
       <div class="trade-opt-ktc">${a.ktc.toLocaleString()}</div>
     </div>`;
