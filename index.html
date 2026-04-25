@@ -269,6 +269,10 @@ a{color:inherit;text-decoration:none}
 .dv-result{margin-top:12px;padding:10px;background:var(--card);border-radius:var(--radius-sm);font-size:13px;font-weight:600;text-align:center;border:1px solid var(--border)}
 .dv-reset-btn{margin-top:10px;width:100%;padding:6px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:6px;font-size:11px;cursor:pointer}
 .dv-reset-btn:hover{color:var(--text);border-color:var(--accent)}
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 </style>
 </head>
 <body>
@@ -434,6 +438,26 @@ a{color:inherit;text-decoration:none}
         <div class="dc-analysis" id="dc-analysis"></div>
       </div>
     </div>
+  </div>
+
+  <!-- INTEL TICKER -->
+  <div style="overflow:hidden;background:#0d0d1f;border:1px solid #1e1e3a;border-left:3px solid #f0b429;border-radius:8px;padding:12px 0;margin:12px 0">
+    <div id="intelTicker" style="display:flex;gap:40px;white-space:nowrap;animation:tickerScroll 30s linear infinite;font-size:13px;color:#94a3b8">
+      <span>🔴 MARKET ALERT · Travis Hunter –549 KTC in 30 days · CB snaps rising at JAX · WE HOLD</span>
+      <span>🟢 RISING · Cam Skattebo · Backup RB drafted late · Path to volume clearing fast</span>
+      <span>⭐ NXBOSTA WATCH · 2027 1st could be top-3 territory · Arch Manning / Jeremiah Smith upside</span>
+      <span>🔥 LAMAR JACKSON · SF dynasty anchor untouchable · Back-to-back MVP caliber seasons</span>
+      <span>📈 MALIK NABERS · KTC top-6 overall · Top-3 dynasty WR · Cornerstone locked in</span>
+      <span>⚡ CONTENDER WINDOW · NOW + FUTURE · Grade A · 11 picks in the war chest</span>
+      <span>🟡 SELL WINDOW · Mike Evans · 32 years old · Extract value before cliff</span>
+      <span>🚀 DONTAYVION WICKS · #1 dynasty riser this month · +470 KTC · Buy window open</span>
+    </div>
+  </div>
+
+  <!-- HOT TAKE GENERATOR -->
+  <div style="margin:12px 0">
+    <button onclick="dropHotTake()" style="width:100%;background:linear-gradient(135deg,#7c2d12,#9a3412);border:1px solid #f0b429;color:#fbbf24;font-weight:700;font-size:15px;padding:14px;border-radius:10px;cursor:pointer;letter-spacing:1px">🔥 DROP A HOT TAKE</button>
+    <div id="hotTakeBox" style="display:none;margin-top:10px;background:#1a0a00;border:1px solid #f0b429;border-radius:10px;padding:16px;font-size:15px;color:#fef3c7;font-style:italic;line-height:1.5"></div>
   </div>
 
   <div class="wr-card">
@@ -622,6 +646,120 @@ const PICKS = [
   {yr:'2028',rd:'4th Round',slot:'Own Pick',owner:'own',
    ktc:750,ktcMin:500,ktcMax:1000,confidence:'Flier',nxbosta:false},
 ];
+
+const leaguePlayers = [
+  {n:'Patrick Mahomes',pos:'QB',team:'KC',age:30,ovr:97,ktc:9500},
+  {n:'Josh Allen',pos:'QB',team:'BUF',age:29,ovr:96,ktc:9200},
+  {n:'Joe Burrow',pos:'QB',team:'CIN',age:29,ovr:93,ktc:8800},
+  {n:'Jalen Hurts',pos:'QB',team:'PHI',age:27,ovr:90,ktc:8200},
+  {n:'Jayden Daniels',pos:'QB',team:'WAS',age:25,ovr:87,ktc:7800},
+  {n:'Justin Herbert',pos:'QB',team:'LAC',age:27,ovr:88,ktc:7600},
+  {n:'Caleb Williams',pos:'QB',team:'CHI',age:24,ovr:86,ktc:7400},
+  {n:'Drake Maye',pos:'QB',team:'NE',age:23,ovr:85,ktc:7200},
+  {n:'Jordan Love',pos:'QB',team:'GB',age:27,ovr:83,ktc:6800},
+  {n:'Brock Purdy',pos:'QB',team:'SF',age:26,ovr:84,ktc:6500},
+  {n:'Anthony Richardson',pos:'QB',team:'IND',age:23,ovr:80,ktc:5800},
+  {n:'Bo Nix',pos:'QB',team:'DEN',age:25,ovr:78,ktc:5200},
+  {n:'Shedeur Sanders',pos:'QB',team:'CLE',age:23,ovr:76,ktc:4800},
+  {n:'Jaxson Dart',pos:'QB',team:'NYG',age:23,ovr:74,ktc:4400},
+  {n:'Dak Prescott',pos:'QB',team:'DAL',age:32,ovr:79,ktc:4200},
+  {n:'Sam Darnold',pos:'QB',team:'SEA',age:28,ovr:72,ktc:3800},
+  {n:'Baker Mayfield',pos:'QB',team:'TB',age:30,ovr:72,ktc:3600},
+  {n:'Kirk Cousins',pos:'QB',team:'ATL',age:37,ovr:68,ktc:2400},
+  {n:'Bijan Robinson',pos:'RB',team:'ATL',age:24,ovr:94,ktc:9000},
+  {n:'Jahmyr Gibbs',pos:'RB',team:'DET',age:24,ovr:93,ktc:8800},
+  {n:'Breece Hall',pos:'RB',team:'NYJ',age:24,ovr:91,ktc:8400},
+  {n:'Ashton Jeanty',pos:'RB',team:'LV',age:22,ovr:88,ktc:8000},
+  {n:'Jonathan Taylor',pos:'RB',team:'IND',age:26,ovr:87,ktc:7400},
+  {n:'Jonathon Brooks',pos:'RB',team:'CAR',age:23,ovr:83,ktc:6800},
+  {n:'Omarion Hampton',pos:'RB',team:'LAC',age:22,ovr:82,ktc:6600},
+  {n:'Kyren Williams',pos:'RB',team:'LAR',age:25,ovr:82,ktc:6400},
+  {n:'TreVeyon Henderson',pos:'RB',team:'NE',age:23,ovr:80,ktc:6000},
+  {n:'Quinshon Judkins',pos:'RB',team:'CLE',age:22,ovr:79,ktc:5800},
+  {n:'Rhamondre Stevenson',pos:'RB',team:'NE',age:27,ovr:78,ktc:5200},
+  {n:'Chase Brown',pos:'RB',team:'CIN',age:25,ovr:77,ktc:5000},
+  {n:'MarShawn Lloyd',pos:'RB',team:'DET',age:23,ovr:75,ktc:4600},
+  {n:'Rachaad White',pos:'RB',team:'TB',age:27,ovr:74,ktc:4200},
+  {n:'Blake Corum',pos:'RB',team:'LAR',age:24,ovr:72,ktc:3800},
+  {n:'David Montgomery',pos:'RB',team:'DET',age:28,ovr:71,ktc:3600},
+  {n:'Alvin Kamara',pos:'RB',team:'NO',age:30,ovr:70,ktc:3400},
+  {n:"Ja'Marr Chase",pos:'WR',team:'CIN',age:25,ovr:98,ktc:9800},
+  {n:'Justin Jefferson',pos:'WR',team:'MIN',age:26,ovr:97,ktc:9600},
+  {n:'CeeDee Lamb',pos:'WR',team:'DAL',age:26,ovr:96,ktc:9400},
+  {n:'Amon-Ra St. Brown',pos:'WR',team:'DET',age:26,ovr:90,ktc:8200},
+  {n:'Brian Thomas Jr.',pos:'WR',team:'JAX',age:23,ovr:86,ktc:7400},
+  {n:'Puka Nacua',pos:'WR',team:'LAR',age:25,ovr:85,ktc:7000},
+  {n:'Garrett Wilson',pos:'WR',team:'NYJ',age:25,ovr:85,ktc:7200},
+  {n:'Rome Odunze',pos:'WR',team:'CHI',age:23,ovr:84,ktc:6800},
+  {n:'Tetairoa McMillan',pos:'WR',team:'CAR',age:22,ovr:83,ktc:6600},
+  {n:'Rashee Rice',pos:'WR',team:'KC',age:25,ovr:83,ktc:6400},
+  {n:'Emeka Egbuka',pos:'WR',team:'TB',age:23,ovr:82,ktc:6200},
+  {n:'Luther Burden III',pos:'WR',team:'CHI',age:22,ovr:80,ktc:6000},
+  {n:'Zay Flowers',pos:'WR',team:'BAL',age:25,ovr:80,ktc:5800},
+  {n:'Xavier Worthy',pos:'WR',team:'KC',age:23,ovr:79,ktc:5600},
+  {n:'Chris Olave',pos:'WR',team:'NO',age:25,ovr:80,ktc:5600},
+  {n:'Drake London',pos:'WR',team:'ATL',age:25,ovr:79,ktc:5400},
+  {n:'DeVonta Smith',pos:'WR',team:'PHI',age:29,ovr:79,ktc:5200},
+  {n:'Tank Dell',pos:'WR',team:'HOU',age:25,ovr:76,ktc:4800},
+  {n:'Davante Adams',pos:'WR',team:'NYJ',age:33,ovr:72,ktc:3600},
+  {n:'Cooper Kupp',pos:'WR',team:'LAR',age:32,ovr:71,ktc:3400},
+  {n:"Wan'Dale Robinson",pos:'WR',team:'NYG',age:25,ovr:74,ktc:4000},
+  {n:'Terry McLaurin',pos:'WR',team:'WAS',age:30,ovr:75,ktc:4200},
+  {n:'Diontae Johnson',pos:'WR',team:'HOU',age:29,ovr:68,ktc:3200},
+  {n:'Rashod Bateman',pos:'WR',team:'BAL',age:25,ovr:69,ktc:3400},
+  {n:'Brock Bowers',pos:'TE',team:'LV',age:23,ovr:92,ktc:8800},
+  {n:'Trey McBride',pos:'TE',team:'ARI',age:26,ovr:88,ktc:7800},
+  {n:'Sam LaPorta',pos:'TE',team:'DET',age:25,ovr:86,ktc:7200},
+  {n:'Jake Ferguson',pos:'TE',team:'DAL',age:26,ovr:82,ktc:6200},
+  {n:'Tucker Kraft',pos:'TE',team:'GB',age:25,ovr:80,ktc:5600},
+  {n:'Isaiah Likely',pos:'TE',team:'BAL',age:26,ovr:75,ktc:4800},
+  {n:'Cade Otton',pos:'TE',team:'TB',age:26,ovr:76,ktc:4600},
+  {n:'Chigoziem Okonkwo',pos:'TE',team:'TEN',age:26,ovr:72,ktc:3800},
+  {n:'Pat Freiermuth',pos:'TE',team:'PIT',age:26,ovr:72,ktc:3600},
+  {n:'Hunter Henry',pos:'TE',team:'NE',age:31,ovr:68,ktc:2800},
+  {n:'Dalton Schultz',pos:'TE',team:'HOU',age:30,ovr:71,ktc:3200},
+  {n:'Jonnu Smith',pos:'TE',team:'MIA',age:30,ovr:69,ktc:2600},
+];const tradePicks = [
+  {label:'2026 Early 1st',yr:2026,rd:1,tier:'Early',ktc:8500,isPick:true},
+  {label:'2026 Mid 1st',yr:2026,rd:1,tier:'Mid',ktc:6000,isPick:true},
+  {label:'2026 Late 1st',yr:2026,rd:1,tier:'Late',ktc:4500,isPick:true},
+  {label:'2026 Early 2nd',yr:2026,rd:2,tier:'Early',ktc:3500,isPick:true},
+  {label:'2026 Mid 2nd',yr:2026,rd:2,tier:'Mid',ktc:2500,isPick:true},
+  {label:'2026 Late 2nd',yr:2026,rd:2,tier:'Late',ktc:1500,isPick:true},
+  {label:'2026 Early 3rd',yr:2026,rd:3,tier:'Early',ktc:900,isPick:true},
+  {label:'2026 Mid 3rd',yr:2026,rd:3,tier:'Mid',ktc:600,isPick:true},
+  {label:'2026 Late 3rd',yr:2026,rd:3,tier:'Late',ktc:350,isPick:true},
+  {label:'2026 Early 4th',yr:2026,rd:4,tier:'Early',ktc:250,isPick:true},
+  {label:'2026 Mid 4th',yr:2026,rd:4,tier:'Mid',ktc:150,isPick:true},
+  {label:'2026 Late 4th',yr:2026,rd:4,tier:'Late',ktc:75,isPick:true},
+  {label:'2027 Early 1st',yr:2027,rd:1,tier:'Early',ktc:7000,isPick:true},
+  {label:'2027 Mid 1st',yr:2027,rd:1,tier:'Mid',ktc:5500,isPick:true},
+  {label:'2027 Late 1st',yr:2027,rd:1,tier:'Late',ktc:4000,isPick:true},
+  {label:'2027 Early 2nd',yr:2027,rd:2,tier:'Early',ktc:3000,isPick:true},
+  {label:'2027 Mid 2nd',yr:2027,rd:2,tier:'Mid',ktc:2000,isPick:true},
+  {label:'2027 Late 2nd',yr:2027,rd:2,tier:'Late',ktc:1200,isPick:true},
+  {label:'2027 Early 3rd',yr:2027,rd:3,tier:'Early',ktc:750,isPick:true},
+  {label:'2027 Mid 3rd',yr:2027,rd:3,tier:'Mid',ktc:500,isPick:true},
+  {label:'2027 Late 3rd',yr:2027,rd:3,tier:'Late',ktc:300,isPick:true},
+  {label:'2027 Early 4th',yr:2027,rd:4,tier:'Early',ktc:200,isPick:true},
+  {label:'2027 Mid 4th',yr:2027,rd:4,tier:'Mid',ktc:125,isPick:true},
+  {label:'2027 Late 4th',yr:2027,rd:4,tier:'Late',ktc:60,isPick:true},
+  {label:'2028 Early 1st',yr:2028,rd:1,tier:'Early',ktc:6000,isPick:true},
+  {label:'2028 Mid 1st',yr:2028,rd:1,tier:'Mid',ktc:4800,isPick:true},
+  {label:'2028 Late 1st',yr:2028,rd:1,tier:'Late',ktc:3500,isPick:true},
+  {label:'2028 Early 2nd',yr:2028,rd:2,tier:'Early',ktc:2500,isPick:true},
+  {label:'2028 Mid 2nd',yr:2028,rd:2,tier:'Mid',ktc:1800,isPick:true},
+  {label:'2028 Late 2nd',yr:2028,rd:2,tier:'Late',ktc:1000,isPick:true},
+  {label:'2028 Early 3rd',yr:2028,rd:3,tier:'Early',ktc:650,isPick:true},
+  {label:'2028 Mid 3rd',yr:2028,rd:3,tier:'Mid',ktc:425,isPick:true},
+  {label:'2028 Late 3rd',yr:2028,rd:3,tier:'Late',ktc:250,isPick:true},
+  {label:'2028 Early 4th',yr:2028,rd:4,tier:'Early',ktc:175,isPick:true},
+  {label:'2028 Mid 4th',yr:2028,rd:4,tier:'Mid',ktc:100,isPick:true},
+  {label:'2028 Late 4th',yr:2028,rd:4,tier:'Late',ktc:50,isPick:true},
+];
+
+
+
 
 const TIER_ICON = {Elite:'\ud83d\udfe3',Strong:'\ud83d\udd35',Mid:'\ud83d\udfe1',Flier:'\u26aa'};
 
@@ -889,7 +1027,18 @@ function filterDropdown(side){
   const q=document.getElementById(side+'-search').value.toLowerCase();
   const dd=document.getElementById(side+'-dropdown');
   if(!q){dd.classList.remove('open');return;}
-  const results=getAllAssets().filter(a=>a.display.toLowerCase().includes(q)).slice(0,12);
+  // Build side-specific pool
+  const yourPool = [
+    ...getAllAssets(),
+    ...tradePicks.map((pk,i)=>({id:'tp_'+i,type:'pick',name:'📅 '+pk.label,display:pk.label,ktc:pk.ktc,confidence:pk.tier}))
+  ];
+  const theirPool = [
+    ...getAllAssets(),
+    ...leaguePlayers.map((lp,i)=>({id:'lp_'+i,type:'player',name:lp.n,pos:lp.pos,nfl:lp.team,age:lp.age,ovr:lp.ovr,ktc:lp.ktc,traj:'',display:lp.n+' · '+lp.pos+' · '+lp.team})),
+    ...tradePicks.map((pk,i)=>({id:'tp_'+i,type:'pick',name:'📅 '+pk.label,display:pk.label,ktc:pk.ktc,confidence:pk.tier}))
+  ];
+  const pool = side==='your' ? yourPool : theirPool;
+  const results=pool.filter(a=>a.display.toLowerCase().includes(q)).slice(0,12);
   if(!results.length){dd.classList.remove('open');return;}
   dd.innerHTML=results.map(a=>{
     const meta=a.type==='player'?`${a.pos} \xb7 ${a.nfl} \xb7 Age ${a.age}`:`${a.confidence} \xb7 ${a.ktc.toLocaleString()} KTC`;
@@ -1193,6 +1342,26 @@ buildRoster();
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',dvInit);}
   else{dvInit();}
 })();
+
+const hotTakes = [
+  "Skattebo outscores Javonte by Week 8. NYG hands him the keys early.",
+  "Hunter proves every doubter wrong. 90+ targets, WR1 production, CB role disappears by October.",
+  "The Nxbosta 1st hits top-3. Dynasty lottery ticket just paid off.",
+  "Lamario Bros wins the championship this season. Roster is built different.",
+  "Nabers finishes top-2 WR in dynasty scoring. The Jefferson debate is over.",
+  "Achane gets 150 targets in Miami. They literally cannot stop him in the passing game.",
+  "Stroud bounces back with 4,200 yards and 32 TDs. That trade looks like larceny in hindsight.",
+  "Tee Higgins + Burrow go nuclear. WR1 finish. Bengals run deep.",
+  "Andrews TE1 finish with Lamar. Ravens TE premium is elite in this format.",
+  "Wicks becomes a top-24 WR by midseason. Buy window is already closing."
+];
+let hotTakeIndex = 0;
+function dropHotTake() {
+  const box = document.getElementById('hotTakeBox');
+  box.style.display = 'block';
+  box.textContent = '🔥 ' + hotTakes[hotTakeIndex % hotTakes.length];
+  hotTakeIndex++;
+}
 </script>
 </body>
 </html>
