@@ -255,6 +255,20 @@ a{color:inherit;text-decoration:none}
 .neg-copy-btn:hover{background:rgba(240,192,64,.2)}
 .neg-text{font-size:12px;color:var(--text);line-height:1.7}
 .scroll-notice{text-align:center;font-size:11px;color:var(--muted);padding:12px 0}
+
+.dv-card{background:var(--card2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-top:16px}
+.dv-header{font-size:14px;font-weight:700;color:var(--accent);margin-bottom:4px}
+.dv-subtitle{font-size:11px;color:var(--muted);margin-bottom:14px}
+.dv-body{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dv-side{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px}
+.dv-side-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.dv-pick-tag{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text);background:var(--card2);border-radius:6px;padding:4px 8px;margin-bottom:4px}
+.dv-remove{cursor:pointer;color:var(--fall);font-size:14px;line-height:1;margin-left:6px}
+.dv-select{width:100%;background:var(--card2);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:6px 8px;font-size:11px;margin-top:8px;cursor:pointer}
+.dv-total{font-size:12px;font-weight:700;color:var(--accent);margin-top:8px;text-align:right}
+.dv-result{margin-top:12px;padding:10px;background:var(--card);border-radius:var(--radius-sm);font-size:13px;font-weight:600;text-align:center;border:1px solid var(--border)}
+.dv-reset-btn{margin-top:10px;width:100%;padding:6px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:6px;font-size:11px;cursor:pointer}
+.dv-reset-btn:hover{color:var(--text);border-color:var(--accent)}
 </style>
 </head>
 <body>
@@ -340,6 +354,32 @@ a{color:inherit;text-decoration:none}
       <span class="capital-val capital-ceil" id="cap-ceil"></span>
     </div>
   </div>
+
+<!-- DRAFT CAPITAL VALUATOR -->
+<div class="dv-card">
+  <div class="dv-header">&#9878; Draft Capital Valuator</div>
+  <div class="dv-subtitle">Compare pick packages &mdash; select picks for each side to see KTC totals &amp; trade value gap</div>
+  <div class="dv-body">
+    <div class="dv-side">
+      <div class="dv-side-label" style="color:var(--accent)">Side A &mdash; You Give</div>
+      <div id="dv-a-list"></div>
+      <select class="dv-select" id="dv-a-sel" onchange="dvAdd('a',this)">
+        <option value="">+ Add a pick</option>
+      </select>
+      <div class="dv-total" id="dv-a-total">KTC Total: 0</div>
+    </div>
+    <div class="dv-side">
+      <div class="dv-side-label" style="color:var(--b)">Side B &mdash; You Get</div>
+      <div id="dv-b-list"></div>
+      <select class="dv-select" id="dv-b-sel" onchange="dvAdd('b',this)">
+        <option value="">+ Add a pick</option>
+      </select>
+      <div class="dv-total" id="dv-b-total">KTC Total: 0</div>
+    </div>
+  </div>
+  <div id="dv-result" class="dv-result" style="display:none"></div>
+  <button class="dv-reset-btn" onclick="dvReset()">Reset Valuator</button>
+</div>
 </div>
 
 <!-- WAR ROOM TAB -->
@@ -511,7 +551,7 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <script>
-// ─── DATA ───────────────────────────────────────────────────────────
+// âââ DATA âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const PLAYERS = [
   {id:1,n:'Lamar Jackson',pos:'QB',nfl:'BAL',age:29,ovr:98,rank:'QB1 \xb7 #4 Overall',ktc:9800,traj:'peak',outlook:'Unanimous dynasty QB1 in SF\xd72 superflex. Back-to-back MVP season pace, elite dual-threat floor. In a 10-team SF\xd72 format he commands maximum value. Age 29 with 3-4 more elite seasons ahead.',ytq:'Lamar Jackson 2025 highlights'},
   {id:2,n:'C.J. Stroud',pos:'QB',nfl:'HOU',age:24,ovr:78,rank:'QB8 \xb7 HOLD',ktc:3200,traj:'rising',outlook:'Own him at fire-sale price \u2014 market cratered after a rough 2025 but he is 24 in a loaded Texans offense. In SF\xd72 a QB2 upside asset is even more valuable. Hold and watch.',ytq:'CJ Stroud 2025 highlights'},
@@ -605,13 +645,13 @@ const SPOTLIGHTS = [
 
 let spotlightIdx = 0;
 
-// ─── UTILITY ────────────────────────────────────────────────────────
+// âââ UTILITY ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function ovrTier(o){return o>=95?'S':o>=85?'A':o>=70?'B':'C'}
 function trajIcon(t){return t==='rising'?'\ud83d\udcc8':t==='peak'?'\u26a1':'\ud83d\udcc9'}
 function trajLabel(t){return t==='rising'?'Rising':t==='peak'?'Peak':'Declining'}
 function trajClass(t){return t==='rising'?'traj-rising':t==='peak'?'traj-peak':'traj-declining'}
 
-// ─── PLAYER SPOTLIGHT ───────────────────────────────────────────────
+// âââ PLAYER SPOTLIGHT âââââââââââââââââââââââââââââââââââââââââââââââ
 function buildSpotlight(){
   const sp = SPOTLIGHTS[spotlightIdx];
   const all = [...PLAYERS,...IR,...TAXI];
@@ -653,7 +693,7 @@ function buildSpotlight(){
 function nextSpotlight(){ spotlightIdx=(spotlightIdx+1)%SPOTLIGHTS.length; buildSpotlight(); }
 function prevSpotlight(){ spotlightIdx=(spotlightIdx-1+SPOTLIGHTS.length)%SPOTLIGHTS.length; buildSpotlight(); }
 
-// ─── PLAYER CARDS ───────────────────────────────────────────────────
+// âââ PLAYER CARDS âââââââââââââââââââââââââââââââââââââââââââââââââââ
 function makeCard(p, extra=''){
   const tier = ovrTier(p.ovr);
   const isIR = extra==='ir';
@@ -691,7 +731,7 @@ function buildRoster(){
   buildDynastyClock();
 }
 
-// ─── PICKS ──────────────────────────────────────────────────────────
+// âââ PICKS ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function buildPicks(){
   const maxKtc = Math.max(...PICKS.map(p=>p.ktcMax));
   const html = PICKS.map((pk)=>{
@@ -731,7 +771,7 @@ function buildPicks(){
   document.getElementById('cap-ceil').textContent='~'+ceil.toLocaleString();
 }
 
-// ─── DYNASTY CLOCK ──────────────────────────────────────────────────
+// âââ DYNASTY CLOCK ââââââââââââââââââââââââââââââââââââââââââââââââââ
 function buildDynastyClock(){
   const allP=[...PLAYERS,...IR,...TAXI];
   const sorted=[...allP].sort((a,b)=>b.ktc-a.ktc).slice(0,12);
@@ -784,7 +824,7 @@ function buildDynastyClock(){
     (total>=70?'Contender window is open right now \u2014 push your chips in while Lamar and your core are in their prime.':'Build toward your contender window by adding youth and picks.');
 }
 
-// ─── MODAL ──────────────────────────────────────────────────────────
+// âââ MODAL ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 let currentYT='';
 function openModal(id){
   const all=[...PLAYERS,...IR,...TAXI];
@@ -812,7 +852,7 @@ function closeModal(e){
   }
 }
 
-// ─── TABS ───────────────────────────────────────────────────────────
+// âââ TABS âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function showTab(id){
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
@@ -824,7 +864,7 @@ function showTab(id){
   document.body.style.overflow='';
 }
 
-// ─── TRADE LAB ──────────────────────────────────────────────────────
+// âââ TRADE LAB ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 let tradeState={your:[],their:[]};
 let activeNegTab='sender';
 
@@ -1091,6 +1131,68 @@ function copyMsg(panel){
 }
 
 buildRoster();
+
+// --- DRAFT CAPITAL VALUATOR ---
+(function(){
+  var DV_ALL=PICKS.map(function(p,i){return Object.assign({},p,{dvIdx:i});});
+  var dvSides={a:[],b:[]};
+  function dvInit(){
+    ['a','b'].forEach(function(side){
+      var sel=document.getElementById('dv-'+side+'-sel');
+      if(!sel)return;
+      sel.innerHTML='<option value="">+ Add a pick<\/option>';
+      DV_ALL.forEach(function(pk,i){
+        var lbl=pk.yr+' '+pk.rd+(pk.owner!=='own'?' (via '+pk.owner+')':'')+' · KTC '+pk.ktc.toLocaleString();
+        var opt=document.createElement('option');
+        opt.value=i;opt.textContent=lbl;
+        sel.appendChild(opt);
+      });
+    });
+  }
+  window.dvAdd=function(side,sel){
+    var i=parseInt(sel.value);
+    if(isNaN(i))return;
+    dvSides[side].push(Object.assign({},DV_ALL[i]));
+    sel.value='';
+    dvRender();
+  };
+  window.dvRemove=function(side,i){
+    dvSides[side].splice(i,1);
+    dvRender();
+  };
+  window.dvReset=function(){
+    dvSides={a:[],b:[]};
+    dvRender();
+  };
+  function dvRender(){
+    ['a','b'].forEach(function(side){
+      var list=document.getElementById('dv-'+side+'-list');
+      var totEl=document.getElementById('dv-'+side+'-total');
+      var tot=dvSides[side].reduce(function(s,p){return s+p.ktc;},0);
+      if(list)list.innerHTML=dvSides[side].map(function(pk,i){
+        var name=pk.yr+' '+pk.rd+(pk.owner!=='own'?' ('+pk.owner+')':'');
+        return '<div class="dv-pick-tag"><span>'+name+'<\/span><span><span style="color:var(--accent)">'+pk.ktc.toLocaleString()+'<\/span><span class="dv-remove" onclick="dvRemove(\''+side+'\','+i+')">×<\/span><\/span><\/div>';
+      }).join('');
+      if(totEl)totEl.textContent='KTC Total: '+tot.toLocaleString();
+    });
+    var aT=dvSides.a.reduce(function(s,p){return s+p.ktc;},0);
+    var bT=dvSides.b.reduce(function(s,p){return s+p.ktc;},0);
+    var r=document.getElementById('dv-result');
+    if(!r)return;
+    if(!dvSides.a.length&&!dvSides.b.length){r.style.display='none';return;}
+    r.style.display='block';
+    if(aT===bT){
+      r.innerHTML='<span style="color:var(--accent)">⚖️ Even trade &mdash; both sides equal<\/span>';
+    } else {
+      var winSide=bT>aT?'B':'A',wT=winSide==='B'?bT:aT,lT=winSide==='B'?aT:bT;
+      var diff=wT-lT,pct=Math.round(diff/wT*100);
+      var col=winSide==='B'?'var(--a)':'var(--fall)';
+      r.innerHTML='<span style="color:'+col+'">Side '+winSide+' wins by '+diff.toLocaleString()+' KTC ('+pct+'% premium)<\/span>';
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',dvInit);}
+  else{dvInit();}
+})();
 </script>
 </body>
 </html>
