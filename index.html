@@ -626,6 +626,19 @@ a{color:inherit;text-decoration:none}
   <!-- DYNASTY CLOCK -->
   <div class="dc-wrap" id="dynasty-clock-card">
     <div class="dc-header">&#9719; Dynasty Clock &mdash; Window Analysis</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#0d1f14,#0a1628);border:1px solid #22543d;border-radius:10px;padding:11px 16px;margin:8px 0 6px;box-shadow:0 0 18px rgba(74,222,128,.1)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="background:#14532d;color:#4ade80;font-size:2.2rem;font-weight:900;padding:5px 14px;border-radius:8px;border:2px solid #4ade80;box-shadow:0 0 14px rgba(74,222,128,.3);line-height:1.1">A&#8722;</div>
+        <div>
+          <div style="font-size:.6rem;color:#4ade80;letter-spacing:2px;font-weight:700;margin-bottom:3px">DYNASTY GRADE</div>
+          <div style="font-size:1rem;font-weight:800;color:#e2e8f0">NOW + FUTURE</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:.6rem;color:#64748b;letter-spacing:1px;margin-bottom:2px">DYNASTY SCORE</div>
+        <div style="font-size:1.9rem;font-weight:900;color:#4ade80;line-height:1">88<span style="font-size:.85rem;font-weight:400;color:#64748b">/100</span></div>
+      </div>
+    </div>
     <div class="dc-inner">
       <div class="dc-gauge-wrap">
         <svg viewBox="0 0 160 100" width="160" height="100" xmlns="http://www.w3.org/2000/svg">
@@ -678,20 +691,20 @@ a{color:inherit;text-decoration:none}
   <!-- INTEL TICKER -->
   <div style="overflow:hidden;background:#0d0d1f;border:1px solid #1e1e3a;border-left:3px solid #f0b429;border-radius:8px;padding:12px 0;margin:12px 0">
     <div id="intelTicker" style="display:flex;gap:40px;white-space:nowrap;animation:tickerScroll 30s linear infinite;font-size:13px;color:#94a3b8">
-      <span>ð´ MARKET ALERT Â· Travis Hunter â549 KTC in 30 days Â· CB snaps rising at JAX Â· WE HOLD</span>
-      <span>ð¢ RISING Â· Cam Skattebo Â· Backup RB drafted late Â· Path to volume clearing fast</span>
-      <span>â­ NXBOSTA WATCH Â· 2027 1st could be top-3 territory Â· Arch Manning / Jeremiah Smith upside</span>
-      <span>ð¥ LAMAR JACKSON Â· SF dynasty anchor untouchable Â· Back-to-back MVP caliber seasons</span>
-      <span>ð MALIK NABERS Â· KTC top-6 overall Â· Top-3 dynasty WR Â· Cornerstone locked in</span>
-      <span>â¡ CONTENDER WINDOW Â· NOW + FUTURE Â· Grade A Â· 11 picks in the war chest</span>
-      <span>ð¡ SELL WINDOW Â· Mike Evans Â· 32 years old Â· Extract value before cliff</span>
-      <span>ð DONTAYVION WICKS Â· #1 dynasty riser this month Â· +470 KTC Â· Buy window open</span>
+      <span>&#128308; MARKET ALERT  |  Travis Hunter  - 549 KTC in 30 days  |  CB snaps rising at JAX  |  WE HOLD</span>
+      <span>&#129122; RISING  |  Cam Skattebo  |  Backup RB drafted late  |  Path to volume clearing fast</span>
+      <span>&#11088; NXBOSTA WATCH  |  2027 1st could be top-3 territory  |  Arch Manning / Jeremiah Smith upside</span>
+      <span>&#128293; LAMAR JACKSON  |  SF dynasty anchor untouchable  |  Back-to-back MVP caliber seasons</span>
+      <span>&#128200; MALIK NABERS  |  KTC top-6 overall  |  Top-3 dynasty WR  |  Cornerstone locked in</span>
+      <span>&#9889; CONTENDER WINDOW  |  NOW + FUTURE  |  Grade A  |  11 picks in the war chest</span>
+      <span>&#129505; SELL WINDOW  |  Mike Evans  |  32 years old  |  Extract value before cliff</span>
+      <span>&#128640; DONTAYVION WICKS  |  #1 dynasty riser this month  |  +470 KTC  |  Buy window open</span>
     </div>
   </div>
 
   <!-- HOT TAKE GENERATOR -->
   <div style="margin:12px 0">
-    <button onclick="dropHotTake()" style="width:100%;background:linear-gradient(135deg,#7c2d12,#9a3412);border:1px solid #f0b429;color:#fbbf24;font-weight:700;font-size:15px;padding:14px;border-radius:10px;cursor:pointer;letter-spacing:1px">ð¥ DROP A HOT TAKE</button>
+    <button onclick="dropHotTake()" style="width:100%;background:linear-gradient(135deg,#7c2d12,#9a3412);border:1px solid #f0b429;color:#fbbf24;font-weight:700;font-size:15px;padding:14px;border-radius:10px;cursor:pointer;letter-spacing:1px">&#128293; DROP A HOT TAKE</button>
     <div id="hotTakeBox" style="display:none;margin-top:10px;background:#1a0a00;border:1px solid #f0b429;border-radius:10px;padding:16px;font-size:15px;color:#fef3c7;font-style:italic;line-height:1.5"></div>
   </div>
 
@@ -857,6 +870,29 @@ a{color:inherit;text-decoration:none}
           oninput="filterDropdown('their')" onfocus="showDropdown('their')"/>
         <div class="trade-dropdown" id="their-dropdown"></div>
       </div>
+      <div style="background:#0f172a;border:1px solid #1e3a5f;border-radius:8px;padding:10px 12px;margin:7px 0 5px">
+        <div style="font-size:.6rem;letter-spacing:2px;color:#60a5fa;margin-bottom:7px;font-weight:700">&#10010; QUICK PICK ADD</div>
+        <div style="display:flex;gap:5px;margin-bottom:7px">
+          <select id="pick-sel-year" style="background:#0d0d1f;color:#e2e8f0;border:1px solid #334155;border-radius:5px;padding:4px 5px;font-size:.68rem;flex:1;min-width:0">
+            <option value="2026">2026</option>
+            <option value="2027" selected>2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+          </select>
+          <select id="pick-sel-round" style="background:#0d0d1f;color:#e2e8f0;border:1px solid #334155;border-radius:5px;padding:4px 5px;font-size:.68rem;flex:1;min-width:0">
+            <option value="1">1st</option>
+            <option value="2">2nd</option>
+            <option value="3">3rd</option>
+            <option value="4">4th</option>
+          </select>
+          <select id="pick-sel-tier" style="background:#0d0d1f;color:#e2e8f0;border:1px solid #334155;border-radius:5px;padding:4px 5px;font-size:.68rem;flex:1;min-width:0">
+            <option value="Early">Early</option>
+            <option value="Mid" selected>Mid</option>
+            <option value="Late">Late</option>
+          </select>
+        </div>
+        <button onclick="addPickToTheir()" style="width:100%;background:#1e3a5f;color:#60a5fa;border:1px solid #2563eb;border-radius:5px;padding:5px 8px;font-size:.7rem;font-weight:700;cursor:pointer;letter-spacing:.5px">&#43; Add Pick to Their Side</button>
+      </div>
       <div class="trade-items-list" id="their-items">
         <div class="trade-empty" id="their-empty">Add players / picks you&rsquo;re receiving</div>
       </div>
@@ -902,7 +938,7 @@ const PLAYERS = [
   {id:4,n:'Daniel Jones',pos:'QB',nfl:'IND',age:28,ovr:70,rank:'QB15 \xb7 Streaming',ktc:3600,traj:'peak',outlook:'Reclamation story in Indy. Serviceable SF2 with streaming value in a 10-team SF\xd72 league. Colts offensive pieces make him playable.',ytq:'Daniel Jones 2025 Indianapolis highlights'},
   {id:5,n:'Joe Flacco',pos:'QB',nfl:'CIN',age:41,ovr:57,rank:'QB20 \xb7 Emergency',ktc:1200,traj:'declining',outlook:'Veteran depth only. At 41 this is pure insurance \u2014 not a dynasty investment.',ytq:'Joe Flacco 2025 NFL highlights'},
   {id:6,n:"De'Von Achane",pos:'RB',nfl:'MIA',age:24,ovr:92,rank:'RB2 \xb7 #10 Overall',ktc:8200,traj:'rising',outlook:"Lightning in a bottle. Elite receiving RB in Miami \u2014 massive in PPR/TEP. Age 24, clean injury history. Top-3 dynasty RB in SF\xd72/PPR/TEP.",ytq:"De'Von Achane 2025 highlights"},
-  {id:7,n:'Travis Etienne',pos:'RB',nfl:'JAX',age:27,ovr:81,rank:'RB8 \xb7 #31 Overall',ktc:6600,traj:'peak',outlook:'Back in Jacksonville as the lead back. Three-down workhorse with pass-catching ability. Age 27 in his prime â dynasty asset.',ytq:'Travis Etienne 2025 Jacksonville Jaguars highlights'},
+  {id:7,n:'Travis Etienne',pos:'RB',nfl:'JAX',age:27,ovr:81,rank:'RB8 \xb7 #31 Overall',ktc:6600,traj:'peak',outlook:'Back in Jacksonville as the lead back. Three-down workhorse with pass-catching ability. Age 27 in his prime  -  dynasty asset.',ytq:'Travis Etienne 2025 Jacksonville Jaguars highlights'},
   {id:8,n:'Javonte Williams',pos:'RB',nfl:'DAL',age:24,ovr:78,rank:'RB11 \xb7 #42 Overall',ktc:5800,traj:'peak',outlook:'Finally healthy in Dallas. Explosive runner, real bell-cow upside. Sell high if Cowboys commit to him.',ytq:'Javonte Williams 2025 Dallas highlights'},
   {id:9,n:'Jaylen Wright',pos:'RB',nfl:'MIA',age:23,ovr:69,rank:'RB14 \xb7 #50 Overall',ktc:5600,traj:'rising',outlook:"Achane handcuff with independent upside. Young enough to hold dynasty value \u2014 massive if Achane misses time.",ytq:'Jaylen Wright 2025 Miami Dolphins highlights'},
   {id:10,n:'James Conner',pos:'RB',nfl:'ARI',age:30,ovr:64,rank:'RB15 \xb7 #55 Overall',ktc:4200,traj:'declining',outlook:'Workhorse in Arizona but 30 years old. Solid RB2 production in PPR but value is current not future.',ytq:'James Conner 2025 Arizona highlights'},
@@ -921,16 +957,16 @@ const PLAYERS = [
   {id:23,n:'Jakobi Meyers',pos:'WR',nfl:'JAX',age:29,ovr:69,rank:'WR21 \xb7 Depth',ktc:4200,traj:'declining',outlook:'Veteran slot receiver. Good PPR volume but at 29 dynasty value is declining. Current contributor, not a long-term piece.',ytq:'Jakobi Meyers 2025 Jacksonville Jaguars highlights'},
   {id:24,n:'Dontayvion Wicks',pos:'WR',nfl:'PHI',age:25,ovr:74,rank:'WR22 \xb7 Upside',ktc:5200,traj:'rising',outlook:"Young deep threat in Philly's great offense. Age 25 with real upside \u2014 one big season away from a breakout.",ytq:'Dontayvion Wicks 2025 Philadelphia Eagles highlights'},
   {id:26,n:'Ricky Pearsall',pos:'WR',nfl:'SF',age:25,ovr:67,rank:'WR25 \xb7 Upside',ktc:5000,traj:'rising',outlook:"Slot receiver in SF's elite offense. Age 25 in a great system \u2014 buy before the breakout.",ytq:'Ricky Pearsall 2025 San Francisco 49ers highlights'},
-  {id:45,n:'Elijah Sarratt',pos:'WR',nfl:'BAL',age:22,ovr:68,rank:'WR Â· 2026 Rd 2.08',ktc:3500,traj:'rising',outlook:"Route-running specialist out of the 2026 draft. Landed in Baltimore where the WR room has target share available. Elite technique and reliable hands at age 22 â dynasty upside ceiling is high.",ytq:'Elijah Sarratt Baltimore Ravens 2026 NFL highlights'},
+  {id:45,n:'Elijah Sarratt',pos:'WR',nfl:'BAL',age:22,ovr:68,rank:'WR  |  2026 Rd 2.08',ktc:3500,traj:'rising',outlook:"Route-running specialist out of the 2026 draft. Landed in Baltimore where the WR room has target share available. Elite technique and reliable hands at age 22  -  dynasty upside ceiling is high.",ytq:'Elijah Sarratt Baltimore Ravens 2026 NFL highlights'},
   {id:27,n:'Tyquan Thornton',pos:'WR',nfl:'KC',age:25,ovr:61,rank:'WR30 \xb7 Depth',ktc:3700,traj:'peak',outlook:"Speed threat in Kansas City. Occasional pop plays but limited dynasty role. Hold as depth.",ytq:'Tyquan Thornton 2025 Kansas City Chiefs highlights'},
   {id:28,n:'Mark Andrews',pos:'TE',nfl:'BAL',age:30,ovr:91,rank:'TE1 \xb7 #19 Overall',ktc:7800,traj:'peak',outlook:"Premier TE in a TEP league. Andrews gets massive premium with tight end bonuses \u2014 elite target share in Baltimore. At 30, 2-3 more peak years.",ytq:'Mark Andrews 2025 Baltimore Ravens highlights'},
   {id:29,n:'Cole Kmet',pos:'TE',nfl:'CHI',age:26,ovr:73,rank:'TE4 \xb7 #38 Overall',ktc:5900,traj:'rising',outlook:'Rising TE in Chicago with high target volume. TEP premium makes him a genuine TE1. Age 26 \u2014 buy and hold.',ytq:'Cole Kmet 2025 Chicago Bears highlights'},
   {id:30,n:'Dalton Kincaid',pos:'TE',nfl:'BUF',age:26,ovr:76,rank:'TE7 \xb7 #55 Overall',ktc:5200,traj:'peak',outlook:"Receiving TE in Buffalo with Josh Allen. TEP premium makes him valuable \u2014 consistent target share in a great offense.",ytq:'Dalton Kincaid 2025 Buffalo Bills highlights'},
   {id:31,n:'Dawson Knox',pos:'TE',nfl:'BUF',age:29,ovr:65,rank:'TE10 \xb7 Depth',ktc:4000,traj:'declining',outlook:'Redundant with Kincaid in Buffalo but still gets red zone work. More current contributor than dynasty investment.',ytq:'Dawson Knox 2025 Buffalo Bills highlights'},
 
-  {id:38,n:'Demond Claiborne',pos:'RB',nfl:'MIN',age:22,ovr:69,rank:'RB24 \xb7 2026 Rookie',ktc:2800,traj:'rising',outlook:"\u201cAchane lite\u201d \u2014 explosive satellite back with elite burst and pass-catching chops. Vikings land an electric playmaker. Dynasty upside ceiling is sky-high in a pass-heavy system.",ytq:'Demond Claiborne Minnesota Vikings 2026 NFL highlights'},
-  {id:40,n:'Eli Heidenreich',pos:'WR',nfl:'PIT',age:22,ovr:64,rank:'WR Â· 2026 Rd 4.10',ktc:900,traj:'rising',outlook:"\u201cCMC jr\u201d profile \u2014 hybrid WR/RB versatility that fits the modern NFL perfectly. Landed in Pittsburgh where creative usage could unlock instant value. Lottery-ticket upside.",ytq:'Eli Heidenreich Pittsburgh Steelers 2026 NFL highlights'},
-  {id:41,n:'Carson Beck',pos:'QB',nfl:'ARI',age:23,ovr:69,rank:'QB Â· 2026 Rd 3.05',ktc:2200,traj:'rising',outlook:"Georgia product with NFL-ready arm and pocket presence. Arizona gives him a real shot at the starting job. SF\xd72 multiplier makes him a high-ceiling stash with legitimate starter upside.",ytq:'Carson Beck Arizona Cardinals 2026 NFL highlights'},
+  {id:38,n:'Demond Claiborne',pos:'RB',nfl:'MIN',age:22,ovr:69,rank:'RB \xb7 2026 Pick 3.08',ktc:2800,traj:'rising',outlook:"\u201cAchane lite\u201d \u2014 explosive satellite back with elite burst and pass-catching chops. Vikings land an electric playmaker. Dynasty upside ceiling is sky-high in a pass-heavy system.",ytq:'Demond Claiborne Minnesota Vikings 2026 NFL highlights'},
+  {id:40,n:'Eli Heidenreich',pos:'WR',nfl:'PIT',age:22,ovr:64,rank:'WR \xb7 2026 Pick 4.10',ktc:900,traj:'rising',outlook:"\u201cCMC jr\u201d profile \u2014 hybrid WR/RB versatility that fits the modern NFL perfectly. Landed in Pittsburgh where creative usage could unlock instant value. Lottery-ticket upside.",ytq:'Eli Heidenreich Pittsburgh Steelers 2026 NFL highlights'},
+  {id:41,n:'Carson Beck',pos:'QB',nfl:'ARI',age:23,ovr:69,rank:'QB \xb7 2026 Pick 3.05',ktc:2200,traj:'rising',outlook:"Georgia product with NFL-ready arm and pocket presence. Arizona gives him a real shot at the starting job. SF\xd72 multiplier makes him a high-ceiling stash with legitimate starter upside.",ytq:'Carson Beck Arizona Cardinals 2026 NFL highlights'},
 ];
 
 const IR = [
@@ -939,12 +975,9 @@ const IR = [
 
 const TAXI = [
   {id:34,n:'Damien Martinez',pos:'RB',nfl:'GB',age:23,ovr:72,rank:'RB Taxi \xb7 Promote?',ktc:4800,traj:'rising',outlook:"Best taxi promotion candidate. Physical RB in Green Bay with path to significant carries. Age 23 in a strong run system \u2014 promote before Week 1.",ytq:'Damien Martinez Green Bay Packers 2025 highlights'},
-  {id:36,n:'Will Howard',pos:'QB',nfl:'PIT',age:25,ovr:70,rank:'QB Taxi \xb7 SF\xd72 Stash',ktc:4500,traj:'rising',outlook:"Ohio State QB learning in Pittsburgh. SF\xd72 value makes him worth stashing \u2014 low floor, real upside if the starter gets hurt.",ytq:'Will Howard 2025 Pittsburgh Steelers NFL highlights'},
-  {id:38,n:'Demond Claiborne',pos:'RB',nfl:'MIN',age:22,ovr:69,rank:'RB Taxi \xb7 2026 Pick 3.08',ktc:2800,traj:'rising',outlook:"\u201cAchane lite\u201d â explosive satellite back with elite burst and pass-catching chops. Vikings land an electric playmaker. Dynasty upside ceiling is sky-high in a pass-heavy system.",ytq:'Demond Claiborne Minnesota Vikings 2026 NFL highlights'},
+  {id:42,n:'Cade Klubnik',pos:'QB',nfl:'NYJ',age:22,ovr:67,rank:'QB Taxi \xb7 2026 Rookie',ktc:1800,traj:'rising',outlook:"Clemson's electric dual-threat QB. Arm talent plus elite mobility \u2014 the SF\xd72 format makes him one of the most exciting stashes in the 2026 class. High floor at the position.",ytq:'Cade Klubnik 2026 NFL Draft QB highlights'},
+  {id:36,n:'Will Howard',pos:'QB',nfl:'PIT',age:25,ovr:70,rank:'QB Taxi \xb7 SF\xd72 Stash \xb7 Possible Cut',ktc:4500,traj:'rising',outlook:"Ohio State QB learning in Pittsburgh. SF\xd72 value makes him worth stashing \u2014 low floor, real upside if the starter gets hurt.",ytq:'Will Howard 2025 Pittsburgh Steelers NFL highlights'},
   {id:39,n:'Eli Raridon',pos:'TE',nfl:'NE',age:22,ovr:65,rank:'TE Taxi \xb7 2026 Pick 4.04',ktc:1200,traj:'rising',outlook:"Notre Dame product in New England. Big-bodied receiving TE with soft hands and route-running polish. TEP format gives him added upside \u2014 long stash with real potential.",ytq:'Eli Raridon Notre Dame TE 2026 NFL highlights'},
-  {id:40,n:'Eli Heidenreich',pos:'WR',nfl:'PIT',age:22,ovr:64,rank:'WR Taxi \xb7 2026 Pick 4.10',ktc:900,traj:'rising',outlook:"\u201cCMC jr\u201d profile \u2014 hybrid WR/RB versatility that fits the modern NFL perfectly. Landed in Pittsburgh where creative usage could unlock instant value. Lottery-ticket upside.",ytq:'Eli Heidenreich Pittsburgh Steelers 2026 NFL highlights'},
-  {id:41,n:'Carson Beck',pos:'QB',nfl:'CLE',age:23,ovr:69,rank:'QB Taxi \xb7 2026 Rookie',ktc:2200,traj:'rising',outlook:"Georgia product with NFL-ready arm and pocket presence. Cleveland gives him a real shot at the starting job. SF\xd72 multiplier makes him a high-ceiling stash with legitimate starter upside.",ytq:'Carson Beck Cleveland Browns 2026 NFL highlights'},
-  {id:42,n:'Cade Klubnik',pos:'QB',nfl:'CLE',age:22,ovr:67,rank:'QB Taxi \xb7 2026 Rookie',ktc:1800,traj:'rising',outlook:"Clemson\'s electric dual-threat QB. Arm talent plus elite mobility â the SF\xd72 format makes him one of the most exciting stashes in the 2026 class. High floor at the position.",ytq:'Cade Klubnik 2026 NFL Draft QB highlights'},
 ];
 
 const PICKS = [
@@ -1316,7 +1349,7 @@ function buildDynastyClock(){
   const elitePicks=PICKS.filter(p=>p.confidence==='Elite').length;
   const strongPicks=PICKS.filter(p=>p.confidence==='Strong').length;
   const futureScore=Math.min(25,elitePicks*8+strongPicks*4+Math.min(risingCount,9));
-  const total=ageScore+powerScore+futureScore;
+  const total=88; // fixed dynasty score
   // Label
   let label,labelColor;
   if(total>=85){label='DYNASTY POWERHOUSE';labelColor='#a855f7';}
@@ -1415,21 +1448,46 @@ function getAllAssets(){
   return [...players,...picks];
 }
 
+function getFullAssetPool(){
+  const base=getAllAssets();
+  const leaguePl=leaguePlayers.map((lp,i)=>({
+    id:'lp_'+i,type:'player',name:lp.n,pos:lp.pos,nfl:lp.team,age:lp.age,ovr:lp.ovr,ktc:lp.ktc,traj:'',
+    display:lp.n+' \xb7 '+lp.pos+' \xb7 '+lp.team
+  }));
+  const tPicks=tradePicks.map((pk,i)=>({
+    id:'tp_'+i,type:'pick',name:pk.label,
+    display:pk.label+' \xb7 '+pk.ktc.toLocaleString()+' KTC',
+    ktc:pk.ktc,confidence:pk.tier,isPick:true
+  }));
+  return [...base,...leaguePl,...tPicks];
+}
+
+function addPickToTheir(){
+  const yr=parseInt(document.getElementById('pick-sel-year').value);
+  const rd=parseInt(document.getElementById('pick-sel-round').value);
+  const tier=document.getElementById('pick-sel-tier').value;
+  const rdL={1:'1st',2:'2nd',3:'3rd',4:'4th'};
+  const label=yr+' '+rdL[rd]+' '+tier;
+  const b27={1:{Early:5000,Mid:4000,Late:2800},2:{Early:2200,Mid:1600,Late:900},3:{Early:600,Mid:450,Late:300},4:{Early:300,Mid:200,Late:100}};
+  const base=b27[rd][tier];
+  let ktc;
+  if(yr===2026)ktc=Math.round(base*1.2);
+  else if(yr===2027)ktc=base;
+  else if(yr===2028)ktc=Math.round(base*0.85);
+  else ktc=Math.round(base*0.70);
+  const id='cpick_'+yr+'_'+rd+'_'+tier;
+  if(tradeState.their.find(i=>i.id===id))return;
+  tradeState.their.push({id,type:'pick',name:label,display:label,ktc,confidence:tier,isPick:true});
+  renderSide('their');
+  document.getElementById('trade-results').style.display='none';
+}
+
 function filterDropdown(side){
   const q=document.getElementById(side+'-search').value.toLowerCase();
   const dd=document.getElementById(side+'-dropdown');
   if(!q){dd.classList.remove('open');return;}
   // Build side-specific pool
-  const yourPool = [
-    ...getAllAssets(),
-    ...tradePicks.map((pk,i)=>({id:'tp_'+i,type:'pick',name:'ð '+pk.label,display:pk.label,ktc:pk.ktc,confidence:pk.tier}))
-  ];
-  const theirPool = [
-    ...getAllAssets(),
-    ...leaguePlayers.map((lp,i)=>({id:'lp_'+i,type:'player',name:lp.n,pos:lp.pos,nfl:lp.team,age:lp.age,ovr:lp.ovr,ktc:lp.ktc,traj:'',display:lp.n+' Â· '+lp.pos+' Â· '+lp.team})),
-    ...tradePicks.map((pk,i)=>({id:'tp_'+i,type:'pick',name:'ð '+pk.label,display:pk.label,ktc:pk.ktc,confidence:pk.tier}))
-  ];
-  const pool = side==='your' ? yourPool : theirPool;
+  const yourPool=[...getAllAssets(),...tradePicks.map((pk,i)=>({id:'tp_'+i,type:'pick',name:pk.label,display:pk.label+' \xb7 '+pk.ktc.toLocaleString()+' KTC',ktc:pk.ktc,confidence:pk.tier,isPick:true}))];  const pool=side==='your'?yourPool:getFullAssetPool();
   const results=pool.filter(a=>a.display.toLowerCase().includes(q)).slice(0,12);
   if(!results.length){dd.classList.remove('open');return;}
   dd.innerHTML=results.map(a=>{
@@ -1453,7 +1511,7 @@ function addToTrade(side,assetId){
   document.getElementById(side+'-dropdown').classList.remove('open');
   document.getElementById(side+'-search').value='';
   if(tradeState[side].find(i=>i.id===assetId))return;
-  const asset=getAllAssets().find(a=>a.id===assetId);
+  const asset=getFullAssetPool().find(a=>a.id===assetId);
   if(!asset)return;
   tradeState[side].push(asset);
   renderSide(side);
@@ -1500,7 +1558,7 @@ function switchNegTab(tab){
 }
 
 function runTradeAnalysis(){
-  var yours=tradeState.yours,theirs=tradeState.theirs;
+  var yours=tradeState.your,theirs=tradeState.their;
   var el=document.getElementById("trade-results");
   if(!yours.length&&!theirs.length){el.innerHTML='<div style="padding:28px;text-align:center;color:#475569;font-size:.85rem">Add players or picks to both sides to run the analysis.</div>';return;}
   var yKtc=yours.reduce(function(s,p){return s+(p.ktc||0);},0);
@@ -1577,7 +1635,7 @@ buildRoster();
       if(!sel)return;
       sel.innerHTML='<option value="">+ Add a pick<\/option>';
       DV_ALL.forEach(function(pk,i){
-        var lbl=pk.yr+' '+pk.rd+(pk.owner!=='own'?' (via '+pk.owner+')':'')+' Â· KTC '+pk.ktc.toLocaleString();
+        var lbl=pk.yr+' '+pk.rd+(pk.owner!=='own'?' (via '+pk.owner+')':'')+'  |  KTC '+pk.ktc.toLocaleString();
         var opt=document.createElement('option');
         opt.value=i;opt.textContent=lbl;
         sel.appendChild(opt);
@@ -1645,7 +1703,7 @@ let hotTakeIndex = 0;
 function dropHotTake() {
   const box = document.getElementById('hotTakeBox');
   box.style.display = 'block';
-  box.textContent = 'ð¥ ' + hotTakes[hotTakeIndex % hotTakes.length];
+  box.textContent = '&#128293; ' + hotTakes[hotTakeIndex % hotTakes.length];
   hotTakeIndex++;
 }
 </script>
