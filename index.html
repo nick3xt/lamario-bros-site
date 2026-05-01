@@ -3,18 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <title>LAMARIO BROS &mdash; Dynasty War Room</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#07070d;--card:#111118;--card2:#1a1a24;--border:#2a2a3a;
+  --bg:#0a0a0a;--card:#1c1c2e;--card2:#1a1a2e;--border:#2a2a3a;
   --text:#e8e8f0;--muted:#6b6b88;--accent:#f0c040;
   --s:#f0c040;--a:#34d399;--b:#60a5fa;--c:#94a3b8;
   --rise:#4ade80;--peak:#facc15;--fall:#f87171;
   --elite:#a855f7;--strong:#60a5fa;--mid:#f0c040;--flier:#94a3b8;
   --radius:12px;--radius-sm:8px;
+  --card-shadow:0 2px 12px rgba(0,0,0,0.4);
+  --grade-s:#FFD700;--grade-a:#00C851;--grade-am:#4CAF50;--grade-bp:#2196F3;--grade-b:#1976D2;--grade-bm:#90CAF9;--grade-c:#FFC107;--grade-d:#FF4444;
 }
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}
+body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}
 a{color:inherit;text-decoration:none}
 
 /* HEADER */
@@ -70,7 +74,7 @@ a{color:inherit;text-decoration:none}
 .pos-label::after{content:'';flex:1;height:1px;background:var(--border)}
 
 /* PLAYER CARD */
-.player-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:6px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s}
+.player-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:6px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s;box-shadow:var(--card-shadow)}
 .player-card:hover{background:var(--card2);border-color:#3a3a52;transform:translateX(2px)}
 .player-card.ir-card{opacity:.6;border-style:dashed}
 .ovr-badge{min-width:40px;height:40px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0}
@@ -273,9 +277,93 @@ a{color:inherit;text-decoration:none}
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* HERO SECTION */
+.hero{background:linear-gradient(135deg,#0a0a0a 0%,#1a0d2e 55%,#0d1f14 100%);border-bottom:2px solid rgba(240,192,64,.3);padding:20px 16px 16px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(168,85,247,.08),transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(240,192,64,.05),transparent 60%);pointer-events:none}
+.hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;position:relative}
+.hero-title{font-size:30px;font-weight:900;letter-spacing:2px;line-height:1;color:#fff}
+.hero-title span{color:#FFD700}
+.hero-grade{display:flex;align-items:center;gap:10px}
+.hero-grade-circle{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;background:rgba(0,200,81,.15);border:2px solid #00C851;color:#00C851;box-shadow:0 0 18px rgba(0,200,81,.2)}
+.hero-grade-info{text-align:right}
+.hero-grade-info strong{display:block;font-size:13px;color:#e8e8f0;font-weight:700}
+.hero-grade-info span{font-size:10px;color:#6b6b88}
+.hero-score-bar{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:10px;box-shadow:var(--card-shadow)}
+.hero-score-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+.hero-score-title{font-size:10px;font-weight:800;letter-spacing:1.5px;color:#6b6b88;text-transform:uppercase}
+.hero-score-num{font-size:20px;font-weight:900;color:#FFD700}
+.hero-score-track{height:8px;background:var(--border);border-radius:4px;overflow:hidden}
+.hero-score-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#f87171 0%,#FFD700 40%,#00C851 70%,#a855f7 100%)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.hero-stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 8px;text-align:center;box-shadow:var(--card-shadow)}
+.hero-stat-val{font-size:22px;font-weight:900;color:#FFD700;display:block;line-height:1.2}
+.hero-stat-label{font-size:9px;font-weight:700;letter-spacing:1px;color:#6b6b88;text-transform:uppercase;margin-top:3px;display:block}
+
+/* HEADSHOTS */
+.player-avatar{width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--card2);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center}
+.player-avatar img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.player-avatar-initials{font-size:12px;font-weight:800;color:var(--accent);letter-spacing:.5px}
+
+/* LORE */
+.lore-section{padding:4px 0}
+.lore-intro{font-size:12px;color:#6b6b88;line-height:1.75;margin-bottom:18px;padding:12px 14px;background:var(--card);border-radius:var(--radius);border-left:3px solid #FFD700;box-shadow:var(--card-shadow)}
+.chapter-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 16px 16px 20px;margin-bottom:12px;position:relative;overflow:hidden;box-shadow:var(--card-shadow)}
+.chapter-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px}
+.chapter-card.gold::before{background:linear-gradient(180deg,#FFD700,#f59e0b)}
+.chapter-card.green::before{background:linear-gradient(180deg,#00C851,#34d399)}
+.chapter-card.purple::before{background:linear-gradient(180deg,#a855f7,#7c3aed)}
+.chapter-card.blue::before{background:linear-gradient(180deg,#2196F3,#60a5fa)}
+.chapter-card.amber::before{background:linear-gradient(180deg,#f59e0b,#d97706)}
+.chapter-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;gap:8px}
+.chapter-title{font-size:14px;font-weight:800;color:#e8e8f0}
+.chapter-year{font-size:10px;font-weight:700;color:#6b6b88;background:var(--card2);padding:2px 8px;border-radius:20px;border:1px solid var(--border);white-space:nowrap;flex-shrink:0}
+.chapter-tag{font-size:9px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:8px}
+.chapter-body{font-size:12px;color:#6b6b88;line-height:1.8}
+.chapter-body strong{color:#e8e8f0}
+.chapter-body em{color:#FFD700;font-style:normal;font-weight:700}
+.lore-footer{text-align:center;padding:14px 0 4px;font-size:10px;color:#6b6b88;border-top:1px solid var(--border);margin-top:4px;letter-spacing:.5px}
+
 </style>
 </head>
 <body>
+
+<!-- HERO SECTION -->
+<div class="hero">
+  <div class="hero-top">
+    <div class="hero-title">LAMARIO <span>BROS</span></div>
+    <div class="hero-grade">
+      <div class="hero-grade-info">
+        <strong>Team Grade</strong>
+        <span>SF Dynasty</span>
+      </div>
+      <div class="hero-grade-circle">A</div>
+    </div>
+  </div>
+  <div class="hero-score-bar">
+    <div class="hero-score-label">
+      <span class="hero-score-title">&#9889; Dynasty Score</span>
+      <span class="hero-score-num">88<span style="font-size:11px;font-weight:400;color:#6b6b88">/100</span></span>
+    </div>
+    <div class="hero-score-track">
+      <div class="hero-score-fill" style="width:88%"></div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-val" id="hero-total-players">&mdash;</span>
+      <span class="hero-stat-label">Total Players</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-val">3</span>
+      <span class="hero-stat-label">Draft Picks</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-val" id="hero-avg-age">&mdash;</span>
+      <span class="hero-stat-label">Avg Age</span>
+    </div>
+  </div>
+</div>
 
 <div class="hdr">
   <div class="hdr-top">
@@ -296,7 +384,7 @@ a{color:inherit;text-decoration:none}
     <div class="tab" onclick="showTab('picks')">Pick Portfolio</div>
     <div class="tab" onclick="showTab('tradeledger')">Trade Ledger</div>
     <div class="tab" onclick="showTab('warroom')">War Room</div>
-    <div class="tab" onclick="showTab('reportcard')">Report Card</div><div class="tab" onclick="showTab('tradelab')">&#129302; Trade</div>
+    <div class="tab" onclick="showTab('reportcard')">Report Card</div><div class="tab" onclick="showTab('tradelab')">&#129302; Trade</div><div class="tab" onclick="showTab('lore')">&#128218; Lore</div>
   </div>
 </div>
 
@@ -902,6 +990,79 @@ a{color:inherit;text-decoration:none}
   <div id="trade-results" style="display:none"></div>
 </div>
 
+
+<!-- LORE TAB -->
+<div id="tab-lore" class="tab-panel">
+<div class="lore-section">
+<div style="padding:16px 0 8px">
+  <h2 style="margin:0 0 4px;font-size:1.1rem;letter-spacing:2px;color:#FFD700">&#128218; LAMARIO LORE</h2>
+  <div style="font-size:.73rem;color:#64748b">The Dynasty Chronicle &middot; ColonelSanders4 &middot; LAMARIO BROS</div>
+</div>
+<div class="lore-intro">
+  Every dynasty has a story. This is ours &mdash; built in the chaos, forged in the trade room, written in KTC points. No shortcuts. No luck. Just reads, conviction, and the willingness to pull the trigger when everyone else hesitates.
+</div>
+
+<div class="chapter-card gold">
+  <div class="chapter-header">
+    <div class="chapter-title">Chapter I &mdash; The Foundation</div>
+    <span class="chapter-year">EST. 2023</span>
+  </div>
+  <span class="chapter-tag" style="background:rgba(255,215,0,.1);color:#FFD700;border:1px solid rgba(255,215,0,.3)">&#127959; ORIGIN STORY</span>
+  <div class="chapter-body">
+    <strong>ColonelSanders4 enters the league with a plan and zero patience for mediocrity.</strong> The Lamario Bros were built on a simple philosophy: <em>bet on youth, bet on upside, never overpay for old.</em> In a 10-team SF&times;2/PPR/TEP dynasty, the early strategy was clear &mdash; accumulate picks, stockpile young talent, and wait for the right moment to strike. The rest of the league slept. The war room was already open.
+  </div>
+</div>
+
+<div class="chapter-card blue">
+  <div class="chapter-header">
+    <div class="chapter-title">Chapter II &mdash; The Lawrence Era</div>
+    <span class="chapter-year">2024&ndash;2025</span>
+  </div>
+  <span class="chapter-tag" style="background:rgba(33,150,243,.1);color:#60a5fa;border:1px solid rgba(33,150,243,.3)">&#127944; FRANCHISE QB</span>
+  <div class="chapter-body">
+    <strong>Trevor Lawrence was the bet.</strong> Acquired on arm talent and pedigree alone &mdash; a top-5 pick surrounded by weapons in Jacksonville. The pairing with <em>Jahmyr Gibbs</em> created one of the most explosive young backfields in dynasty. Lawrence threw. Gibbs exploded. For two seasons, the Lamario Bros looked like a dynasty built to last &mdash; a generational RB and a franchise QB locked in together. Then came the call that changed everything.
+  </div>
+</div>
+
+<div class="chapter-card amber">
+  <div class="chapter-header">
+    <div class="chapter-title">Chapter III &mdash; The Great Trade</div>
+    <span class="chapter-year">APR 19, 2026</span>
+  </div>
+  <span class="chapter-tag" style="background:rgba(245,158,11,.15);color:#fbbf24;border:1px solid rgba(245,158,11,.35)">&#128293; BLOCKBUSTER</span>
+  <div class="chapter-body">
+    The most debated trade of the offseason. <strong>Lawrence + Gibbs out. Stroud + Nabers + Williams + two 2027 firsts in.</strong> The fantasy world lost its mind. You sold Gibbs &mdash; arguably a top-3 dynasty RB &mdash; at his absolute peak. You moved Lawrence while the market still believed. And in return, you landed <em>C.J. Stroud</em> at 24 years old, <em>Malik Nabers</em> with a ceiling that scares every GM in the league, <em>Javonte Williams</em> finally healthy in Dallas, and two 2027 first-rounders as nuclear war chips. Some called it sell-low. The KTC ledger said +15,000. History will judge.
+  </div>
+</div>
+
+<div class="chapter-card green">
+  <div class="chapter-header">
+    <div class="chapter-title">Chapter IV &mdash; The Current Roster</div>
+    <span class="chapter-year">2026 SEASON</span>
+  </div>
+  <span class="chapter-tag" style="background:rgba(0,200,81,.1);color:#00C851;border:1px solid rgba(0,200,81,.3)">&#9889; CONTENDER NOW</span>
+  <div class="chapter-body">
+    <em>Stroud</em> is the new franchise QB &mdash; 24 years old, elite arm talent, a Texans offense built around him. <em>Malik Nabers</em> is the WR1 with a ceiling that doesn&rsquo;t exist &mdash; Year 2, age 22, top-3 dynasty WR in any SF/PPR/TEP format. <em>Javonte Williams</em> anchors the RB room, finally healthy, finally the bell cow he was always supposed to be. The roster grade is <em>A</em>. The trajectory is up. The war room is fully loaded and the window is now.
+  </div>
+</div>
+
+<div class="chapter-card purple">
+  <div class="chapter-header">
+    <div class="chapter-title">Chapter V &mdash; The Vision</div>
+    <span class="chapter-year">2026&ndash;&infin;</span>
+  </div>
+  <span class="chapter-tag" style="background:rgba(168,85,247,.1);color:#a855f7;border:1px solid rgba(168,85,247,.3)">&#128081; DYNASTY</span>
+  <div class="chapter-body">
+    <strong>This isn&rsquo;t a rebuild. This is a reload.</strong> The Lamario Bros operate differently &mdash; never fully in, never fully out, always dangerous. Two 2027 first-rounders in the war chest. Nabers locked in for the next decade. Stroud with everything to prove and the arm to prove it. <em>TikTok-era dynasty.</em> Short attention span. Maximum aggression. Next play mentality. Every offseason a hostile takeover. Every draft a restock. Hungry. Always hungry.
+  </div>
+</div>
+
+<div class="lore-footer">
+  Last updated May 2026 &middot; Written in the war room &middot; LAMARIO BROS DYNASTY
+</div>
+</div>
+</div>
+
 </div><!-- /content -->
 
 <!-- MODAL -->
@@ -932,52 +1093,52 @@ a{color:inherit;text-decoration:none}
 <script>
 // Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ DATA Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
 const PLAYERS = [
-  {id:1,n:'Lamar Jackson',pos:'QB',nfl:'BAL',age:29,ovr:98,rank:'QB1 \xb7 #4 Overall',ktc:9800,traj:'peak',outlook:'Unanimous dynasty QB1 in SF\xd72 superflex. Back-to-back MVP season pace, elite dual-threat floor. In a 10-team SF\xd72 format he commands maximum value. Age 29 with 3-4 more elite seasons ahead.',ytq:'Lamar Jackson 2025 highlights'},
-  {id:2,n:'C.J. Stroud',pos:'QB',nfl:'HOU',age:24,ovr:78,rank:'QB8 \xb7 HOLD',ktc:3200,traj:'rising',outlook:'Own him at fire-sale price \u2014 market cratered after a rough 2025 but he is 24 in a loaded Texans offense. In SF\xd72 a QB2 upside asset is even more valuable. Hold and watch.',ytq:'CJ Stroud 2025 highlights'},
-  {id:3,n:'Tyson Bagent',pos:'QB',nfl:'CHI',age:25,ovr:66,rank:'QB12 \xb7 Streaming',ktc:4800,traj:'rising',outlook:'Reclaimed the Bears starting job. In SF\xd72 formats a streaming QB2 still holds real value. Strong upside if the Chicago offense clicks.',ytq:'Tyson Bagent 2025 NFL highlights'},
-  {id:4,n:'Daniel Jones',pos:'QB',nfl:'IND',age:28,ovr:70,rank:'QB15 \xb7 Streaming',ktc:3600,traj:'peak',outlook:'Reclamation story in Indy. Serviceable SF2 with streaming value in a 10-team SF\xd72 league. Colts offensive pieces make him playable.',ytq:'Daniel Jones 2025 Indianapolis highlights'},
-  {id:5,n:'Joe Flacco',pos:'QB',nfl:'CIN',age:41,ovr:57,rank:'QB20 \xb7 Emergency',ktc:1200,traj:'declining',outlook:'Veteran depth only. At 41 this is pure insurance \u2014 not a dynasty investment.',ytq:'Joe Flacco 2025 NFL highlights'},
-  {id:6,n:"De'Von Achane",pos:'RB',nfl:'MIA',age:24,ovr:92,rank:'RB2 \xb7 #10 Overall',ktc:8200,traj:'rising',outlook:"Lightning in a bottle. Elite receiving RB in Miami \u2014 massive in PPR/TEP. Age 24, clean injury history. Top-3 dynasty RB in SF\xd72/PPR/TEP.",ytq:"De'Von Achane 2025 highlights"},
-  {id:7,n:'Travis Etienne',pos:'RB',nfl:'JAX',age:27,ovr:81,rank:'RB8 \xb7 #31 Overall',ktc:6600,traj:'peak',outlook:'Back in Jacksonville as the lead back. Three-down workhorse with pass-catching ability. Age 27 in his prime  -  dynasty asset.',ytq:'Travis Etienne 2025 Jacksonville Jaguars highlights'},
-  {id:8,n:'Javonte Williams',pos:'RB',nfl:'DAL',age:24,ovr:78,rank:'RB11 \xb7 #42 Overall',ktc:5800,traj:'peak',outlook:'Finally healthy in Dallas. Explosive runner, real bell-cow upside. Sell high if Cowboys commit to him.',ytq:'Javonte Williams 2025 Dallas highlights'},
-  {id:9,n:'Jaylen Wright',pos:'RB',nfl:'MIA',age:23,ovr:69,rank:'RB14 \xb7 #50 Overall',ktc:5600,traj:'rising',outlook:"Achane handcuff with independent upside. Young enough to hold dynasty value \u2014 massive if Achane misses time.",ytq:'Jaylen Wright 2025 Miami Dolphins highlights'},
-  {id:10,n:'James Conner',pos:'RB',nfl:'ARI',age:30,ovr:64,rank:'RB15 \xb7 #55 Overall',ktc:4200,traj:'declining',outlook:'Workhorse in Arizona but 30 years old. Solid RB2 production in PPR but value is current not future.',ytq:'James Conner 2025 Arizona highlights'},
-  {id:11,n:'Tank Bigsby',pos:'RB',nfl:'PHI',age:23,ovr:68,rank:'RB17 \xb7 #61 Overall',ktc:4900,traj:'rising',outlook:"Young RB behind Philly's elite OL. Limited receiving hurts PPR, but the run game keeps him relevant.",ytq:'Tank Bigsby 2025 Philadelphia highlights'},
-  {id:12,n:'Cam Skattebo',pos:'RB',nfl:'NYG',age:25,ovr:80,rank:'RB18 \xb7 #64 Overall',ktc:6000,traj:'rising',outlook:"Dynasty darling who exploded into the NYG starting role. Physical runner with receiving upside in a workhorse role. Age 25, buy window still open.",ytq:'Cam Skattebo 2025 New York Giants highlights'},
-  {id:13,n:'Chris Rodriguez',pos:'RB',nfl:'WAS',age:26,ovr:65,rank:'RB22 \xb7 Depth',ktc:4100,traj:'peak',outlook:'Physical runner in Washington. Volume upside in a committee but brings goal-line punch and three-down potential.',ytq:'Chris Rodriguez 2025 Washington Commanders highlights'},
-  {id:14,n:'Jerome Ford',pos:'RB',nfl:'WAS',age:25,ovr:63,rank:'RB21 \xb7 Depth',ktc:3800,traj:'peak',outlook:'Pass-catching back in Washington. PPR value holds in a committee. Buyable depth with a clear role.',ytq:'Jerome Ford 2025 Washington Commanders highlights'},
-  {id:15,n:'Kenneth Gainwell',pos:'RB',nfl:'TB',age:27,ovr:67,rank:'RB30 \xb7 Stash',ktc:2600,traj:'peak',outlook:'Change-of-pace back in Tampa Bay. Occasional receiving value but deep league stash only.',ytq:'Kenneth Gainwell 2025 Tampa Bay highlights'},
-  {id:16,n:'Malik Nabers',pos:'WR',nfl:'NYG',age:22,ovr:95,rank:'WR3 \xb7 #9 Overall',ktc:9200,traj:'rising',outlook:"Year-2 elite. Top-3 dynasty WR in SF\xd72/PPR/TEP. Giants are building around him at age 23. Don't touch.",ytq:'Malik Nabers 2025 New York Giants highlights'},
-  {id:17,n:'Travis Hunter',pos:'WR',nfl:'JAX',age:22,ovr:82,rank:'WR11 \xb7 Top-10 Overall',ktc:5200,traj:'peak',outlook:"CB usage at JAX is worth monitoring \u2014 track snap share Weeks 1\u20133 before any decision. At KTC top-10 overall, don't sell a generational athlete on early noise. Hold and watch how Jacksonville deploys him.",ytq:'Travis Hunter 2025 NFL highlights'},
-  {id:18,n:'Tee Higgins',pos:'WR',nfl:'CIN',age:27,ovr:85,rank:'WR6 \xb7 #14 Overall',ktc:7800,traj:'peak',outlook:"Prime-age WR2 with Burrow throwing him the ball. When healthy, top-10 WR in SF\xd72/PPR/TEP. Core piece, don't move him.",ytq:'Tee Higgins 2025 Cincinnati Bengals highlights'},
-  {id:19,n:'Jameson Williams',pos:'WR',nfl:'DET',age:25,ovr:81,rank:'WR9 \xb7 #21 Overall',ktc:7200,traj:'rising',outlook:"Breakout ascending. Detroit's WR1, explosive in any format at age 25 with massive ceiling.",ytq:'Jameson Williams 2025 Detroit Lions highlights'},
-  {id:20,n:'Mike Evans',pos:'WR',nfl:'SF',age:32,ovr:73,rank:'WR10 \xb7 #25 Overall',ktc:6600,traj:'declining',outlook:"Still producing at a high level in SF's offense. At 32 the age discount is real. Sell window is now.",ytq:'Mike Evans 2025 San Francisco 49ers highlights'},
-  {id:21,n:'DJ Moore',pos:'WR',nfl:'BUF',age:29,ovr:74,rank:'WR12 \xb7 #32 Overall',ktc:6400,traj:'peak',outlook:"Prime-age WR in Buffalo's elite offense. Consistent WR1/2 production with excellent target share.",ytq:'DJ Moore 2025 Buffalo Bills highlights'},
-  {id:22,n:'Michael Pittman',pos:'WR',nfl:'PIT',age:27,ovr:74,rank:'WR15 \xb7 #38 Overall',ktc:5600,traj:'peak',outlook:"Target hog in Pittsburgh with PPR-friendly route tree. Age 27 means 3-4 more peak years. Strong hold.",ytq:'Michael Pittman 2025 Pittsburgh Steelers highlights'},
-  {id:23,n:'Jakobi Meyers',pos:'WR',nfl:'JAX',age:29,ovr:69,rank:'WR21 \xb7 Depth',ktc:4200,traj:'declining',outlook:'Veteran slot receiver. Good PPR volume but at 29 dynasty value is declining. Current contributor, not a long-term piece.',ytq:'Jakobi Meyers 2025 Jacksonville Jaguars highlights'},
-  {id:24,n:'Dontayvion Wicks',pos:'WR',nfl:'PHI',age:25,ovr:74,rank:'WR22 \xb7 Upside',ktc:5200,traj:'rising',outlook:"Young deep threat in Philly's great offense. Age 25 with real upside \u2014 one big season away from a breakout.",ytq:'Dontayvion Wicks 2025 Philadelphia Eagles highlights'},
-  {id:26,n:'Ricky Pearsall',pos:'WR',nfl:'SF',age:25,ovr:67,rank:'WR25 \xb7 Upside',ktc:5000,traj:'rising',outlook:"Slot receiver in SF's elite offense. Age 25 in a great system \u2014 buy before the breakout.",ytq:'Ricky Pearsall 2025 San Francisco 49ers highlights'},
-  {id:45,n:'Elijah Sarratt',pos:'WR',nfl:'BAL',age:22,ovr:68,rank:'WR  |  2026 Rd 2.08',ktc:3500,traj:'rising',outlook:"Route-running specialist out of the 2026 draft. Landed in Baltimore where the WR room has target share available. Elite technique and reliable hands at age 22  -  dynasty upside ceiling is high.",ytq:'Elijah Sarratt Baltimore Ravens 2026 NFL highlights'},
-  {id:27,n:'Tyquan Thornton',pos:'WR',nfl:'KC',age:25,ovr:61,rank:'WR30 \xb7 Depth',ktc:3700,traj:'peak',outlook:"Speed threat in Kansas City. Occasional pop plays but limited dynasty role. Hold as depth.",ytq:'Tyquan Thornton 2025 Kansas City Chiefs highlights'},
-  {id:28,n:'Mark Andrews',pos:'TE',nfl:'BAL',age:30,ovr:91,rank:'TE1 \xb7 #19 Overall',ktc:7800,traj:'peak',outlook:"Premier TE in a TEP league. Andrews gets massive premium with tight end bonuses \u2014 elite target share in Baltimore. At 30, 2-3 more peak years.",ytq:'Mark Andrews 2025 Baltimore Ravens highlights'},
-  {id:29,n:'Cole Kmet',pos:'TE',nfl:'CHI',age:26,ovr:73,rank:'TE4 \xb7 #38 Overall',ktc:5900,traj:'rising',outlook:'Rising TE in Chicago with high target volume. TEP premium makes him a genuine TE1. Age 26 \u2014 buy and hold.',ytq:'Cole Kmet 2025 Chicago Bears highlights'},
-  {id:30,n:'Dalton Kincaid',pos:'TE',nfl:'BUF',age:26,ovr:76,rank:'TE7 \xb7 #55 Overall',ktc:5200,traj:'peak',outlook:"Receiving TE in Buffalo with Josh Allen. TEP premium makes him valuable \u2014 consistent target share in a great offense.",ytq:'Dalton Kincaid 2025 Buffalo Bills highlights'},
-  {id:31,n:'Dawson Knox',pos:'TE',nfl:'BUF',age:29,ovr:65,rank:'TE10 \xb7 Depth',ktc:4000,traj:'declining',outlook:'Redundant with Kincaid in Buffalo but still gets red zone work. More current contributor than dynasty investment.',ytq:'Dawson Knox 2025 Buffalo Bills highlights'},
+  {id:1,slid:4881,n:'Lamar Jackson',pos:'QB',nfl:'BAL',age:29,ovr:98,rank:'QB1 \xb7 #4 Overall',ktc:9800,traj:'peak',outlook:'Unanimous dynasty QB1 in SF\xd72 superflex. Back-to-back MVP season pace, elite dual-threat floor. In a 10-team SF\xd72 format he commands maximum value. Age 29 with 3-4 more elite seasons ahead.',ytq:'Lamar Jackson 2025 highlights'},
+  {id:2,slid:9509,n:'C.J. Stroud',pos:'QB',nfl:'HOU',age:24,ovr:78,rank:'QB8 \xb7 HOLD',ktc:3200,traj:'rising',outlook:'Own him at fire-sale price \u2014 market cratered after a rough 2025 but he is 24 in a loaded Texans offense. In SF\xd72 a QB2 upside asset is even more valuable. Hold and watch.',ytq:'CJ Stroud 2025 highlights'},
+  {id:3,slid:10229,n:'Tyson Bagent',pos:'QB',nfl:'CHI',age:25,ovr:66,rank:'QB12 \xb7 Streaming',ktc:4800,traj:'rising',outlook:'Reclaimed the Bears starting job. In SF\xd72 formats a streaming QB2 still holds real value. Strong upside if the Chicago offense clicks.',ytq:'Tyson Bagent 2025 NFL highlights'},
+  {id:4,slid:5849,n:'Daniel Jones',pos:'QB',nfl:'IND',age:28,ovr:70,rank:'QB15 \xb7 Streaming',ktc:3600,traj:'peak',outlook:'Reclamation story in Indy. Serviceable SF2 with streaming value in a 10-team SF\xd72 league. Colts offensive pieces make him playable.',ytq:'Daniel Jones 2025 Indianapolis highlights'},
+  {id:5,slid:3294,n:'Joe Flacco',pos:'QB',nfl:'CIN',age:41,ovr:57,rank:'QB20 \xb7 Emergency',ktc:1200,traj:'declining',outlook:'Veteran depth only. At 41 this is pure insurance \u2014 not a dynasty investment.',ytq:'Joe Flacco 2025 NFL highlights'},
+  {id:6,slid:9484,n:"De'Von Achane",pos:'RB',nfl:'MIA',age:24,ovr:92,rank:'RB2 \xb7 #10 Overall',ktc:8200,traj:'rising',outlook:"Lightning in a bottle. Elite receiving RB in Miami \u2014 massive in PPR/TEP. Age 24, clean injury history. Top-3 dynasty RB in SF\xd72/PPR/TEP.",ytq:"De'Von Achane 2025 highlights"},
+  {id:7,slid:6790,n:'Travis Etienne',pos:'RB',nfl:'JAX',age:27,ovr:81,rank:'RB8 \xb7 #31 Overall',ktc:6600,traj:'peak',outlook:'Back in Jacksonville as the lead back. Three-down workhorse with pass-catching ability. Age 27 in his prime  -  dynasty asset.',ytq:'Travis Etienne 2025 Jacksonville Jaguars highlights'},
+  {id:8,slid:7564,n:'Javonte Williams',pos:'RB',nfl:'DAL',age:24,ovr:78,rank:'RB11 \xb7 #42 Overall',ktc:5800,traj:'peak',outlook:'Finally healthy in Dallas. Explosive runner, real bell-cow upside. Sell high if Cowboys commit to him.',ytq:'Javonte Williams 2025 Dallas highlights'},
+  {id:9,slid:10230,n:'Jaylen Wright',pos:'RB',nfl:'MIA',age:23,ovr:69,rank:'RB14 \xb7 #50 Overall',ktc:5600,traj:'rising',outlook:"Achane handcuff with independent upside. Young enough to hold dynasty value \u2014 massive if Achane misses time.",ytq:'Jaylen Wright 2025 Miami Dolphins highlights'},
+  {id:10,slid:3970,n:'James Conner',pos:'RB',nfl:'ARI',age:30,ovr:64,rank:'RB15 \xb7 #55 Overall',ktc:4200,traj:'declining',outlook:'Workhorse in Arizona but 30 years old. Solid RB2 production in PPR but value is current not future.',ytq:'James Conner 2025 Arizona highlights'},
+  {id:11,slid:9486,n:'Tank Bigsby',pos:'RB',nfl:'PHI',age:23,ovr:68,rank:'RB17 \xb7 #61 Overall',ktc:4900,traj:'rising',outlook:"Young RB behind Philly's elite OL. Limited receiving hurts PPR, but the run game keeps him relevant.",ytq:'Tank Bigsby 2025 Philadelphia highlights'},
+  {id:12,slid:11565,n:'Cam Skattebo',pos:'RB',nfl:'NYG',age:25,ovr:80,rank:'RB18 \xb7 #64 Overall',ktc:6000,traj:'rising',outlook:"Dynasty darling who exploded into the NYG starting role. Physical runner with receiving upside in a workhorse role. Age 25, buy window still open.",ytq:'Cam Skattebo 2025 New York Giants highlights'},
+  {id:13,slid:8680,n:'Chris Rodriguez',pos:'RB',nfl:'WAS',age:26,ovr:65,rank:'RB22 \xb7 Depth',ktc:4100,traj:'peak',outlook:'Physical runner in Washington. Volume upside in a committee but brings goal-line punch and three-down potential.',ytq:'Chris Rodriguez 2025 Washington Commanders highlights'},
+  {id:14,slid:9165,n:'Jerome Ford',pos:'RB',nfl:'WAS',age:25,ovr:63,rank:'RB21 \xb7 Depth',ktc:3800,traj:'peak',outlook:'Pass-catching back in Washington. PPR value holds in a committee. Buyable depth with a clear role.',ytq:'Jerome Ford 2025 Washington Commanders highlights'},
+  {id:15,slid:7526,n:'Kenneth Gainwell',pos:'RB',nfl:'TB',age:27,ovr:67,rank:'RB30 \xb7 Stash',ktc:2600,traj:'peak',outlook:'Change-of-pace back in Tampa Bay. Occasional receiving value but deep league stash only.',ytq:'Kenneth Gainwell 2025 Tampa Bay highlights'},
+  {id:16,slid:10222,n:'Malik Nabers',pos:'WR',nfl:'NYG',age:22,ovr:95,rank:'WR3 \xb7 #9 Overall',ktc:9200,traj:'rising',outlook:"Year-2 elite. Top-3 dynasty WR in SF\xd72/PPR/TEP. Giants are building around him at age 23. Don't touch.",ytq:'Malik Nabers 2025 New York Giants highlights'},
+  {id:17,slid:11566,n:'Travis Hunter',pos:'WR',nfl:'JAX',age:22,ovr:82,rank:'WR11 \xb7 Top-10 Overall',ktc:5200,traj:'peak',outlook:"CB usage at JAX is worth monitoring \u2014 track snap share Weeks 1\u20133 before any decision. At KTC top-10 overall, don't sell a generational athlete on early noise. Hold and watch how Jacksonville deploys him.",ytq:'Travis Hunter 2025 NFL highlights'},
+  {id:18,slid:6904,n:'Tee Higgins',pos:'WR',nfl:'CIN',age:27,ovr:85,rank:'WR6 \xb7 #14 Overall',ktc:7800,traj:'peak',outlook:"Prime-age WR2 with Burrow throwing him the ball. When healthy, top-10 WR in SF\xd72/PPR/TEP. Core piece, don't move him.",ytq:'Tee Higgins 2025 Cincinnati Bengals highlights'},
+  {id:19,slid:8150,n:'Jameson Williams',pos:'WR',nfl:'DET',age:25,ovr:81,rank:'WR9 \xb7 #21 Overall',ktc:7200,traj:'rising',outlook:"Breakout ascending. Detroit's WR1, explosive in any format at age 25 with massive ceiling.",ytq:'Jameson Williams 2025 Detroit Lions highlights'},
+  {id:20,slid:3164,n:'Mike Evans',pos:'WR',nfl:'SF',age:32,ovr:73,rank:'WR10 \xb7 #25 Overall',ktc:6600,traj:'declining',outlook:"Still producing at a high level in SF's offense. At 32 the age discount is real. Sell window is now.",ytq:'Mike Evans 2025 San Francisco 49ers highlights'},
+  {id:21,slid:5870,n:'DJ Moore',pos:'WR',nfl:'BUF',age:29,ovr:74,rank:'WR12 \xb7 #32 Overall',ktc:6400,traj:'peak',outlook:"Prime-age WR in Buffalo's elite offense. Consistent WR1/2 production with excellent target share.",ytq:'DJ Moore 2025 Buffalo Bills highlights'},
+  {id:22,slid:7528,n:'Michael Pittman',pos:'WR',nfl:'PIT',age:27,ovr:74,rank:'WR15 \xb7 #38 Overall',ktc:5600,traj:'peak',outlook:"Target hog in Pittsburgh with PPR-friendly route tree. Age 27 means 3-4 more peak years. Strong hold.",ytq:'Michael Pittman 2025 Pittsburgh Steelers highlights'},
+  {id:23,slid:6831,n:'Jakobi Meyers',pos:'WR',nfl:'JAX',age:29,ovr:69,rank:'WR21 \xb7 Depth',ktc:4200,traj:'declining',outlook:'Veteran slot receiver. Good PPR volume but at 29 dynasty value is declining. Current contributor, not a long-term piece.',ytq:'Jakobi Meyers 2025 Jacksonville Jaguars highlights'},
+  {id:24,slid:9503,n:'Dontayvion Wicks',pos:'WR',nfl:'PHI',age:25,ovr:74,rank:'WR22 \xb7 Upside',ktc:5200,traj:'rising',outlook:"Young deep threat in Philly's great offense. Age 25 with real upside \u2014 one big season away from a breakout.",ytq:'Dontayvion Wicks 2025 Philadelphia Eagles highlights'},
+  {id:26,slid:10227,n:'Ricky Pearsall',pos:'WR',nfl:'SF',age:25,ovr:67,rank:'WR25 \xb7 Upside',ktc:5000,traj:'rising',outlook:"Slot receiver in SF's elite offense. Age 25 in a great system \u2014 buy before the breakout.",ytq:'Ricky Pearsall 2025 San Francisco 49ers highlights'},
+  {id:45,slid:null,n:'Elijah Sarratt',pos:'WR',nfl:'BAL',age:22,ovr:68,rank:'WR  |  2026 Rd 2.08',ktc:3500,traj:'rising',outlook:"Route-running specialist out of the 2026 draft. Landed in Baltimore where the WR room has target share available. Elite technique and reliable hands at age 22  -  dynasty upside ceiling is high.",ytq:'Elijah Sarratt Baltimore Ravens 2026 NFL highlights'},
+  {id:27,slid:8155,n:'Tyquan Thornton',pos:'WR',nfl:'KC',age:25,ovr:61,rank:'WR30 \xb7 Depth',ktc:3700,traj:'peak',outlook:"Speed threat in Kansas City. Occasional pop plays but limited dynasty role. Hold as depth.",ytq:'Tyquan Thornton 2025 Kansas City Chiefs highlights'},
+  {id:28,slid:5844,n:'Mark Andrews',pos:'TE',nfl:'BAL',age:30,ovr:91,rank:'TE1 \xb7 #19 Overall',ktc:7800,traj:'peak',outlook:"Premier TE in a TEP league. Andrews gets massive premium with tight end bonuses \u2014 elite target share in Baltimore. At 30, 2-3 more peak years.",ytq:'Mark Andrews 2025 Baltimore Ravens highlights'},
+  {id:29,slid:6797,n:'Cole Kmet',pos:'TE',nfl:'CHI',age:26,ovr:73,rank:'TE4 \xb7 #38 Overall',ktc:5900,traj:'rising',outlook:'Rising TE in Chicago with high target volume. TEP premium makes him a genuine TE1. Age 26 \u2014 buy and hold.',ytq:'Cole Kmet 2025 Chicago Bears highlights'},
+  {id:30,slid:9492,n:'Dalton Kincaid',pos:'TE',nfl:'BUF',age:26,ovr:76,rank:'TE7 \xb7 #55 Overall',ktc:5200,traj:'peak',outlook:"Receiving TE in Buffalo with Josh Allen. TEP premium makes him valuable \u2014 consistent target share in a great offense.",ytq:'Dalton Kincaid 2025 Buffalo Bills highlights'},
+  {id:31,slid:6826,n:'Dawson Knox',pos:'TE',nfl:'BUF',age:29,ovr:65,rank:'TE10 \xb7 Depth',ktc:4000,traj:'declining',outlook:'Redundant with Kincaid in Buffalo but still gets red zone work. More current contributor than dynasty investment.',ytq:'Dawson Knox 2025 Buffalo Bills highlights'},
 
-  {id:38,n:'Demond Claiborne',pos:'RB',nfl:'MIN',age:22,ovr:69,rank:'RB \xb7 2026 Pick 3.08',ktc:2800,traj:'rising',outlook:"\u201cAchane lite\u201d \u2014 explosive satellite back with elite burst and pass-catching chops. Vikings land an electric playmaker. Dynasty upside ceiling is sky-high in a pass-heavy system.",ytq:'Demond Claiborne Minnesota Vikings 2026 NFL highlights'},
-  {id:40,n:'Eli Heidenreich',pos:'WR',nfl:'PIT',age:22,ovr:64,rank:'WR \xb7 2026 Pick 4.10',ktc:900,traj:'rising',outlook:"\u201cCMC jr\u201d profile \u2014 hybrid WR/RB versatility that fits the modern NFL perfectly. Landed in Pittsburgh where creative usage could unlock instant value. Lottery-ticket upside.",ytq:'Eli Heidenreich Pittsburgh Steelers 2026 NFL highlights'},
-  {id:41,n:'Carson Beck',pos:'QB',nfl:'ARI',age:23,ovr:69,rank:'QB \xb7 2026 Pick 3.05',ktc:2200,traj:'rising',outlook:"Georgia product with NFL-ready arm and pocket presence. Arizona gives him a real shot at the starting job. SF\xd72 multiplier makes him a high-ceiling stash with legitimate starter upside.",ytq:'Carson Beck Arizona Cardinals 2026 NFL highlights'},
+  {id:38,slid:null,n:'Demond Claiborne',pos:'RB',nfl:'MIN',age:22,ovr:69,rank:'RB \xb7 2026 Pick 3.08',ktc:2800,traj:'rising',outlook:"\u201cAchane lite\u201d \u2014 explosive satellite back with elite burst and pass-catching chops. Vikings land an electric playmaker. Dynasty upside ceiling is sky-high in a pass-heavy system.",ytq:'Demond Claiborne Minnesota Vikings 2026 NFL highlights'},
+  {id:40,slid:null,n:'Eli Heidenreich',pos:'WR',nfl:'PIT',age:22,ovr:64,rank:'WR \xb7 2026 Pick 4.10',ktc:900,traj:'rising',outlook:"\u201cCMC jr\u201d profile \u2014 hybrid WR/RB versatility that fits the modern NFL perfectly. Landed in Pittsburgh where creative usage could unlock instant value. Lottery-ticket upside.",ytq:'Eli Heidenreich Pittsburgh Steelers 2026 NFL highlights'},
+  {id:41,slid:null,n:'Carson Beck',pos:'QB',nfl:'ARI',age:23,ovr:69,rank:'QB \xb7 2026 Pick 3.05',ktc:2200,traj:'rising',outlook:"Georgia product with NFL-ready arm and pocket presence. Arizona gives him a real shot at the starting job. SF\xd72 multiplier makes him a high-ceiling stash with legitimate starter upside.",ytq:'Carson Beck Arizona Cardinals 2026 NFL highlights'},
 ];
 
 const IR = [
-  {id:33,n:'Joe Mixon',pos:'RB',nfl:'HOU',age:29,ovr:70,rank:'RB9 \xb7 IR',ktc:5100,traj:'declining',outlook:"Workhorse back on IR. When healthy, high-volume bell cow \u2014 but at 29 with injury history the dynasty value is fading. Monitor recovery and consider trading.",ytq:'Joe Mixon 2025 Houston Texans highlights'},
+  {id:33,slid:4034,n:'Joe Mixon',pos:'RB',nfl:'HOU',age:29,ovr:70,rank:'RB9 \xb7 IR',ktc:5100,traj:'declining',outlook:"Workhorse back on IR. When healthy, high-volume bell cow \u2014 but at 29 with injury history the dynasty value is fading. Monitor recovery and consider trading.",ytq:'Joe Mixon 2025 Houston Texans highlights'},
 ];
 
 const TAXI = [
-  {id:34,n:'Damien Martinez',pos:'RB',nfl:'GB',age:23,ovr:72,rank:'RB Taxi \xb7 Promote?',ktc:4800,traj:'rising',outlook:"Best taxi promotion candidate. Physical RB in Green Bay with path to significant carries. Age 23 in a strong run system \u2014 promote before Week 1.",ytq:'Damien Martinez Green Bay Packers 2025 highlights'},
-  {id:42,n:'Cade Klubnik',pos:'QB',nfl:'NYJ',age:22,ovr:67,rank:'QB Taxi \xb7 2026 Rookie',ktc:1800,traj:'rising',outlook:"Clemson's electric dual-threat QB. Arm talent plus elite mobility \u2014 the SF\xd72 format makes him one of the most exciting stashes in the 2026 class. High floor at the position.",ytq:'Cade Klubnik 2026 NFL Draft QB highlights'},
-  {id:36,n:'Will Howard',pos:'QB',nfl:'PIT',age:25,ovr:70,rank:'QB Taxi \xb7 SF\xd72 Stash \xb7 Possible Cut',ktc:4500,traj:'rising',outlook:"Ohio State QB learning in Pittsburgh. SF\xd72 value makes him worth stashing \u2014 low floor, real upside if the starter gets hurt.",ytq:'Will Howard 2025 Pittsburgh Steelers NFL highlights'},
-  {id:39,n:'Eli Raridon',pos:'TE',nfl:'NE',age:22,ovr:65,rank:'TE Taxi \xb7 2026 Pick 4.04',ktc:1200,traj:'rising',outlook:"Notre Dame product in New England. Big-bodied receiving TE with soft hands and route-running polish. TEP format gives him added upside \u2014 long stash with real potential.",ytq:'Eli Raridon Notre Dame TE 2026 NFL highlights'},
+  {id:34,slid:null,n:'Damien Martinez',pos:'RB',nfl:'GB',age:23,ovr:72,rank:'RB Taxi \xb7 Promote?',ktc:4800,traj:'rising',outlook:"Best taxi promotion candidate. Physical RB in Green Bay with path to significant carries. Age 23 in a strong run system \u2014 promote before Week 1.",ytq:'Damien Martinez Green Bay Packers 2025 highlights'},
+  {id:42,slid:null,n:'Cade Klubnik',pos:'QB',nfl:'NYJ',age:22,ovr:67,rank:'QB Taxi \xb7 2026 Rookie',ktc:1800,traj:'rising',outlook:"Clemson's electric dual-threat QB. Arm talent plus elite mobility \u2014 the SF\xd72 format makes him one of the most exciting stashes in the 2026 class. High floor at the position.",ytq:'Cade Klubnik 2026 NFL Draft QB highlights'},
+  {id:36,slid:null,n:'Will Howard',pos:'QB',nfl:'PIT',age:25,ovr:70,rank:'QB Taxi \xb7 SF\xd72 Stash \xb7 Possible Cut',ktc:4500,traj:'rising',outlook:"Ohio State QB learning in Pittsburgh. SF\xd72 value makes him worth stashing \u2014 low floor, real upside if the starter gets hurt.",ytq:'Will Howard 2025 Pittsburgh Steelers NFL highlights'},
+  {id:39,slid:null,n:'Eli Raridon',pos:'TE',nfl:'NE',age:22,ovr:65,rank:'TE Taxi \xb7 2026 Pick 4.04',ktc:1200,traj:'rising',outlook:"Notre Dame product in New England. Big-bodied receiving TE with soft hands and route-running polish. TEP format gives him added upside \u2014 long stash with real potential.",ytq:'Eli Raridon Notre Dame TE 2026 NFL highlights'},
 ];
 
 const PICKS = [
@@ -1272,7 +1433,16 @@ function prevSpotlight(){ spotlightIdx=(spotlightIdx-1+SPOTLIGHTS.length)%SPOTLI
 function makeCard(p, extra=''){
   const tier = ovrTier(p.ovr);
   const isIR = extra==='ir';
+  const nameParts = p.n.replace(/[^a-zA-Z ]/g,'').split(' ').filter(w=>w.length>0);
+  const initials = (nameParts[0]?nameParts[0][0]:'') + (nameParts[1]?nameParts[1][0]:'');
+  let avatarHtml;
+  if(p.slid){
+    avatarHtml = `<div class="player-avatar"><img src="https://sleepercdn.com/content/nfl/players/thumb/${p.slid}.jpg" alt="${p.n}" onerror="this.style.display='none';this.parentNode.innerHTML='<span class=\"player-avatar-initials\">${initials}</span>'"></div>`;
+  } else {
+    avatarHtml = `<div class="player-avatar"><span class="player-avatar-initials">${initials}</span></div>`;
+  }
   return `<div class="player-card${isIR?' ir-card':''}" onclick="openModal(${p.id})">
+    ${avatarHtml}
     <div class="ovr-badge ovr-${tier}">${p.ovr}</div>
     <div class="player-info">
       <div class="player-name">${p.n}</div>
@@ -1432,7 +1602,7 @@ function showTab(id){
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+id).classList.add('active');
-  const tabs=['roster','taxi','picks','tradeledger','warroom','reportcard','tradelab'];
+  const tabs=['roster','taxi','picks','tradeledger','warroom','reportcard','tradelab','lore'];
   const idx=tabs.indexOf(id);
   if(idx>=0) document.querySelectorAll('.tab')[idx].classList.add('active');
   document.getElementById('modal').classList.remove('open');
@@ -1644,6 +1814,14 @@ function copyMsg(panel){
 }
 
 buildRoster();
+// ─── HERO QUICK STATS ─────────────────────────────────────────────────────
+(function(){
+  const allH=[...PLAYERS,...IR,...TAXI];
+  const tpEl=document.getElementById('hero-total-players');
+  const aaEl=document.getElementById('hero-avg-age');
+  if(tpEl) tpEl.textContent=allH.length;
+  if(aaEl) aaEl.textContent=(allH.reduce(function(s,p){return s+p.age;},0)/allH.length).toFixed(1);
+})();
 
 // --- DRAFT CAPITAL VALUATOR ---
 (function(){
@@ -1723,7 +1901,7 @@ let hotTakeIndex = 0;
 function dropHotTake() {
   const box = document.getElementById('hotTakeBox');
   box.style.display = 'block';
-  box.textContent = '&#128293; ' + hotTakes[hotTakeIndex % hotTakes.length];
+  box.innerHTML = '🔥 ' + hotTakes[hotTakeIndex % hotTakes.length];
   hotTakeIndex++;
 }
 </script>
