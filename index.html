@@ -378,7 +378,7 @@ a{color:inherit;text-decoration:none}
   <div class="hero-score-bar">
     <div class="hero-score-label">
       <span class="hero-score-title">&#9889; Dynasty Score</span>
-      <span class="hero-score-num">88<span style="font-size:11px;font-weight:400;color:#6b6b88">/100</span></span>
+      <span class="hero-score-num">88<span style="font-size:13px;font-weight:600;color:#94a3b8">/100</span></span>
     </div>
     <div class="hero-score-track">
       <div class="hero-score-fill" style="width:88%"></div>
@@ -1449,6 +1449,8 @@ function buildSpotlight(){
   const all = [...PLAYERS,...IR,...TAXI];
   const p = all.find(x=>x.id===sp.pid);
   if(!p) return;
+  // Player is on our roster — never show BUY for an owned player
+  const rec = sp.rec === 'BUY' ? 'HOLD' : sp.rec;
   const tier = ovrTier(p.ovr);
   const deltaNum = sp.ovrNew - sp.ovrPrev;
   const deltaHtml = deltaNum>0
@@ -1456,7 +1458,7 @@ function buildSpotlight(){
     : `<span class="spotlight-delta delta-neutral">= OVR</span>`;
   const recBtns = `
     <div class="spotlight-rec-wrap">
-      <span class="spotlight-rec-badge rec-${sp.rec}">${sp.rec}</span>
+      <span class="spotlight-rec-badge rec-${rec}">${rec}</span>
       <span class="spotlight-meta">${p.pos} \xb7 ${p.nfl} \xb7 Age ${p.age} \xb7 KTC ${p.ktc.toLocaleString()}</span>
     </div>`;
   const html = `<div class="spotlight-card">
@@ -1904,6 +1906,7 @@ const TRADE_TARGETS = [
 function renderTargetList(){
   const wrap=document.getElementById('target-list-wrap');
   if(!wrap)return;
+  const ownedNames=new Set([...PLAYERS,...IR,...TAXI].map(p=>p.n.toLowerCase()));
   const posColors={TE:'#fb923c',WR:'#60a5fa',RB:'#34d399',QB:'#a855f7'};
   const groups=[
     {priority:1,pos:'TE',label:'#1 NEED \u2014 TIGHT END (Avg age 28.7 \u2014 upgrade window now)'},
@@ -1911,7 +1914,7 @@ function renderTargetList(){
   ];
   let html='';
   groups.forEach(g=>{
-    const items=TRADE_TARGETS.filter(t=>t.needPriority===g.priority);
+    const items=TRADE_TARGETS.filter(t=>t.needPriority===g.priority && !ownedNames.has(t.name.toLowerCase()));
     if(!items.length)return;
     html+=`<div class="target-group-label">${g.label}</div>`;
     items.forEach(t=>{
