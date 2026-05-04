@@ -359,6 +359,65 @@ a{color:inherit;text-decoration:none}
 .chapter-body em{color:#FFD700;font-style:normal;font-weight:700}
 .lore-footer{text-align:center;padding:14px 0 4px;font-size:10px;color:#6b6b88;border-top:1px solid var(--border);margin-top:4px;letter-spacing:.5px}
 
+
+/* ─── ESPN LORE (Upgrade 1) ──────────────────────────────── */
+.espn-lore-section{padding:4px 0}
+.espn-lore-topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0 10px;margin-bottom:4px}
+.espn-lore-badge{display:inline-flex;align-items:center;gap:5px;background:#D50A0A;color:#fff;font-size:9px;font-weight:900;letter-spacing:2px;padding:4px 10px;border-radius:2px;text-transform:uppercase}
+.espn-story-scroll{display:flex;gap:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:14px;scrollbar-width:none}
+.espn-story-scroll::-webkit-scrollbar{display:none}
+.espn-story-card{flex:0 0 275px;background:linear-gradient(160deg,#13131e,#1a0d2e);border:1px solid #2a2a3a;border-radius:14px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.espn-story-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#D50A0A;z-index:1}
+.espn-card-img-wrap{position:relative;height:148px;overflow:hidden;background:linear-gradient(135deg,#0d0d1f,#1a0d2e)}
+.espn-card-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;opacity:.88;transition:opacity .3s}
+.espn-card-gradient{position:absolute;bottom:0;left:0;right:0;height:75px;background:linear-gradient(transparent,#13131e)}
+.espn-vibe-badge{position:absolute;top:10px;right:10px;font-size:10px;font-weight:800;padding:3px 9px;border-radius:20px;background:rgba(0,0,0,.78);border:1px solid rgba(255,255,255,.15);color:#fff;backdrop-filter:blur(4px);white-space:nowrap;z-index:2}
+.espn-card-body{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column;gap:7px}
+.espn-card-meta{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.espn-card-date{font-size:9px;font-weight:700;color:#D50A0A;letter-spacing:1px;text-transform:uppercase;flex-shrink:0}
+.espn-card-category{font-size:9px;color:var(--muted);font-weight:600;background:#1e1e2e;border:1px solid #2a2a3a;border-radius:3px;padding:1px 6px;white-space:nowrap}
+.espn-card-headline{font-size:14px;font-weight:900;color:#fff;line-height:1.35;letter-spacing:-.2px}
+.espn-card-pull{border-left:3px solid #D50A0A;padding:7px 10px;background:rgba(213,10,10,.07);border-radius:0 6px 6px 0}
+.espn-card-pull-text{font-size:11px;font-style:italic;color:var(--text);line-height:1.55}
+.espn-card-attribution{font-size:9px;color:#D50A0A;font-weight:700;margin-top:4px;letter-spacing:.3px}
+.espn-lore-grid{display:none}
+@media(min-width:620px){
+  .espn-story-scroll{display:none}
+  .espn-lore-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+}
+@media(min-width:900px){
+  .espn-lore-grid{grid-template-columns:repeat(3,1fr)}
+}
+.espn-lore-footer{text-align:center;padding:14px 0 4px;font-size:10px;color:var(--muted);border-top:1px solid var(--border);margin-top:8px;letter-spacing:.5px}
+
+/* ─── TRENDING ARROWS (Upgrade 2) ──────────────────────── */
+.trend-arrow{position:absolute;top:7px;right:7px;font-size:11px;font-weight:900;padding:1px 5px;border-radius:4px;line-height:1.4;z-index:3;pointer-events:none}
+.trend-up{background:rgba(74,222,128,.22);color:#4ade80;border:1px solid rgba(74,222,128,.4)}
+.trend-down{background:rgba(248,113,113,.22);color:#f87171;border:1px solid rgba(248,113,113,.4)}
+.player-card{position:relative}
+
+/* ─── DYNASTY SPOTLIGHT MODAL (Upgrade 3) ──────────────── */
+.modal-sec-title{font-size:9px;font-weight:800;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin:12px 0 7px;display:flex;align-items:center;gap:6px}
+.modal-sec-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.peak-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px}
+.peak-in{background:rgba(52,211,153,.15);color:#34d399;border:1px solid rgba(52,211,153,.3)}
+.peak-approaching{background:rgba(240,192,64,.15);color:#f0c040;border:1px solid rgba(240,192,64,.3)}
+.peak-past{background:rgba(248,113,113,.15);color:#f87171;border:1px solid rgba(248,113,113,.3)}
+.verdict-modal-badge{display:inline-flex;align-items:center;gap:5px;font-size:14px;font-weight:900;padding:8px 22px;border-radius:30px;letter-spacing:.5px}
+.verdict-BUY{background:rgba(52,211,153,.15);color:#34d399;border:2px solid rgba(52,211,153,.4)}
+.verdict-SELL{background:rgba(248,113,113,.15);color:#f87171;border:2px solid rgba(248,113,113,.4)}
+.verdict-HOLD{background:rgba(240,192,64,.15);color:#f0c040;border:2px solid rgba(240,192,64,.3)}
+.fc-trend-row{display:flex;align-items:center;gap:8px;background:var(--card2);border-radius:8px;padding:9px 12px;margin-bottom:4px}
+.fc-trend-label{font-size:9px;color:var(--muted);font-weight:800;letter-spacing:.8px;text-transform:uppercase;flex-shrink:0}
+.fc-val{font-size:15px;font-weight:800;color:var(--accent)}
+.fc-pct{font-size:11px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:auto}
+.fc-pct-up{background:rgba(74,222,128,.15);color:#4ade80}
+.fc-pct-down{background:rgba(248,113,113,.15);color:#f87171}
+.fc-pct-flat{background:rgba(148,163,184,.1);color:var(--muted)}
+.espn-bullets{list-style:none;display:flex;flex-direction:column;gap:5px;margin:0;padding:0}
+.espn-bullets li{font-size:12px;color:var(--text);padding:6px 8px;background:var(--card2);border-radius:6px;line-height:1.5;display:flex;align-items:flex-start;gap:6px}
+.espn-bullets li::before{content:'\25BA';color:#D50A0A;font-size:8px;flex-shrink:0;margin-top:4px}
+
 </style>
 </head>
 <body>
@@ -1028,96 +1087,254 @@ a{color:inherit;text-decoration:none}
 
 <!-- LORE TAB -->
 <div id="tab-lore" class="tab-panel">
-<div class="lore-section">
-<div style="padding:16px 0 8px">
-  <h2 style="margin:0 0 4px;font-size:1.1rem;letter-spacing:2px;color:#FFD700">&#128218; LAMARIO LORE</h2>
-  <div style="font-size:.73rem;color:#64748b">The Dynasty Chronicle &middot; ColonelSanders4 &middot; LAMARIO BROS</div>
-</div>
-<div class="lore-intro">
-  Every dynasty has a story. This is ours &mdash; built in the chaos, forged in the trade room, written in KTC points. No shortcuts. No luck. Just reads, conviction, and the willingness to pull the trigger when everyone else hesitates.
-</div>
+<div class="espn-lore-section">
 
-<div class="chapter-card gold">
-  <div class="chapter-header">
-    <div class="chapter-title">Chapter I &mdash; The Foundation</div>
-    <span class="chapter-year">EST. 2023</span>
-  </div>
-  <span class="chapter-tag" style="background:rgba(255,215,0,.1);color:#FFD700;border:1px solid rgba(255,215,0,.3)">&#127959; ORIGIN STORY</span>
-  <div class="chapter-body">
-    <strong>ColonelSanders4 enters the league with a plan and zero patience for mediocrity.</strong> The Lamario Bros were built on a simple philosophy: <em>bet on youth, bet on upside, never overpay for old.</em> In a 10-team SF&times;2/PPR/TEP dynasty, the early strategy was clear &mdash; accumulate picks, stockpile young talent, and wait for the right moment to strike. The rest of the league slept. The war room was already open.
-  </div>
-</div>
-
-<div class="chapter-card blue">
-  <div class="chapter-header">
-    <div class="chapter-title">Chapter II &mdash; The Lawrence Era</div>
-    <span class="chapter-year">2024&ndash;2025</span>
-  </div>
-  <span class="chapter-tag" style="background:rgba(33,150,243,.1);color:#60a5fa;border:1px solid rgba(33,150,243,.3)">&#127944; FRANCHISE QB</span>
-  <div class="chapter-body">
-    <strong>Trevor Lawrence was the bet.</strong> Acquired on arm talent and pedigree alone &mdash; a top-5 pick surrounded by weapons in Jacksonville. The pairing with <em>Jahmyr Gibbs</em> created one of the most explosive young backfields in dynasty. Lawrence threw. Gibbs exploded. For two seasons, the Lamario Bros looked like a dynasty built to last &mdash; a generational RB and a franchise QB locked in together. Then came the call that changed everything.
-  </div>
-</div>
-
-<div class="chapter-card amber">
-  <div class="chapter-header">
-    <div class="chapter-title">Chapter III &mdash; The Great Trade</div>
-    <span class="chapter-year">APR 19, 2026</span>
-  </div>
-  <span class="chapter-tag" style="background:rgba(245,158,11,.15);color:#fbbf24;border:1px solid rgba(245,158,11,.35)">&#128293; BLOCKBUSTER</span>
-  <div class="chapter-body">
-    The most debated trade of the offseason. <strong>Lawrence + Gibbs out. Stroud + Nabers + Williams + two 2027 firsts in.</strong> The fantasy world lost its mind. You sold Gibbs &mdash; arguably a top-3 dynasty RB &mdash; at his absolute peak. You moved Lawrence while the market still believed. And in return, you landed <em>C.J. Stroud</em> at 24 years old, <em>Malik Nabers</em> with a ceiling that scares every GM in the league, <em>Javonte Williams</em> finally healthy in Dallas, and two 2027 first-rounders as nuclear war chips. Some called it sell-low. The KTC ledger said +15,000. History will judge.
-  </div>
-</div>
-
-<div class="chapter-card green">
-  <div class="chapter-header">
-    <div class="chapter-title">Chapter IV &mdash; The Current Roster</div>
-    <span class="chapter-year">2026 SEASON</span>
-  </div>
-  <span class="chapter-tag" style="background:rgba(0,200,81,.1);color:#00C851;border:1px solid rgba(0,200,81,.3)">&#9889; CONTENDER NOW</span>
-  <div class="chapter-body">
-    <em>Stroud</em> is the new franchise QB &mdash; 24 years old, elite arm talent, a Texans offense built around him. <em>Malik Nabers</em> is the WR1 with a ceiling that doesn&rsquo;t exist &mdash; Year 2, age 22, top-3 dynasty WR in any SF/PPR/TEP format. <em>Javonte Williams</em> anchors the RB room, finally healthy, finally the bell cow he was always supposed to be. The roster grade is <em>A</em>. The trajectory is up. The war room is fully loaded and the window is now.
-  </div>
-</div>
-
-<div class="chapter-card purple">
-  <div class="chapter-header">
-    <div class="chapter-title">Chapter V &mdash; The Vision</div>
-    <span class="chapter-year">2026&ndash;&infin;</span>
-  </div>
-  <span class="chapter-tag" style="background:rgba(168,85,247,.1);color:#a855f7;border:1px solid rgba(168,85,247,.3)">&#128081; DYNASTY</span>
-  <div class="chapter-body">
-    <strong>This isn&rsquo;t a rebuild. This is a reload.</strong> The Lamario Bros operate differently &mdash; never fully in, never fully out, always dangerous. Two 2027 first-rounders in the war chest. Nabers locked in for the next decade. Stroud with everything to prove and the arm to prove it. <em>TikTok-era dynasty.</em> Short attention span. Maximum aggression. Next play mentality. Every offseason a hostile takeover. Every draft a restock. Hungry. Always hungry.
-  </div>
-</div>
-
-<div class="lore-footer">
-  Last updated May 2026 &middot; Written in the war room &middot; LAMARIO BROS DYNASTY
-</div>
-</div>
-</div>
-
-
-<div id="tab-targets" class="tab-panel">
-<div class="target-header">
+<div class="espn-lore-topbar">
   <div>
-    <div class="target-title">&#127919; Trade Target List</div>
-    <div style="font-size:11px;color:var(--muted);margin-top:3px">Players you should be calling about right now</div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+      <div class="espn-lore-badge">&#9889; ESPN INSIDER</div>
+      <span style="font-size:9px;color:#D50A0A;font-weight:700;letter-spacing:1.5px">DYNASTY CHRONICLES</span>
+    </div>
+    <div style="font-size:19px;font-weight:900;color:#fff;letter-spacing:1px">LAMARIO BROS</div>
+    <div style="font-size:10px;color:var(--muted);margin-top:1px">ColonelSanders4 &middot; SF &times;2 Dynasty &middot; War Room Files</div>
+  </div>
+  <div style="text-align:right">
+    <div style="font-size:9px;color:var(--muted);letter-spacing:1px;margin-bottom:2px">FRANCHISE GRADE</div>
+    <div style="font-size:32px;font-weight:900;color:#4ade80;line-height:1">A</div>
+    <div style="font-size:9px;color:var(--muted)">88 / 100</div>
   </div>
 </div>
 
-<div class="need-banner">
-  <div class="need-banner-title">&#128198; Lamario Bros Needs</div>
-  <div style="font-size:11px;color:var(--muted);margin-bottom:8px;line-height:1.5">Positions thin or aging where upgrades would move the needle</div>
-  <div class="need-items">
-    <span class="need-badge need-TE">TE &#8212; Avg age 28.7 (Andrews 30, Knox 29, Kincaid 27)</span>
-    <span class="need-badge need-WR">WR &#8212; DJ Moore 29, need elite upgrade</span>
+<!-- MOBILE scroll -->
+<div class="espn-story-scroll">
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3916387.png&h=200&w=150" alt="Lamar Jackson" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#128081; DYNASTY MOVE</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">EST. 2023</span>
+        <span class="espn-card-category">FRANCHISE IDENTITY</span>
+      </div>
+      <div class="espn-card-headline">The War Room Never Closes: How ColonelSanders4 Built the Most Dangerous Dynasty in the League</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;Bet on youth. Bet on upside. Never overpay for old. The rest of the league was asleep while we were working.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; Lamario Bros GM &mdash; War Room internal memo, 2023</div>
+      </div>
+    </div>
+  </div>
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4685720.png&h=200&w=150" alt="Malik Nabers" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#128293; HEIST ALERT</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">APR 19, 2026</span>
+        <span class="espn-card-category">TRADE BREAKDOWN</span>
+      </div>
+      <div class="espn-card-headline">Gibbs + Lawrence Out. Stroud + Nabers + Two Firsts In. The +15,000 KTC Robbery Nobody Saw Coming.</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;Nxbosta handed over the crown jewels. That&#8217;s not a trade &mdash; that&#8217;s a crime scene with a 15,000-point body count.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; Dynasty Wire &mdash; Post-trade film room breakdown, April 2026</div>
+      </div>
+    </div>
+  </div>
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4685720.png&h=200&w=150" alt="Malik Nabers" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#128200; DYNASTY RISER</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">2026 SEASON</span>
+        <span class="espn-card-category">BOLD TAKE</span>
+      </div>
+      <div class="espn-card-headline">Malik Nabers Is Not Human. The Unassailable Case for the Most Untouchable Dynasty Asset in Your League.</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;Age 22. Year 2. Giants building the offense around him. No ceiling detected. You don&#8217;t sell a cornerstone.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; Dynasty War Room Insider &mdash; May 2026 dynasty rankings</div>
+      </div>
+    </div>
+  </div>
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap" style="background:linear-gradient(135deg,#1a0000,#2e0808)">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4873339.png&h=200&w=150" alt="Travis Hunter" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#129656; BLOOD SPORT</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">2026 &ndash; ONGOING</span>
+        <span class="espn-card-category">RIVALS REPORT</span>
+      </div>
+      <div class="espn-card-headline">Open Letter to Nxbosta: You Handed Us Two First-Round Picks. We Accept Your Surrender.</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;Every single time Nxbosta opens the draft board, Lamario Bros is already laughing. Checkmate was the very first trade.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; Anonymous source &mdash; league group chat, post-Trade 4 fallout</div>
+      </div>
+    </div>
+  </div>
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4431611.png&h=200&w=150" alt="CJ Stroud" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#128128; REST IN PEACE LEAGUE</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">NOW &mdash; 2029</span>
+        <span class="espn-card-category">DYNASTY WINDOW</span>
+      </div>
+      <div class="espn-card-headline">The Window Doesn't Close: Nabers, Stroud, Achane &mdash; Lamario Bros Has This League By the Throat</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;This isn&#8217;t a dynasty window. This IS the window. Wide open, lights on, everyone else locked outside staring in.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; Dynasty analyst &mdash; 10-team SF superflex digest, May 2026</div>
+      </div>
+    </div>
+  </div>
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4426389.png&h=200&w=150" alt="De'Von Achane" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#128302; PROPHECY</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">2027 PREDICTION</span>
+        <span class="espn-card-category">THE FUTURE</span>
+      </div>
+      <div class="espn-card-headline">Championship or Bust: The 2027 Lamario Bros War Machine Is Built to Win Now, Win Later, and Win Always.</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;The Nxbosta pick lands top-3. The Nabers trade looks like grand larceny in hindsight. The ring is already in the mail.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; War Room Prediction Log &mdash; ColonelSanders4, May 2026</div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div id="target-list-wrap"></div>
+<!-- DESKTOP grid -->
+<div class="espn-lore-grid">
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3916387.png&h=200&w=150" alt="Lamar Jackson" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#128081; DYNASTY MOVE</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">EST. 2023</span>
+        <span class="espn-card-category">FRANCHISE IDENTITY</span>
+      </div>
+      <div class="espn-card-headline">The War Room Never Closes: How ColonelSanders4 Built the Most Dangerous Dynasty in the League</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;Bet on youth. Bet on upside. Never overpay for old. The rest of the league was asleep while we were working.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; Lamario Bros GM &mdash; War Room internal memo, 2023</div>
+      </div>
+    </div>
+  </div>
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4685720.png&h=200&w=150" alt="Malik Nabers" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#128293; HEIST ALERT</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">APR 19, 2026</span>
+        <span class="espn-card-category">TRADE BREAKDOWN</span>
+      </div>
+      <div class="espn-card-headline">Gibbs + Lawrence Out. Stroud + Nabers + Two Firsts In. The +15,000 KTC Robbery Nobody Saw Coming.</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;Nxbosta handed over the crown jewels. That&#8217;s not a trade &mdash; that&#8217;s a crime scene with a 15,000-point body count.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; Dynasty Wire &mdash; Post-trade film room breakdown, April 2026</div>
+      </div>
+    </div>
+  </div>
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4685720.png&h=200&w=150" alt="Malik Nabers" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#128200; DYNASTY RISER</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">2026 SEASON</span>
+        <span class="espn-card-category">BOLD TAKE</span>
+      </div>
+      <div class="espn-card-headline">Malik Nabers Is Not Human. The Unassailable Case for the Most Untouchable Dynasty Asset in Your League.</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;Age 22. Year 2. Giants building the offense around him. No ceiling detected. You don&#8217;t sell a cornerstone.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; Dynasty War Room Insider &mdash; May 2026 dynasty rankings</div>
+      </div>
+    </div>
+  </div>
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap" style="background:linear-gradient(135deg,#1a0000,#2e0808)">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4873339.png&h=200&w=150" alt="Travis Hunter" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#129656; BLOOD SPORT</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">2026 &ndash; ONGOING</span>
+        <span class="espn-card-category">RIVALS REPORT</span>
+      </div>
+      <div class="espn-card-headline">Open Letter to Nxbosta: You Handed Us Two First-Round Picks. We Accept Your Surrender.</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;Every single time Nxbosta opens the draft board, Lamario Bros is already laughing. Checkmate was the very first trade.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; Anonymous source &mdash; league group chat, post-Trade 4 fallout</div>
+      </div>
+    </div>
+  </div>
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4431611.png&h=200&w=150" alt="CJ Stroud" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#128128; REST IN PEACE LEAGUE</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">NOW &mdash; 2029</span>
+        <span class="espn-card-category">DYNASTY WINDOW</span>
+      </div>
+      <div class="espn-card-headline">The Window Doesn't Close: Nabers, Stroud, Achane &mdash; Lamario Bros Has This League By the Throat</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;This isn&#8217;t a dynasty window. This IS the window. Wide open, lights on, everyone else locked outside staring in.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; Dynasty analyst &mdash; 10-team SF superflex digest, May 2026</div>
+      </div>
+    </div>
+  </div>
+  <div class="espn-story-card">
+    <div class="espn-card-img-wrap">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4426389.png&h=200&w=150" alt="De'Von Achane" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
+      <div class="espn-card-gradient"></div>
+      <div class="espn-vibe-badge">&#128302; PROPHECY</div>
+    </div>
+    <div class="espn-card-body">
+      <div class="espn-card-meta">
+        <span class="espn-card-date">2027 PREDICTION</span>
+        <span class="espn-card-category">THE FUTURE</span>
+      </div>
+      <div class="espn-card-headline">Championship or Bust: The 2027 Lamario Bros War Machine Is Built to Win Now, Win Later, and Win Always.</div>
+      <div class="espn-card-pull">
+        <div class="espn-card-pull-text">&#8220;The Nxbosta pick lands top-3. The Nabers trade looks like grand larceny in hindsight. The ring is already in the mail.&#8221;</div>
+        <div class="espn-card-attribution">&#8212; War Room Prediction Log &mdash; ColonelSanders4, May 2026</div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="espn-lore-footer">Last updated May 2026 &middot; Written in the war room &middot; LAMARIO BROS DYNASTY &middot; 10-team SF&times;2 PPR TEP</div>
+</div>
+</div>
+
+
+
 
 </div><!-- /content -->
 
@@ -1132,14 +1349,27 @@ a{color:inherit;text-decoration:none}
         <div class="modal-sub" id="m-sub"></div>
       </div>
     </div>
+    <!-- Dynasty Value + FC Live Trend -->
+    <div class="fc-trend-row">
+      <span class="fc-trend-label">Dynasty Value</span>
+      <span class="fc-val" id="m-ktc-val"></span>
+      <span id="m-fc-pct"></span>
+    </div>
+    <!-- Core Stats Grid -->
     <div class="modal-grid">
       <div class="modal-stat"><div class="modal-stat-label">OVR Grade</div><div class="modal-stat-val gold" id="m-ovr"></div></div>
-      <div class="modal-stat"><div class="modal-stat-label">Dynasty Rank</div><div class="modal-stat-val green" id="m-rank"></div></div>
-      <div class="modal-stat"><div class="modal-stat-label">KTC Value</div><div class="modal-stat-val blue" id="m-ktc"></div></div>
+      <div class="modal-stat"><div class="modal-stat-label">Roster Rank</div><div class="modal-stat-val green" id="m-pos-rank"></div></div>
+      <div class="modal-stat"><div class="modal-stat-label">Peak Window</div><div id="m-peak-badge"></div></div>
       <div class="modal-stat"><div class="modal-stat-label">Trajectory</div><div id="m-traj"></div></div>
     </div>
-    <div class="outlook" id="m-outlook"></div>
-    <div class="modal-btns">
+    <!-- Verdict Badge -->
+    <div style="text-align:center;margin-bottom:12px">
+      <div id="m-verdict" class="verdict-modal-badge"></div>
+    </div>
+    <!-- ESPN Dynasty Spotlight bullets -->
+    <div class="modal-sec-title">&#128308; Dynasty Spotlight</div>
+    <ul class="espn-bullets" id="m-bullets"></ul>
+    <div class="modal-btns" style="margin-top:14px">
       <button class="btn btn-yt" onclick="openYT()">&#127381; Highlights</button>
       <button class="btn btn-close" onclick="closeModal()">Close</button>
     </div>
@@ -1488,6 +1718,14 @@ function nextSpotlight(){ spotlightIdx=(spotlightIdx+1)%SPOTLIGHTS.length; build
 function prevSpotlight(){ spotlightIdx=(spotlightIdx-1+SPOTLIGHTS.length)%SPOTLIGHTS.length; buildSpotlight(); }
 
 // Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ PLAYER CARDS Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+function getFCTrend(p){
+  const fcv=fcData[p.n.toLowerCase()];
+  if(!fcv||!p.ktc) return '';
+  const pct=(fcv-p.ktc)/p.ktc;
+  if(pct>0.03) return '<span class="trend-arrow trend-up">&#9650;</span>';
+  if(pct<-0.03) return '<span class="trend-arrow trend-down">&#9660;</span>';
+  return '';
+}
 function makeCard(p, extra=''){
   const tier = ovrTier(p.ovr);
   const isIR = extra==='ir';
@@ -1499,7 +1737,9 @@ function makeCard(p, extra=''){
   } else {
     avatarHtml = `<div class="player-avatar"><span class="player-avatar-initials">${initials}</span></div>`;
   }
-  return `<div class="player-card${isIR?' ir-card':''}" onclick="openModal(${p.id})">
+  const trendArrow = getFCTrend(p);
+  return `<div class="player-card${isIR?' ir-card':''}" onclick="openModal(${p.id})" style="position:relative">
+    ${trendArrow}
     ${avatarHtml}
     <div class="ovr-badge ovr-${tier}">${p.ovr}</div>
     <div class="player-info">
@@ -1629,20 +1869,97 @@ function buildDynastyClock(){
 
 // Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ MODAL Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
 let currentYT='';
+const PEAK_WINDOWS={QB:[27,32],RB:[24,27],WR:[24,28],TE:[26,30]};
+function getPeakInfo(p){
+  const [ps,pe]=PEAK_WINDOWS[p.pos]||[24,29];
+  if(p.age>=ps&&p.age<=pe) return {status:'In Peak',cls:'peak-in',icon:'⚡',ps,pe};
+  if(p.age<ps) return {status:`Approaching (${ps-p.age}yr)`,cls:'peak-approaching',icon:'📈',ps,pe};
+  return {status:'Past Peak',cls:'peak-past',icon:'📉',ps,pe};
+}
+function getVerdict(p,peakInfo,fcTrend){
+  const{ps,pe}=peakInfo;
+  const inPeak=p.age>=ps&&p.age<=pe;
+  const rising=p.traj==='rising';
+  const declining=p.traj==='declining';
+  const pastPeak=p.age>pe+1;
+  if(rising&&p.age<=ps+2) return{v:'BUY',lbl:'⬆ BUY'};
+  if((declining&&pastPeak)||(pastPeak&&p.age>=pe+3)) return{v:'SELL',lbl:'⬇ SELL'};
+  if(fcTrend>0.06) return{v:'BUY',lbl:'⬆ BUY'};
+  if(fcTrend<-0.06&&declining) return{v:'SELL',lbl:'⬇ SELL'};
+  return{v:'HOLD',lbl:'→ HOLD'};
+}
+function genBullets(p,peakInfo,fcVal){
+  const{ps,pe}=peakInfo;
+  const bullets=[];
+  // Age/peak
+  if(p.age<ps) bullets.push(`Age ${p.age} — ${pe-p.age} years until the ${p.pos} prime window (${ps}–${pe}). Buy-low window is wide open right now.`);
+  else if(p.age<=pe) bullets.push(`Age ${p.age} — right in the ${p.pos} prime window (${ps}–${pe}). This is peak-production territory. Don’t blink.`);
+  else bullets.push(`Age ${p.age} — past the ${p.pos} prime window (${ps}–${pe}). Factor the age cliff into your trade price before it’s too late.`);
+  // Trajectory
+  if(p.traj==='rising') bullets.push(`Value trending UP — the dynasty market is waking up on ${p.n.split(' ')[1]||p.n}. Get in before the price tag explodes.`);
+  else if(p.traj==='declining') bullets.push(`Value trending DOWN — this is your sell signal. Extract maximum return while the market still respects the name.`);
+  else bullets.push(`Value locked at ${p.ktc.toLocaleString()} KTC — established floor, no volatility. A dependable war room anchor piece.`);
+  // FC comparison
+  if(fcVal){
+    const pct=((fcVal-p.ktc)/p.ktc*100).toFixed(1);
+    const sign=parseFloat(pct)>=0?'+':'';
+    if(parseFloat(pct)>3) bullets.push(`FantasyCalc live: ${fcVal.toLocaleString()} (${sign}${pct}% vs stored) — market pricing higher than expected. Momentum building.`);
+    else if(parseFloat(pct)<-3) bullets.push(`FantasyCalc live: ${fcVal.toLocaleString()} (${sign}${pct}% vs stored) — market softening. Overreaction or early warning sign?`);
+    else bullets.push(`FantasyCalc live: ${fcVal.toLocaleString()} (${sign}${pct}%) — market consensus stable. No panic needed, no rush to act.`);
+  } else {
+    bullets.push(`Dynasty value: ${p.ktc.toLocaleString()} KTC (stored). FC live data unavailable — check FantasyCalc for real-time market price.`);
+  }
+  // Roster role
+  const allR=[...PLAYERS,...IR,...TAXI];
+  const posRankArr=allR.filter(x=>x.pos===p.pos).sort((a,b)=>b.ktc-a.ktc);
+  const posRankN=posRankArr.findIndex(x=>x.id===p.id)+1;
+  const posLbl=p.pos+posRankN;
+  if(posRankN===1) bullets.push(`${posLbl} on your roster — your franchise anchor at the position. You don’t trade your best pieces, you build around them.`);
+  else bullets.push(`${posLbl} on your roster — starter-level depth. One injury to the ${p.pos}1 and this slot prints points immediately.`);
+  return bullets.slice(0,4);
+}
 function openModal(id){
   const all=[...PLAYERS,...IR,...TAXI];
   const p=all.find(x=>x.id===id);
   if(!p) return;
   const tier=ovrTier(p.ovr);
+  // Header
   document.getElementById('m-ovr-badge').className=`modal-ovr ovr-${tier}`;
   document.getElementById('m-ovr-badge').textContent=p.ovr;
   document.getElementById('m-name').textContent=p.n;
   document.getElementById('m-sub').textContent=`${p.pos} \xb7 ${p.nfl} \xb7 Age ${p.age}`;
   document.getElementById('m-ovr').textContent=p.ovr+' OVR';
-  document.getElementById('m-rank').textContent=p.rank;
-  document.getElementById('m-ktc').textContent=p.ktc.toLocaleString();
+  // FC trend
+  const fcv=fcData[p.n.toLowerCase()];
+  document.getElementById('m-ktc-val').textContent=p.ktc.toLocaleString();
+  const fcTrend=fcv?(fcv-p.ktc)/p.ktc:0;
+  if(fcv){
+    const pct=(fcTrend*100).toFixed(1);
+    const sign=parseFloat(pct)>=0?'+':'';
+    const cls=parseFloat(pct)>3?'fc-pct-up':parseFloat(pct)<-3?'fc-pct-down':'fc-pct-flat';
+    const arr=parseFloat(pct)>3?'▲ ':parseFloat(pct)<-3?'▼ ':'→ ';
+    document.getElementById('m-fc-pct').innerHTML=`<span class="fc-pct ${cls}">${arr}${sign}${pct}% FC</span>`;
+  } else {
+    document.getElementById('m-fc-pct').innerHTML='<span class="fc-pct fc-pct-flat">→ FC N/A</span>';
+  }
+  // Positional rank
+  const allR=[...PLAYERS,...IR,...TAXI];
+  const posArr=allR.filter(x=>x.pos===p.pos).sort((a,b)=>b.ktc-a.ktc);
+  const posRankN=posArr.findIndex(x=>x.id===p.id)+1;
+  document.getElementById('m-pos-rank').textContent=p.pos+posRankN+' on Roster';
+  // Peak window
+  const pk=getPeakInfo(p);
+  document.getElementById('m-peak-badge').innerHTML=`<span class="peak-badge ${pk.cls}">${pk.icon} ${pk.status}</span>`;
+  // Trajectory
   document.getElementById('m-traj').innerHTML=`<span class="traj-badge ${trajClass(p.traj)}">${trajIcon(p.traj)} ${trajLabel(p.traj)}</span>`;
-  document.getElementById('m-outlook').textContent=p.outlook;
+  // Verdict
+  const vd=getVerdict(p,pk,fcTrend);
+  const vEl=document.getElementById('m-verdict');
+  vEl.className=`verdict-modal-badge verdict-${vd.v}`;
+  vEl.textContent=vd.lbl;
+  // ESPN bullets
+  const bullets=genBullets(p,pk,fcv);
+  document.getElementById('m-bullets').innerHTML=bullets.map(b=>`<li>${b}</li>`).join('');
   currentYT='https://www.youtube.com/results?search_query='+encodeURIComponent(p.ytq);
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -1871,7 +2188,30 @@ function copyMsg(panel){
   });
 }
 
+// ─── FantasyCalc live values (Upgrade 2) ────────────────────
+let fcData={};
+async function loadFCValues(){
+  try{
+    const res=await fetch('https://api.fantasycalc.com/values/current?isDynasty=true&numQbs=2&ppr=1&includePicksEtc=true',{cache:'default'});
+    if(res.ok){
+      const data=await res.json();
+      if(Array.isArray(data)){
+        data.forEach(entry=>{
+          if(entry&&entry.player&&entry.player.name){
+            fcData[entry.player.name.toLowerCase()]=entry.value;
+            // also feed old fcValueMap for backward compat
+            if(typeof fcValueMap!=='undefined') fcValueMap[entry.player.name.toLowerCase()]=entry.value;
+          }
+        });
+      }
+    }
+  }catch(e){console.log('FC fetch failed (non-fatal):',e);}
+  // Re-render roster with trending arrows now that fcData is populated
+  buildRoster();
+}
+// Render roster immediately (no arrows yet), then re-render with FC arrows when ready
 buildRoster();
+loadFCValues();
 
 // ─── TARGET LIST DATA ───────────────────────────────────────────────────
 const TRADE_TARGETS = [
@@ -1954,39 +2294,10 @@ async function loadFantasyCalcValues(){
     applyTrendArrows();
   }catch(e){/* graceful fallback */}
 }
-function applyTrendArrows(){
-  if(!Object.keys(fcValueMap).length)return;
-  document.querySelectorAll('.player-name').forEach(el=>{
-    // find the player in our data
-    const rawName=el.textContent.replace(/[▲▼]/g,'').trim();
-    const fc=fcValueMap[rawName.toLowerCase()];
-    if(fc===undefined)return;
-    // find stored ktc from data array
-    const allP=[...(typeof PLAYERS!=='undefined'?PLAYERS:[]),
-                ...(typeof IR!=='undefined'?IR:[]),
-                ...(typeof TAXI!=='undefined'?TAXI:[])];
-    const p=allP.find(x=>x.n&&x.n.toLowerCase()===rawName.toLowerCase());
-    if(!p)return;
-    const stored=p.ktc||0;
-    if(!stored)return;
-    // remove existing arrow
-    el.querySelectorAll('.trend-arrow').forEach(a=>a.remove());
-    const pct=(fc-stored)/stored;
-    if(pct>0.03){
-      const span=document.createElement('span');
-      span.className='trend-arrow trend-up';
-      span.textContent='\u25b2';
-      span.title='FC: '+fc.toLocaleString()+' vs stored: '+stored.toLocaleString()+' (+'+Math.round(pct*100)+'%)';
-      el.appendChild(span);
-    } else if(pct<-0.03){
-      const span=document.createElement('span');
-      span.className='trend-arrow trend-dn';
-      span.textContent='\u25bc';
-      span.title='FC: '+fc.toLocaleString()+' vs stored: '+stored.toLocaleString()+' ('+Math.round(pct*100)+'%)';
-      el.appendChild(span);
-    }
-  });
-}
+// applyTrendArrows: superseded by makeCard getFCTrend() — arrows are now
+// rendered as absolute-positioned badges at card build time (Upgrade 2).
+// This stub kept for backward-compat reference only.
+function applyTrendArrows(){ /* no-op: handled by makeCard + loadFCValues */ }
 
 // init on page ready
 if(document.readyState==='loading'){
