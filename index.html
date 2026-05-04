@@ -43,39 +43,17 @@ a{color:inherit;text-decoration:none}
 .tab-panel{display:none}
 .tab-panel.active{display:block}
 
-/* PLAYER SPOTLIGHT */
-.spotlight-card{background:linear-gradient(135deg,#111120,#1a0d2e);border:1px solid rgba(240,192,64,.25);border-radius:var(--radius);padding:14px;margin-bottom:14px;position:relative;overflow:hidden}
-.spotlight-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--elite),var(--accent),var(--a))}
-.spotlight-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.spotlight-week{font-size:9px;font-weight:800;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase}
-.spotlight-nav{display:flex;gap:6px}
-.spotlight-nav-btn{background:var(--card2);border:1px solid var(--border);border-radius:4px;color:var(--muted);font-size:11px;padding:2px 7px;cursor:pointer;font-family:inherit}
-.spotlight-nav-btn:hover{border-color:var(--accent);color:var(--accent)}
-.spotlight-body{display:flex;gap:12px;align-items:flex-start}
-.spotlight-ovr-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0}
-.spotlight-ovr{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900}
-.spotlight-delta{font-size:10px;font-weight:800;padding:2px 6px;border-radius:10px}
-.delta-up{background:rgba(52,211,153,.2);color:var(--a)}
-.delta-neutral{background:rgba(240,192,64,.15);color:var(--accent)}
-.spotlight-info{flex:1;min-width:0}
-.spotlight-name{font-size:16px;font-weight:800;margin-bottom:2px}
-.spotlight-headline{font-size:11px;font-weight:700;color:var(--accent);margin-bottom:6px}
-.spotlight-blurb{font-size:12px;color:var(--text);line-height:1.6;margin-bottom:8px}
-.spotlight-rec-wrap{display:flex;align-items:center;gap:8px}
-.spotlight-rec-badge{font-size:12px;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:.5px}
-.rec-BUY{background:rgba(52,211,153,.2);color:var(--a);border:1px solid rgba(52,211,153,.4)}
-.rec-HOLD{background:rgba(240,192,64,.15);color:var(--accent);border:1px solid rgba(240,192,64,.3)}
-.rec-SELL{background:rgba(248,113,113,.15);color:var(--fall);border:1px solid rgba(248,113,113,.3)}
-.spotlight-meta{font-size:10px;color:var(--muted)}
-
 /* SECTION HEADERS */
 .pos-section{margin-bottom:8px}
 .pos-label{font-size:10px;font-weight:800;letter-spacing:1.5px;color:var(--muted);padding:6px 0 4px;display:flex;align-items:center;gap:8px}
 .pos-label::after{content:'';flex:1;height:1px;background:var(--border)}
 
 /* PLAYER CARD */
-.player-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:6px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s;box-shadow:var(--card-shadow)}
+.player-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:6px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s;box-shadow:var(--card-shadow);position:relative}
 .player-card:hover{background:var(--card2);border-color:#3a3a52;transform:translateX(2px)}
+.fc-badge{position:absolute;top:6px;right:8px;font-size:10px;font-weight:800;padding:1px 5px;border-radius:4px;line-height:1.4}
+.fc-up{background:rgba(74,222,128,.2);color:#4ade80;border:1px solid rgba(74,222,128,.4)}
+.fc-dn{background:rgba(248,113,113,.15);color:#f87171;border:1px solid rgba(248,113,113,.3)}
 .player-card.ir-card{opacity:.6;border-style:dashed}
 .ovr-badge{min-width:40px;height:40px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0}
 .ovr-S{background:rgba(240,192,64,.2);color:var(--s)}
@@ -183,41 +161,6 @@ a{color:inherit;text-decoration:none}
 .traj-rising{background:rgba(74,222,128,.15);color:var(--rise)}
 .traj-peak{background:rgba(250,204,21,.15);color:var(--peak)}
 .traj-declining{background:rgba(248,113,113,.15);color:var(--fall)}
-/* TARGET LIST */
-.target-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.target-title{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase}
-.need-banner{background:linear-gradient(135deg,#0d0d1a,#1a0829);border:1px solid rgba(240,192,64,.2);border-radius:var(--radius);padding:12px 14px;margin-bottom:14px;position:relative;overflow:hidden}
-.need-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--fall),var(--accent),var(--a))}
-.need-banner-title{font-size:10px;font-weight:800;letter-spacing:1.5px;color:var(--accent);margin-bottom:6px;text-transform:uppercase}
-.need-items{display:flex;gap:6px;flex-wrap:wrap}
-.need-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.5px}
-.need-TE{background:rgba(251,146,60,.15);color:#fb923c;border:1px solid rgba(251,146,60,.3)}
-.need-WR{background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.3)}
-.need-RB{background:rgba(52,211,153,.15);color:#34d399;border:1px solid rgba(52,211,153,.3)}
-.need-QB{background:rgba(168,85,247,.15);color:#a855f7;border:1px solid rgba(168,85,247,.3)}
-.target-group-label{font-size:9px;font-weight:800;letter-spacing:2px;color:var(--muted);padding:10px 0 6px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
-.target-group-label::after{content:'';flex:1;height:1px;background:var(--border)}
-.target-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:8px;position:relative;overflow:hidden;transition:border-color .15s}
-.target-card:hover{border-color:#3a3a52}
-.target-card-accent{position:absolute;left:0;top:0;bottom:0;width:3px}
-.target-card-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.target-pos-badge{font-size:9px;font-weight:800;padding:3px 8px;border-radius:4px;letter-spacing:.5px;flex-shrink:0}
-.target-pos-TE{background:rgba(251,146,60,.2);color:#fb923c;border:1px solid rgba(251,146,60,.3)}
-.target-pos-WR{background:rgba(96,165,250,.2);color:#60a5fa;border:1px solid rgba(96,165,250,.3)}
-.target-pos-RB{background:rgba(52,211,153,.2);color:#34d399;border:1px solid rgba(52,211,153,.3)}
-.target-pos-QB{background:rgba(168,85,247,.2);color:#a855f7;border:1px solid rgba(168,85,247,.3)}
-.target-player-name{font-size:15px;font-weight:800;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.target-age-chip{font-size:10px;color:var(--muted);background:var(--card2);border:1px solid var(--border);border-radius:4px;padding:1px 6px;flex-shrink:0;font-weight:600}
-.target-ktc{font-size:12px;font-weight:700;color:var(--accent);flex-shrink:0}
-.target-team-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
-.target-team-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.target-team-name{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.3px}
-.target-reason{font-size:11px;color:var(--text);line-height:1.5;opacity:.85}
-/* TRENDING ARROWS */
-.trend-arrow{font-size:11px;font-weight:700;margin-left:4px;vertical-align:middle;line-height:1}
-.trend-up{color:#22c55e}
-.trend-dn{color:#ef4444}
-
 
 /* TRADE LAB */
 .trade-intro{font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.5;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px}
@@ -359,65 +302,6 @@ a{color:inherit;text-decoration:none}
 .chapter-body em{color:#FFD700;font-style:normal;font-weight:700}
 .lore-footer{text-align:center;padding:14px 0 4px;font-size:10px;color:#6b6b88;border-top:1px solid var(--border);margin-top:4px;letter-spacing:.5px}
 
-
-/* ─── ESPN LORE (Upgrade 1) ──────────────────────────────── */
-.espn-lore-section{padding:4px 0}
-.espn-lore-topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0 10px;margin-bottom:4px}
-.espn-lore-badge{display:inline-flex;align-items:center;gap:5px;background:#D50A0A;color:#fff;font-size:9px;font-weight:900;letter-spacing:2px;padding:4px 10px;border-radius:2px;text-transform:uppercase}
-.espn-story-scroll{display:flex;gap:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:14px;scrollbar-width:none}
-.espn-story-scroll::-webkit-scrollbar{display:none}
-.espn-story-card{flex:0 0 275px;background:linear-gradient(160deg,#13131e,#1a0d2e);border:1px solid #2a2a3a;border-radius:14px;overflow:hidden;position:relative;display:flex;flex-direction:column}
-.espn-story-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#D50A0A;z-index:1}
-.espn-card-img-wrap{position:relative;height:148px;overflow:hidden;background:linear-gradient(135deg,#0d0d1f,#1a0d2e)}
-.espn-card-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;opacity:.88;transition:opacity .3s}
-.espn-card-gradient{position:absolute;bottom:0;left:0;right:0;height:75px;background:linear-gradient(transparent,#13131e)}
-.espn-vibe-badge{position:absolute;top:10px;right:10px;font-size:10px;font-weight:800;padding:3px 9px;border-radius:20px;background:rgba(0,0,0,.78);border:1px solid rgba(255,255,255,.15);color:#fff;backdrop-filter:blur(4px);white-space:nowrap;z-index:2}
-.espn-card-body{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column;gap:7px}
-.espn-card-meta{display:flex;align-items:center;justify-content:space-between;gap:6px}
-.espn-card-date{font-size:9px;font-weight:700;color:#D50A0A;letter-spacing:1px;text-transform:uppercase;flex-shrink:0}
-.espn-card-category{font-size:9px;color:var(--muted);font-weight:600;background:#1e1e2e;border:1px solid #2a2a3a;border-radius:3px;padding:1px 6px;white-space:nowrap}
-.espn-card-headline{font-size:14px;font-weight:900;color:#fff;line-height:1.35;letter-spacing:-.2px}
-.espn-card-pull{border-left:3px solid #D50A0A;padding:7px 10px;background:rgba(213,10,10,.07);border-radius:0 6px 6px 0}
-.espn-card-pull-text{font-size:11px;font-style:italic;color:var(--text);line-height:1.55}
-.espn-card-attribution{font-size:9px;color:#D50A0A;font-weight:700;margin-top:4px;letter-spacing:.3px}
-.espn-lore-grid{display:none}
-@media(min-width:620px){
-  .espn-story-scroll{display:none}
-  .espn-lore-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-}
-@media(min-width:900px){
-  .espn-lore-grid{grid-template-columns:repeat(3,1fr)}
-}
-.espn-lore-footer{text-align:center;padding:14px 0 4px;font-size:10px;color:var(--muted);border-top:1px solid var(--border);margin-top:8px;letter-spacing:.5px}
-
-/* ─── TRENDING ARROWS (Upgrade 2) ──────────────────────── */
-.trend-arrow{position:absolute;top:7px;right:7px;font-size:11px;font-weight:900;padding:1px 5px;border-radius:4px;line-height:1.4;z-index:3;pointer-events:none}
-.trend-up{background:rgba(74,222,128,.22);color:#4ade80;border:1px solid rgba(74,222,128,.4)}
-.trend-down{background:rgba(248,113,113,.22);color:#f87171;border:1px solid rgba(248,113,113,.4)}
-.player-card{position:relative}
-
-/* ─── DYNASTY SPOTLIGHT MODAL (Upgrade 3) ──────────────── */
-.modal-sec-title{font-size:9px;font-weight:800;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin:12px 0 7px;display:flex;align-items:center;gap:6px}
-.modal-sec-title::after{content:'';flex:1;height:1px;background:var(--border)}
-.peak-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px}
-.peak-in{background:rgba(52,211,153,.15);color:#34d399;border:1px solid rgba(52,211,153,.3)}
-.peak-approaching{background:rgba(240,192,64,.15);color:#f0c040;border:1px solid rgba(240,192,64,.3)}
-.peak-past{background:rgba(248,113,113,.15);color:#f87171;border:1px solid rgba(248,113,113,.3)}
-.verdict-modal-badge{display:inline-flex;align-items:center;gap:5px;font-size:14px;font-weight:900;padding:8px 22px;border-radius:30px;letter-spacing:.5px}
-.verdict-BUY{background:rgba(52,211,153,.15);color:#34d399;border:2px solid rgba(52,211,153,.4)}
-.verdict-SELL{background:rgba(248,113,113,.15);color:#f87171;border:2px solid rgba(248,113,113,.4)}
-.verdict-HOLD{background:rgba(240,192,64,.15);color:#f0c040;border:2px solid rgba(240,192,64,.3)}
-.fc-trend-row{display:flex;align-items:center;gap:8px;background:var(--card2);border-radius:8px;padding:9px 12px;margin-bottom:4px}
-.fc-trend-label{font-size:9px;color:var(--muted);font-weight:800;letter-spacing:.8px;text-transform:uppercase;flex-shrink:0}
-.fc-val{font-size:15px;font-weight:800;color:var(--accent)}
-.fc-pct{font-size:11px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:auto}
-.fc-pct-up{background:rgba(74,222,128,.15);color:#4ade80}
-.fc-pct-down{background:rgba(248,113,113,.15);color:#f87171}
-.fc-pct-flat{background:rgba(148,163,184,.1);color:var(--muted)}
-.espn-bullets{list-style:none;display:flex;flex-direction:column;gap:5px;margin:0;padding:0}
-.espn-bullets li{font-size:12px;color:var(--text);padding:6px 8px;background:var(--card2);border-radius:6px;line-height:1.5;display:flex;align-items:flex-start;gap:6px}
-.espn-bullets li::before{content:'\25BA';color:#D50A0A;font-size:8px;flex-shrink:0;margin-top:4px}
-
 </style>
 </head>
 <body>
@@ -437,7 +321,7 @@ a{color:inherit;text-decoration:none}
   <div class="hero-score-bar">
     <div class="hero-score-label">
       <span class="hero-score-title">&#9889; Dynasty Score</span>
-      <span class="hero-score-num">88<span style="font-size:13px;font-weight:600;color:#94a3b8">/100</span></span>
+      <span class="hero-score-num">88<span style="font-size:11px;font-weight:400;color:#6b6b88">/100</span></span>
     </div>
     <div class="hero-score-track">
       <div class="hero-score-fill" style="width:88%"></div>
@@ -478,7 +362,7 @@ a{color:inherit;text-decoration:none}
     <div class="tab" onclick="showTab('picks')">Pick Portfolio</div>
     <div class="tab" onclick="showTab('tradeledger')">Trade Ledger</div>
     <div class="tab" onclick="showTab('warroom')">War Room</div>
-    <div class="tab" onclick="showTab('reportcard')">Report Card</div><div class="tab" onclick="showTab('tradelab')">&#129302; Trade</div><div class="tab" onclick="showTab('lore')">&#128218; Lore</div><div class="tab" onclick="showTab('targets')">&#127919; Targets</div>
+    <div class="tab" onclick="showTab('reportcard')">Report Card</div><div class="tab" onclick="showTab('tradelab')">&#129302; Trade</div><div class="tab" onclick="showTab('lore')">&#128218; Lore</div>
   </div>
 </div>
 
@@ -486,7 +370,6 @@ a{color:inherit;text-decoration:none}
 
 <!-- ROSTER TAB -->
 <div id="tab-roster" class="tab-panel active">
-  <div id="spotlight-wrap"></div>
   <div class="pos-section">
     <div class="pos-label">QB</div>
     <div id="qb-list"></div>
@@ -1087,254 +970,75 @@ a{color:inherit;text-decoration:none}
 
 <!-- LORE TAB -->
 <div id="tab-lore" class="tab-panel">
-<div class="espn-lore-section">
+<div class="lore-section">
+<div style="padding:16px 0 8px">
+  <h2 style="margin:0 0 4px;font-size:1.1rem;letter-spacing:2px;color:#FFD700">&#128218; LAMARIO LORE</h2>
+  <div style="font-size:.73rem;color:#64748b">The Dynasty Chronicle &middot; ColonelSanders4 &middot; LAMARIO BROS</div>
+</div>
+<div class="lore-intro">
+  Every dynasty has a story. This is ours &mdash; built in the chaos, forged in the trade room, written in KTC points. No shortcuts. No luck. Just reads, conviction, and the willingness to pull the trigger when everyone else hesitates.
+</div>
 
-<div class="espn-lore-topbar">
-  <div>
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
-      <div class="espn-lore-badge">&#9889; ESPN INSIDER</div>
-      <span style="font-size:9px;color:#D50A0A;font-weight:700;letter-spacing:1.5px">DYNASTY CHRONICLES</span>
-    </div>
-    <div style="font-size:19px;font-weight:900;color:#fff;letter-spacing:1px">LAMARIO BROS</div>
-    <div style="font-size:10px;color:var(--muted);margin-top:1px">ColonelSanders4 &middot; SF &times;2 Dynasty &middot; War Room Files</div>
+<div class="chapter-card gold">
+  <div class="chapter-header">
+    <div class="chapter-title">Chapter I &mdash; The Foundation</div>
+    <span class="chapter-year">EST. 2023</span>
   </div>
-  <div style="text-align:right">
-    <div style="font-size:9px;color:var(--muted);letter-spacing:1px;margin-bottom:2px">FRANCHISE GRADE</div>
-    <div style="font-size:32px;font-weight:900;color:#4ade80;line-height:1">A</div>
-    <div style="font-size:9px;color:var(--muted)">88 / 100</div>
+  <span class="chapter-tag" style="background:rgba(255,215,0,.1);color:#FFD700;border:1px solid rgba(255,215,0,.3)">&#127959; ORIGIN STORY</span>
+  <div class="chapter-body">
+    <strong>ColonelSanders4 enters the league with a plan and zero patience for mediocrity.</strong> The Lamario Bros were built on a simple philosophy: <em>bet on youth, bet on upside, never overpay for old.</em> In a 10-team SF&times;2/PPR/TEP dynasty, the early strategy was clear &mdash; accumulate picks, stockpile young talent, and wait for the right moment to strike. The rest of the league slept. The war room was already open.
   </div>
 </div>
 
-<!-- MOBILE scroll -->
-<div class="espn-story-scroll">
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3916387.png&h=200&w=150" alt="Lamar Jackson" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#128081; DYNASTY MOVE</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">EST. 2023</span>
-        <span class="espn-card-category">FRANCHISE IDENTITY</span>
-      </div>
-      <div class="espn-card-headline">The War Room Never Closes: How ColonelSanders4 Built the Most Dangerous Dynasty in the League</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;Bet on youth. Bet on upside. Never overpay for old. The rest of the league was asleep while we were working.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; Lamario Bros GM &mdash; War Room internal memo, 2023</div>
-      </div>
-    </div>
+<div class="chapter-card blue">
+  <div class="chapter-header">
+    <div class="chapter-title">Chapter II &mdash; The Lawrence Era</div>
+    <span class="chapter-year">2024&ndash;2025</span>
   </div>
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4685720.png&h=200&w=150" alt="Malik Nabers" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#128293; HEIST ALERT</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">APR 19, 2026</span>
-        <span class="espn-card-category">TRADE BREAKDOWN</span>
-      </div>
-      <div class="espn-card-headline">Gibbs + Lawrence Out. Stroud + Nabers + Two Firsts In. The +15,000 KTC Robbery Nobody Saw Coming.</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;Nxbosta handed over the crown jewels. That&#8217;s not a trade &mdash; that&#8217;s a crime scene with a 15,000-point body count.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; Dynasty Wire &mdash; Post-trade film room breakdown, April 2026</div>
-      </div>
-    </div>
-  </div>
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4685720.png&h=200&w=150" alt="Malik Nabers" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#128200; DYNASTY RISER</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">2026 SEASON</span>
-        <span class="espn-card-category">BOLD TAKE</span>
-      </div>
-      <div class="espn-card-headline">Malik Nabers Is Not Human. The Unassailable Case for the Most Untouchable Dynasty Asset in Your League.</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;Age 22. Year 2. Giants building the offense around him. No ceiling detected. You don&#8217;t sell a cornerstone.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; Dynasty War Room Insider &mdash; May 2026 dynasty rankings</div>
-      </div>
-    </div>
-  </div>
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap" style="background:linear-gradient(135deg,#1a0000,#2e0808)">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4873339.png&h=200&w=150" alt="Travis Hunter" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#129656; BLOOD SPORT</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">2026 &ndash; ONGOING</span>
-        <span class="espn-card-category">RIVALS REPORT</span>
-      </div>
-      <div class="espn-card-headline">Open Letter to Nxbosta: You Handed Us Two First-Round Picks. We Accept Your Surrender.</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;Every single time Nxbosta opens the draft board, Lamario Bros is already laughing. Checkmate was the very first trade.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; Anonymous source &mdash; league group chat, post-Trade 4 fallout</div>
-      </div>
-    </div>
-  </div>
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4431611.png&h=200&w=150" alt="CJ Stroud" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#128128; REST IN PEACE LEAGUE</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">NOW &mdash; 2029</span>
-        <span class="espn-card-category">DYNASTY WINDOW</span>
-      </div>
-      <div class="espn-card-headline">The Window Doesn't Close: Nabers, Stroud, Achane &mdash; Lamario Bros Has This League By the Throat</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;This isn&#8217;t a dynasty window. This IS the window. Wide open, lights on, everyone else locked outside staring in.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; Dynasty analyst &mdash; 10-team SF superflex digest, May 2026</div>
-      </div>
-    </div>
-  </div>
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4426389.png&h=200&w=150" alt="De'Von Achane" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#128302; PROPHECY</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">2027 PREDICTION</span>
-        <span class="espn-card-category">THE FUTURE</span>
-      </div>
-      <div class="espn-card-headline">Championship or Bust: The 2027 Lamario Bros War Machine Is Built to Win Now, Win Later, and Win Always.</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;The Nxbosta pick lands top-3. The Nabers trade looks like grand larceny in hindsight. The ring is already in the mail.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; War Room Prediction Log &mdash; ColonelSanders4, May 2026</div>
-      </div>
-    </div>
+  <span class="chapter-tag" style="background:rgba(33,150,243,.1);color:#60a5fa;border:1px solid rgba(33,150,243,.3)">&#127944; FRANCHISE QB</span>
+  <div class="chapter-body">
+    <strong>Trevor Lawrence was the bet.</strong> Acquired on arm talent and pedigree alone &mdash; a top-5 pick surrounded by weapons in Jacksonville. The pairing with <em>Jahmyr Gibbs</em> created one of the most explosive young backfields in dynasty. Lawrence threw. Gibbs exploded. For two seasons, the Lamario Bros looked like a dynasty built to last &mdash; a generational RB and a franchise QB locked in together. Then came the call that changed everything.
   </div>
 </div>
 
-<!-- DESKTOP grid -->
-<div class="espn-lore-grid">
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3916387.png&h=200&w=150" alt="Lamar Jackson" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#128081; DYNASTY MOVE</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">EST. 2023</span>
-        <span class="espn-card-category">FRANCHISE IDENTITY</span>
-      </div>
-      <div class="espn-card-headline">The War Room Never Closes: How ColonelSanders4 Built the Most Dangerous Dynasty in the League</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;Bet on youth. Bet on upside. Never overpay for old. The rest of the league was asleep while we were working.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; Lamario Bros GM &mdash; War Room internal memo, 2023</div>
-      </div>
-    </div>
+<div class="chapter-card amber">
+  <div class="chapter-header">
+    <div class="chapter-title">Chapter III &mdash; The Great Trade</div>
+    <span class="chapter-year">APR 19, 2026</span>
   </div>
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4685720.png&h=200&w=150" alt="Malik Nabers" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#128293; HEIST ALERT</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">APR 19, 2026</span>
-        <span class="espn-card-category">TRADE BREAKDOWN</span>
-      </div>
-      <div class="espn-card-headline">Gibbs + Lawrence Out. Stroud + Nabers + Two Firsts In. The +15,000 KTC Robbery Nobody Saw Coming.</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;Nxbosta handed over the crown jewels. That&#8217;s not a trade &mdash; that&#8217;s a crime scene with a 15,000-point body count.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; Dynasty Wire &mdash; Post-trade film room breakdown, April 2026</div>
-      </div>
-    </div>
-  </div>
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4685720.png&h=200&w=150" alt="Malik Nabers" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#128200; DYNASTY RISER</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">2026 SEASON</span>
-        <span class="espn-card-category">BOLD TAKE</span>
-      </div>
-      <div class="espn-card-headline">Malik Nabers Is Not Human. The Unassailable Case for the Most Untouchable Dynasty Asset in Your League.</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;Age 22. Year 2. Giants building the offense around him. No ceiling detected. You don&#8217;t sell a cornerstone.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; Dynasty War Room Insider &mdash; May 2026 dynasty rankings</div>
-      </div>
-    </div>
-  </div>
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap" style="background:linear-gradient(135deg,#1a0000,#2e0808)">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4873339.png&h=200&w=150" alt="Travis Hunter" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#129656; BLOOD SPORT</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">2026 &ndash; ONGOING</span>
-        <span class="espn-card-category">RIVALS REPORT</span>
-      </div>
-      <div class="espn-card-headline">Open Letter to Nxbosta: You Handed Us Two First-Round Picks. We Accept Your Surrender.</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;Every single time Nxbosta opens the draft board, Lamario Bros is already laughing. Checkmate was the very first trade.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; Anonymous source &mdash; league group chat, post-Trade 4 fallout</div>
-      </div>
-    </div>
-  </div>
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4431611.png&h=200&w=150" alt="CJ Stroud" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#128128; REST IN PEACE LEAGUE</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">NOW &mdash; 2029</span>
-        <span class="espn-card-category">DYNASTY WINDOW</span>
-      </div>
-      <div class="espn-card-headline">The Window Doesn't Close: Nabers, Stroud, Achane &mdash; Lamario Bros Has This League By the Throat</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;This isn&#8217;t a dynasty window. This IS the window. Wide open, lights on, everyone else locked outside staring in.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; Dynasty analyst &mdash; 10-team SF superflex digest, May 2026</div>
-      </div>
-    </div>
-  </div>
-  <div class="espn-story-card">
-    <div class="espn-card-img-wrap">
-      <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/4426389.png&h=200&w=150" alt="De'Von Achane" loading="lazy" onerror="this.parentNode.style.background='linear-gradient(135deg,#1c1c2e,#0d0d1f)'">
-      <div class="espn-card-gradient"></div>
-      <div class="espn-vibe-badge">&#128302; PROPHECY</div>
-    </div>
-    <div class="espn-card-body">
-      <div class="espn-card-meta">
-        <span class="espn-card-date">2027 PREDICTION</span>
-        <span class="espn-card-category">THE FUTURE</span>
-      </div>
-      <div class="espn-card-headline">Championship or Bust: The 2027 Lamario Bros War Machine Is Built to Win Now, Win Later, and Win Always.</div>
-      <div class="espn-card-pull">
-        <div class="espn-card-pull-text">&#8220;The Nxbosta pick lands top-3. The Nabers trade looks like grand larceny in hindsight. The ring is already in the mail.&#8221;</div>
-        <div class="espn-card-attribution">&#8212; War Room Prediction Log &mdash; ColonelSanders4, May 2026</div>
-      </div>
-    </div>
+  <span class="chapter-tag" style="background:rgba(245,158,11,.15);color:#fbbf24;border:1px solid rgba(245,158,11,.35)">&#128293; BLOCKBUSTER</span>
+  <div class="chapter-body">
+    The most debated trade of the offseason. <strong>Lawrence + Gibbs out. Stroud + Nabers + Williams + two 2027 firsts in.</strong> The fantasy world lost its mind. You sold Gibbs &mdash; arguably a top-3 dynasty RB &mdash; at his absolute peak. You moved Lawrence while the market still believed. And in return, you landed <em>C.J. Stroud</em> at 24 years old, <em>Malik Nabers</em> with a ceiling that scares every GM in the league, <em>Javonte Williams</em> finally healthy in Dallas, and two 2027 first-rounders as nuclear war chips. Some called it sell-low. The KTC ledger said +15,000. History will judge.
   </div>
 </div>
 
-<div class="espn-lore-footer">Last updated May 2026 &middot; Written in the war room &middot; LAMARIO BROS DYNASTY &middot; 10-team SF&times;2 PPR TEP</div>
+<div class="chapter-card green">
+  <div class="chapter-header">
+    <div class="chapter-title">Chapter IV &mdash; The Current Roster</div>
+    <span class="chapter-year">2026 SEASON</span>
+  </div>
+  <span class="chapter-tag" style="background:rgba(0,200,81,.1);color:#00C851;border:1px solid rgba(0,200,81,.3)">&#9889; CONTENDER NOW</span>
+  <div class="chapter-body">
+    <em>Stroud</em> is the new franchise QB &mdash; 24 years old, elite arm talent, a Texans offense built around him. <em>Malik Nabers</em> is the WR1 with a ceiling that doesn&rsquo;t exist &mdash; Year 2, age 22, top-3 dynasty WR in any SF/PPR/TEP format. <em>Javonte Williams</em> anchors the RB room, finally healthy, finally the bell cow he was always supposed to be. The roster grade is <em>A</em>. The trajectory is up. The war room is fully loaded and the window is now.
+  </div>
+</div>
+
+<div class="chapter-card purple">
+  <div class="chapter-header">
+    <div class="chapter-title">Chapter V &mdash; The Vision</div>
+    <span class="chapter-year">2026&ndash;&infin;</span>
+  </div>
+  <span class="chapter-tag" style="background:rgba(168,85,247,.1);color:#a855f7;border:1px solid rgba(168,85,247,.3)">&#128081; DYNASTY</span>
+  <div class="chapter-body">
+    <strong>This isn&rsquo;t a rebuild. This is a reload.</strong> The Lamario Bros operate differently &mdash; never fully in, never fully out, always dangerous. Two 2027 first-rounders in the war chest. Nabers locked in for the next decade. Stroud with everything to prove and the arm to prove it. <em>TikTok-era dynasty.</em> Short attention span. Maximum aggression. Next play mentality. Every offseason a hostile takeover. Every draft a restock. Hungry. Always hungry.
+  </div>
+</div>
+
+<div class="lore-footer">
+  Last updated May 2026 &middot; Written in the war room &middot; LAMARIO BROS DYNASTY
 </div>
 </div>
-
-
-
+</div>
 
 </div><!-- /content -->
 
@@ -1349,27 +1053,14 @@ a{color:inherit;text-decoration:none}
         <div class="modal-sub" id="m-sub"></div>
       </div>
     </div>
-    <!-- Dynasty Value + FC Live Trend -->
-    <div class="fc-trend-row">
-      <span class="fc-trend-label">Dynasty Value</span>
-      <span class="fc-val" id="m-ktc-val"></span>
-      <span id="m-fc-pct"></span>
-    </div>
-    <!-- Core Stats Grid -->
     <div class="modal-grid">
       <div class="modal-stat"><div class="modal-stat-label">OVR Grade</div><div class="modal-stat-val gold" id="m-ovr"></div></div>
-      <div class="modal-stat"><div class="modal-stat-label">Roster Rank</div><div class="modal-stat-val green" id="m-pos-rank"></div></div>
-      <div class="modal-stat"><div class="modal-stat-label">Peak Window</div><div id="m-peak-badge"></div></div>
+      <div class="modal-stat"><div class="modal-stat-label">Dynasty Rank</div><div class="modal-stat-val green" id="m-rank"></div></div>
+      <div class="modal-stat"><div class="modal-stat-label">KTC Value</div><div class="modal-stat-val blue" id="m-ktc"></div></div>
       <div class="modal-stat"><div class="modal-stat-label">Trajectory</div><div id="m-traj"></div></div>
     </div>
-    <!-- Verdict Badge -->
-    <div style="text-align:center;margin-bottom:12px">
-      <div id="m-verdict" class="verdict-modal-badge"></div>
-    </div>
-    <!-- ESPN Dynasty Spotlight bullets -->
-    <div class="modal-sec-title">&#128308; Dynasty Spotlight</div>
-    <ul class="espn-bullets" id="m-bullets"></ul>
-    <div class="modal-btns" style="margin-top:14px">
+    <div class="outlook" id="m-outlook"></div>
+    <div class="modal-btns">
       <button class="btn btn-yt" onclick="openYT()">&#127381; Highlights</button>
       <button class="btn btn-close" onclick="closeModal()">Close</button>
     </div>
@@ -1377,355 +1068,8 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <script>
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ DATA Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
-const PLAYERS = [
-  {id:1,slid:4881,n:'Lamar Jackson',pos:'QB',nfl:'BAL',age:29,ovr:98,rank:'QB1 \xb7 #4 Overall',ktc:9800,traj:'peak',outlook:'Unanimous dynasty QB1 in SF\xd72 superflex. Back-to-back MVP season pace, elite dual-threat floor. In a 10-team SF\xd72 format he commands maximum value. Age 29 with 3-4 more elite seasons ahead.',ytq:'Lamar Jackson 2025 highlights'},
-  {id:2,slid:9509,n:'C.J. Stroud',pos:'QB',nfl:'HOU',age:24,ovr:78,rank:'QB8 \xb7 HOLD',ktc:3200,traj:'rising',outlook:'Own him at fire-sale price \u2014 market cratered after a rough 2025 but he is 24 in a loaded Texans offense. In SF\xd72 a QB2 upside asset is even more valuable. Hold and watch.',ytq:'CJ Stroud 2025 highlights'},
-  {id:3,slid:10229,n:'Tyson Bagent',pos:'QB',nfl:'CHI',age:25,ovr:66,rank:'QB12 \xb7 Streaming',ktc:4800,traj:'rising',outlook:'Reclaimed the Bears starting job. In SF\xd72 formats a streaming QB2 still holds real value. Strong upside if the Chicago offense clicks.',ytq:'Tyson Bagent 2025 NFL highlights'},
-  {id:4,slid:5849,n:'Daniel Jones',pos:'QB',nfl:'IND',age:28,ovr:70,rank:'QB15 \xb7 Streaming',ktc:3600,traj:'peak',outlook:'Reclamation story in Indy. Serviceable SF2 with streaming value in a 10-team SF\xd72 league. Colts offensive pieces make him playable.',ytq:'Daniel Jones 2025 Indianapolis highlights'},
-  {id:5,slid:3294,n:'Joe Flacco',pos:'QB',nfl:'CIN',age:41,ovr:57,rank:'QB20 \xb7 Emergency',ktc:1200,traj:'declining',outlook:'Veteran depth only. At 41 this is pure insurance \u2014 not a dynasty investment.',ytq:'Joe Flacco 2025 NFL highlights'},
-  {id:6,slid:9484,n:"De'Von Achane",pos:'RB',nfl:'MIA',age:24,ovr:92,rank:'RB2 \xb7 #10 Overall',ktc:8200,traj:'rising',outlook:"Lightning in a bottle. Elite receiving RB in Miami \u2014 massive in PPR/TEP. Age 24, clean injury history. Top-3 dynasty RB in SF\xd72/PPR/TEP.",ytq:"De'Von Achane 2025 highlights"},
-  {id:7,slid:6790,n:'Travis Etienne',pos:'RB',nfl:'JAX',age:27,ovr:81,rank:'RB8 \xb7 #31 Overall',ktc:6600,traj:'peak',outlook:'Back in Jacksonville as the lead back. Three-down workhorse with pass-catching ability. Age 27 in his prime  -  dynasty asset.',ytq:'Travis Etienne 2025 Jacksonville Jaguars highlights'},
-  {id:8,slid:7564,n:'Javonte Williams',pos:'RB',nfl:'DAL',age:24,ovr:78,rank:'RB11 \xb7 #42 Overall',ktc:5800,traj:'peak',outlook:'Finally healthy in Dallas. Explosive runner, real bell-cow upside. Sell high if Cowboys commit to him.',ytq:'Javonte Williams 2025 Dallas highlights'},
-  {id:9,slid:10230,n:'Jaylen Wright',pos:'RB',nfl:'MIA',age:23,ovr:69,rank:'RB14 \xb7 #50 Overall',ktc:5600,traj:'rising',outlook:"Achane handcuff with independent upside. Young enough to hold dynasty value \u2014 massive if Achane misses time.",ytq:'Jaylen Wright 2025 Miami Dolphins highlights'},
-  {id:10,slid:3970,n:'James Conner',pos:'RB',nfl:'ARI',age:30,ovr:64,rank:'RB15 \xb7 #55 Overall',ktc:4200,traj:'declining',outlook:'Workhorse in Arizona but 30 years old. Solid RB2 production in PPR but value is current not future.',ytq:'James Conner 2025 Arizona highlights'},
-  {id:11,slid:9486,n:'Tank Bigsby',pos:'RB',nfl:'PHI',age:23,ovr:68,rank:'RB17 \xb7 #61 Overall',ktc:4900,traj:'rising',outlook:"Young RB behind Philly's elite OL. Limited receiving hurts PPR, but the run game keeps him relevant.",ytq:'Tank Bigsby 2025 Philadelphia highlights'},
-  {id:12,slid:11565,n:'Cam Skattebo',pos:'RB',nfl:'NYG',age:25,ovr:80,rank:'RB18 \xb7 #64 Overall',ktc:6000,traj:'rising',outlook:"Dynasty darling who exploded into the NYG starting role. Physical runner with receiving upside in a workhorse role. Age 25, buy window still open.",ytq:'Cam Skattebo 2025 New York Giants highlights'},
-  {id:13,slid:8680,n:'Chris Rodriguez',pos:'RB',nfl:'WAS',age:26,ovr:65,rank:'RB22 \xb7 Depth',ktc:4100,traj:'peak',outlook:'Physical runner in Washington. Volume upside in a committee but brings goal-line punch and three-down potential.',ytq:'Chris Rodriguez 2025 Washington Commanders highlights'},
-  {id:14,slid:9165,n:'Jerome Ford',pos:'RB',nfl:'WAS',age:25,ovr:63,rank:'RB21 \xb7 Depth',ktc:3800,traj:'peak',outlook:'Pass-catching back in Washington. PPR value holds in a committee. Buyable depth with a clear role.',ytq:'Jerome Ford 2025 Washington Commanders highlights'},
-  {id:15,slid:7526,n:'Kenneth Gainwell',pos:'RB',nfl:'TB',age:27,ovr:67,rank:'RB30 \xb7 Stash',ktc:2600,traj:'peak',outlook:'Change-of-pace back in Tampa Bay. Occasional receiving value but deep league stash only.',ytq:'Kenneth Gainwell 2025 Tampa Bay highlights'},
-  {id:16,slid:10222,n:'Malik Nabers',pos:'WR',nfl:'NYG',age:22,ovr:95,rank:'WR3 \xb7 #9 Overall',ktc:9200,traj:'rising',outlook:"Year-2 elite. Top-3 dynasty WR in SF\xd72/PPR/TEP. Giants are building around him at age 23. Don't touch.",ytq:'Malik Nabers 2025 New York Giants highlights'},
-  {id:17,slid:11566,n:'Travis Hunter',pos:'WR',nfl:'JAX',age:22,ovr:82,rank:'WR11 \xb7 Top-10 Overall',ktc:5200,traj:'peak',outlook:"CB usage at JAX is worth monitoring \u2014 track snap share Weeks 1\u20133 before any decision. At KTC top-10 overall, don't sell a generational athlete on early noise. Hold and watch how Jacksonville deploys him.",ytq:'Travis Hunter 2025 NFL highlights'},
-  {id:18,slid:6904,n:'Tee Higgins',pos:'WR',nfl:'CIN',age:27,ovr:85,rank:'WR6 \xb7 #14 Overall',ktc:7800,traj:'peak',outlook:"Prime-age WR2 with Burrow throwing him the ball. When healthy, top-10 WR in SF\xd72/PPR/TEP. Core piece, don't move him.",ytq:'Tee Higgins 2025 Cincinnati Bengals highlights'},
-  {id:19,slid:8150,n:'Jameson Williams',pos:'WR',nfl:'DET',age:25,ovr:81,rank:'WR9 \xb7 #21 Overall',ktc:7200,traj:'rising',outlook:"Breakout ascending. Detroit's WR1, explosive in any format at age 25 with massive ceiling.",ytq:'Jameson Williams 2025 Detroit Lions highlights'},
-  {id:20,slid:3164,n:'Mike Evans',pos:'WR',nfl:'SF',age:32,ovr:73,rank:'WR10 \xb7 #25 Overall',ktc:6600,traj:'declining',outlook:"Still producing at a high level in SF's offense. At 32 the age discount is real. Sell window is now.",ytq:'Mike Evans 2025 San Francisco 49ers highlights'},
-  {id:21,slid:5870,n:'DJ Moore',pos:'WR',nfl:'BUF',age:29,ovr:74,rank:'WR12 \xb7 #32 Overall',ktc:6400,traj:'peak',outlook:"Prime-age WR in Buffalo's elite offense. Consistent WR1/2 production with excellent target share.",ytq:'DJ Moore 2025 Buffalo Bills highlights'},
-  {id:22,slid:7528,n:'Michael Pittman',pos:'WR',nfl:'PIT',age:27,ovr:74,rank:'WR15 \xb7 #38 Overall',ktc:5600,traj:'peak',outlook:"Target hog in Pittsburgh with PPR-friendly route tree. Age 27 means 3-4 more peak years. Strong hold.",ytq:'Michael Pittman 2025 Pittsburgh Steelers highlights'},
-  {id:23,slid:6831,n:'Jakobi Meyers',pos:'WR',nfl:'JAX',age:29,ovr:69,rank:'WR21 \xb7 Depth',ktc:4200,traj:'declining',outlook:'Veteran slot receiver. Good PPR volume but at 29 dynasty value is declining. Current contributor, not a long-term piece.',ytq:'Jakobi Meyers 2025 Jacksonville Jaguars highlights'},
-  {id:24,slid:9503,n:'Dontayvion Wicks',pos:'WR',nfl:'PHI',age:25,ovr:74,rank:'WR22 \xb7 Upside',ktc:5200,traj:'rising',outlook:"Young deep threat in Philly's great offense. Age 25 with real upside \u2014 one big season away from a breakout.",ytq:'Dontayvion Wicks 2025 Philadelphia Eagles highlights'},
-  {id:26,slid:10227,n:'Ricky Pearsall',pos:'WR',nfl:'SF',age:25,ovr:67,rank:'WR25 \xb7 Upside',ktc:5000,traj:'rising',outlook:"Slot receiver in SF's elite offense. Age 25 in a great system \u2014 buy before the breakout.",ytq:'Ricky Pearsall 2025 San Francisco 49ers highlights'},
-  {id:45,slid:null,n:'Elijah Sarratt',pos:'WR',nfl:'BAL',age:22,ovr:68,rank:'WR  |  2026 Rd 2.08',ktc:3500,traj:'rising',outlook:"Route-running specialist out of the 2026 draft. Landed in Baltimore where the WR room has target share available. Elite technique and reliable hands at age 22  -  dynasty upside ceiling is high.",ytq:'Elijah Sarratt Baltimore Ravens 2026 NFL highlights'},
-  {id:27,slid:8155,n:'Tyquan Thornton',pos:'WR',nfl:'KC',age:25,ovr:61,rank:'WR30 \xb7 Depth',ktc:3700,traj:'peak',outlook:"Speed threat in Kansas City. Occasional pop plays but limited dynasty role. Hold as depth.",ytq:'Tyquan Thornton 2025 Kansas City Chiefs highlights'},
-  {id:28,slid:5844,n:'Mark Andrews',pos:'TE',nfl:'BAL',age:30,ovr:91,rank:'TE1 \xb7 #19 Overall',ktc:7800,traj:'peak',outlook:"Premier TE in a TEP league. Andrews gets massive premium with tight end bonuses \u2014 elite target share in Baltimore. At 30, 2-3 more peak years.",ytq:'Mark Andrews 2025 Baltimore Ravens highlights'},
-  {id:29,slid:6797,n:'Cole Kmet',pos:'TE',nfl:'CHI',age:26,ovr:73,rank:'TE4 \xb7 #38 Overall',ktc:5900,traj:'rising',outlook:'Rising TE in Chicago with high target volume. TEP premium makes him a genuine TE1. Age 26 \u2014 buy and hold.',ytq:'Cole Kmet 2025 Chicago Bears highlights'},
-  {id:30,slid:9492,n:'Dalton Kincaid',pos:'TE',nfl:'BUF',age:26,ovr:76,rank:'TE7 \xb7 #55 Overall',ktc:5200,traj:'peak',outlook:"Receiving TE in Buffalo with Josh Allen. TEP premium makes him valuable \u2014 consistent target share in a great offense.",ytq:'Dalton Kincaid 2025 Buffalo Bills highlights'},
-  {id:31,slid:6826,n:'Dawson Knox',pos:'TE',nfl:'BUF',age:29,ovr:65,rank:'TE10 \xb7 Depth',ktc:4000,traj:'declining',outlook:'Redundant with Kincaid in Buffalo but still gets red zone work. More current contributor than dynasty investment.',ytq:'Dawson Knox 2025 Buffalo Bills highlights'},
-
-  {id:38,slid:null,n:'Demond Claiborne',pos:'RB',nfl:'MIN',age:22,ovr:69,rank:'RB \xb7 2026 Pick 3.08',ktc:2800,traj:'rising',outlook:"\u201cAchane lite\u201d \u2014 explosive satellite back with elite burst and pass-catching chops. Vikings land an electric playmaker. Dynasty upside ceiling is sky-high in a pass-heavy system.",ytq:'Demond Claiborne Minnesota Vikings 2026 NFL highlights'},
-  {id:40,slid:null,n:'Eli Heidenreich',pos:'WR',nfl:'PIT',age:22,ovr:64,rank:'WR \xb7 2026 Pick 4.10',ktc:900,traj:'rising',outlook:"\u201cCMC jr\u201d profile \u2014 hybrid WR/RB versatility that fits the modern NFL perfectly. Landed in Pittsburgh where creative usage could unlock instant value. Lottery-ticket upside.",ytq:'Eli Heidenreich Pittsburgh Steelers 2026 NFL highlights'},
-  {id:41,slid:null,n:'Carson Beck',pos:'QB',nfl:'ARI',age:23,ovr:69,rank:'QB \xb7 2026 Pick 3.05',ktc:2200,traj:'rising',outlook:"Georgia product with NFL-ready arm and pocket presence. Arizona gives him a real shot at the starting job. SF\xd72 multiplier makes him a high-ceiling stash with legitimate starter upside.",ytq:'Carson Beck Arizona Cardinals 2026 NFL highlights'},
-];
-
-const IR = [
-  {id:33,slid:4034,n:'Joe Mixon',pos:'RB',nfl:'HOU',age:29,ovr:70,rank:'RB9 \xb7 IR',ktc:5100,traj:'declining',outlook:"Workhorse back on IR. When healthy, high-volume bell cow \u2014 but at 29 with injury history the dynasty value is fading. Monitor recovery and consider trading.",ytq:'Joe Mixon 2025 Houston Texans highlights'},
-];
-
-const TAXI = [
-  {id:34,slid:null,n:'Damien Martinez',pos:'RB',nfl:'GB',age:23,ovr:72,rank:'RB Taxi \xb7 Promote?',ktc:4800,traj:'rising',outlook:"Best taxi promotion candidate. Physical RB in Green Bay with path to significant carries. Age 23 in a strong run system \u2014 promote before Week 1.",ytq:'Damien Martinez Green Bay Packers 2025 highlights'},
-  {id:42,slid:null,n:'Cade Klubnik',pos:'QB',nfl:'NYJ',age:22,ovr:67,rank:'QB Taxi \xb7 2026 Rookie',ktc:1800,traj:'rising',outlook:"Clemson's electric dual-threat QB. Arm talent plus elite mobility \u2014 the SF\xd72 format makes him one of the most exciting stashes in the 2026 class. High floor at the position.",ytq:'Cade Klubnik 2026 NFL Draft QB highlights'},
-  {id:36,slid:null,n:'Will Howard',pos:'QB',nfl:'PIT',age:25,ovr:70,rank:'QB Taxi \xb7 SF\xd72 Stash \xb7 Possible Cut',ktc:4500,traj:'rising',outlook:"Ohio State QB learning in Pittsburgh. SF\xd72 value makes him worth stashing \u2014 low floor, real upside if the starter gets hurt.",ytq:'Will Howard 2025 Pittsburgh Steelers NFL highlights'},
-  {id:39,slid:null,n:'Eli Raridon',pos:'TE',nfl:'NE',age:22,ovr:65,rank:'TE Taxi \xb7 2026 Pick 4.04',ktc:1200,traj:'rising',outlook:"Notre Dame product in New England. Big-bodied receiving TE with soft hands and route-running polish. TEP format gives him added upside \u2014 long stash with real potential.",ytq:'Eli Raridon Notre Dame TE 2026 NFL highlights'},
-];
-
-const PICKS = [
-  {yr:'2027',rd:'1st Round',slot:'Unknown',owner:'Nxbosta',
-   ktc:6000,ktcMin:4500,ktcMax:9500,confidence:'Elite',nxbosta:true},
-  {yr:'2027',rd:'3rd Round',slot:'Unknown',owner:'Nxbosta',
-   ktc:1500,ktcMin:1000,ktcMax:2000,confidence:'Mid',nxbosta:true},
-  {yr:'2027',rd:'4th Round',slot:'Unknown',owner:'Nxbosta',
-   ktc:800,ktcMin:500,ktcMax:1000,confidence:'Flier',nxbosta:true},
-];
-
-const leaguePlayers = [
-  {n:'Patrick Mahomes',pos:'QB',team:'KC',age:30,ovr:97,ktc:9500},
-  {n:'Josh Allen',pos:'QB',team:'BUF',age:29,ovr:96,ktc:9200},
-  {n:'Joe Burrow',pos:'QB',team:'CIN',age:29,ovr:93,ktc:8800},
-  {n:'Jalen Hurts',pos:'QB',team:'PHI',age:27,ovr:90,ktc:8200},
-  {n:'Jayden Daniels',pos:'QB',team:'WAS',age:25,ovr:87,ktc:7800},
-  {n:'Justin Herbert',pos:'QB',team:'LAC',age:27,ovr:88,ktc:7600},
-  {n:'Caleb Williams',pos:'QB',team:'CHI',age:24,ovr:86,ktc:7400},
-  {n:'Drake Maye',pos:'QB',team:'NE',age:23,ovr:85,ktc:7200},
-  {n:'Jordan Love',pos:'QB',team:'GB',age:27,ovr:83,ktc:6800},
-  {n:'Brock Purdy',pos:'QB',team:'SF',age:26,ovr:84,ktc:6500},
-  {n:'Anthony Richardson',pos:'QB',team:'IND',age:23,ovr:80,ktc:5800},
-  {n:'Bo Nix',pos:'QB',team:'DEN',age:25,ovr:78,ktc:5200},
-  {n:'Shedeur Sanders',pos:'QB',team:'CLE',age:23,ovr:76,ktc:4800},
-  {n:'Jaxson Dart',pos:'QB',team:'NYG',age:23,ovr:74,ktc:4400},
-  {n:'Dak Prescott',pos:'QB',team:'DAL',age:32,ovr:79,ktc:4200},
-  {n:'Sam Darnold',pos:'QB',team:'SEA',age:28,ovr:72,ktc:3800},
-  {n:'Baker Mayfield',pos:'QB',team:'TB',age:30,ovr:72,ktc:3600},
-  {n:'Kirk Cousins',pos:'QB',team:'ATL',age:37,ovr:68,ktc:2400},
-  {n:'Trevor Lawrence',pos:'QB',team:'JAX',age:26,ovr:84,ktc:6800},
-  {n:'Lamar Jackson',pos:'QB',team:'BAL',age:29,ovr:98,ktc:9800},
-  {n:'Geno Smith',pos:'QB',team:'SEA',age:35,ovr:66,ktc:2200},
-  {n:'Matthew Stafford',pos:'QB',team:'LAR',age:37,ovr:68,ktc:2000},
-  {n:'Tua Tagovailoa',pos:'QB',team:'MIA',age:27,ovr:80,ktc:5600},
-  {n:'Justin Fields',pos:'QB',team:'PIT',age:27,ovr:78,ktc:5000},
-  {n:'Will Levis',pos:'QB',team:'TEN',age:26,ovr:74,ktc:4200},
-  {n:'Michael Penix Jr.',pos:'QB',team:'ATL',age:25,ovr:76,ktc:4600},
-  {n:'JJ McCarthy',pos:'QB',team:'MIN',age:23,ovr:78,ktc:5400},
-  {n:'Arch Manning',pos:'QB',team:'NO',age:23,ovr:72,ktc:4800},
-  {n:'Bijan Robinson',pos:'RB',team:'ATL',age:24,ovr:94,ktc:9000},
-  {n:'Jahmyr Gibbs',pos:'RB',team:'DET',age:24,ovr:93,ktc:8800},
-  {n:'Breece Hall',pos:'RB',team:'NYJ',age:24,ovr:91,ktc:8400},
-  {n:'Ashton Jeanty',pos:'RB',team:'LV',age:22,ovr:88,ktc:8000},
-  {n:'Jonathan Taylor',pos:'RB',team:'IND',age:26,ovr:87,ktc:7400},
-  {n:'Jonathon Brooks',pos:'RB',team:'CAR',age:23,ovr:83,ktc:6800},
-  {n:'Omarion Hampton',pos:'RB',team:'LAC',age:22,ovr:82,ktc:6600},
-  {n:'Kyren Williams',pos:'RB',team:'LAR',age:25,ovr:82,ktc:6400},
-  {n:'TreVeyon Henderson',pos:'RB',team:'NE',age:23,ovr:80,ktc:6000},
-  {n:'Quinshon Judkins',pos:'RB',team:'CLE',age:22,ovr:79,ktc:5800},
-  {n:'Rhamondre Stevenson',pos:'RB',team:'NE',age:27,ovr:78,ktc:5200},
-  {n:'Chase Brown',pos:'RB',team:'CIN',age:25,ovr:77,ktc:5000},
-  {n:'MarShawn Lloyd',pos:'RB',team:'DET',age:23,ovr:75,ktc:4600},
-  {n:'Rachaad White',pos:'RB',team:'TB',age:27,ovr:74,ktc:4200},
-  {n:'Blake Corum',pos:'RB',team:'LAR',age:24,ovr:72,ktc:3800},
-  {n:'David Montgomery',pos:'RB',team:'DET',age:28,ovr:71,ktc:3600},
-  {n:'Alvin Kamara',pos:'RB',team:'NO',age:30,ovr:70,ktc:3400},
-  {n:"Ja'Marr Chase",pos:'WR',team:'CIN',age:25,ovr:98,ktc:9800},
-  {n:'Justin Jefferson',pos:'WR',team:'MIN',age:26,ovr:97,ktc:9600},
-  {n:'CeeDee Lamb',pos:'WR',team:'DAL',age:26,ovr:96,ktc:9400},
-  {n:'Amon-Ra St. Brown',pos:'WR',team:'DET',age:26,ovr:90,ktc:8200},
-  {n:'Brian Thomas Jr.',pos:'WR',team:'JAX',age:23,ovr:86,ktc:7400},
-  {n:'Puka Nacua',pos:'WR',team:'LAR',age:25,ovr:85,ktc:7000},
-  {n:'Garrett Wilson',pos:'WR',team:'NYJ',age:25,ovr:85,ktc:7200},
-  {n:'Rome Odunze',pos:'WR',team:'CHI',age:23,ovr:84,ktc:6800},
-  {n:'Tetairoa McMillan',pos:'WR',team:'CAR',age:22,ovr:83,ktc:6600},
-  {n:'Rashee Rice',pos:'WR',team:'KC',age:25,ovr:83,ktc:6400},
-  {n:'Emeka Egbuka',pos:'WR',team:'TB',age:23,ovr:82,ktc:6200},
-  {n:'Luther Burden III',pos:'WR',team:'CHI',age:22,ovr:80,ktc:6000},
-  {n:'Zay Flowers',pos:'WR',team:'BAL',age:25,ovr:80,ktc:5800},
-  {n:'Xavier Worthy',pos:'WR',team:'KC',age:23,ovr:79,ktc:5600},
-  {n:'Chris Olave',pos:'WR',team:'NO',age:25,ovr:80,ktc:5600},
-  {n:'Drake London',pos:'WR',team:'ATL',age:25,ovr:79,ktc:5400},
-  {n:'DeVonta Smith',pos:'WR',team:'PHI',age:29,ovr:79,ktc:5200},
-  {n:'Tank Dell',pos:'WR',team:'HOU',age:25,ovr:76,ktc:4800},
-  {n:'Davante Adams',pos:'WR',team:'NYJ',age:33,ovr:72,ktc:3600},
-  {n:'Cooper Kupp',pos:'WR',team:'LAR',age:32,ovr:71,ktc:3400},
-  {n:"Wan'Dale Robinson",pos:'WR',team:'NYG',age:25,ovr:74,ktc:4000},
-  {n:'Terry McLaurin',pos:'WR',team:'WAS',age:30,ovr:75,ktc:4200},
-  {n:'Diontae Johnson',pos:'WR',team:'HOU',age:29,ovr:68,ktc:3200},
-  {n:'Rashod Bateman',pos:'WR',team:'BAL',age:25,ovr:69,ktc:3400},
-  {n:'Stefon Diggs',pos:'WR',team:'NE',age:32,ovr:72,ktc:3200},
-  {n:'Jaylen Waddle',pos:'WR',team:'MIA',age:26,ovr:82,ktc:6400},
-  {n:'Mike Evans',pos:'WR',team:'TB',age:32,ovr:73,ktc:4200},
-  {n:'Tee Higgins',pos:'WR',team:'CIN',age:27,ovr:88,ktc:7200},
-  {n:'Jalen McMillan',pos:'WR',team:'TB',age:23,ovr:74,ktc:4200},
-  {n:'Marvin Harrison Jr.',pos:'WR',team:'ARI',age:23,ovr:85,ktc:7400},
-  {n:'Ladd McConkey',pos:'WR',team:'LAC',age:24,ovr:79,ktc:5400},
-  {n:'Jameson Williams',pos:'WR',team:'DET',age:25,ovr:85,ktc:6800},
-  {n:'Javonte Williams',pos:'RB',team:'DAL',age:26,ovr:78,ktc:5800},
-  {n:'Travis Etienne',pos:'RB',team:'NO',age:27,ovr:81,ktc:6600},
-  {n:"De'Von Achane",pos:'RB',team:'MIA',age:24,ovr:92,ktc:8200},
-  {n:'Cam Skattebo',pos:'RB',team:'NYG',age:25,ovr:80,ktc:6000},
-  {n:'Travis Hunter',pos:'WR',team:'JAX',age:22,ovr:82,ktc:4100},
-  {n:'Mark Andrews',pos:'TE',team:'BAL',age:30,ovr:91,ktc:7800},
-  {n:'Dalton Kincaid',pos:'TE',team:'BUF',age:26,ovr:76,ktc:4600},
-  {n:'Dawson Knox',pos:'TE',team:'BUF',age:29,ovr:74,ktc:3800},
-  {n:'Cole Kmet',pos:'TE',team:'CHI',age:26,ovr:80,ktc:5200},
-  {n:'Brock Bowers',pos:'TE',team:'LV',age:23,ovr:92,ktc:8800},
-  {n:'Trey McBride',pos:'TE',team:'ARI',age:26,ovr:88,ktc:7800},
-  {n:'Sam LaPorta',pos:'TE',team:'DET',age:25,ovr:86,ktc:7200},
-  {n:'Jake Ferguson',pos:'TE',team:'DAL',age:26,ovr:82,ktc:6200},
-  {n:'Tucker Kraft',pos:'TE',team:'GB',age:25,ovr:80,ktc:5600},
-  {n:'Isaiah Likely',pos:'TE',team:'BAL',age:26,ovr:75,ktc:4800},
-  {n:'Cade Otton',pos:'TE',team:'TB',age:26,ovr:76,ktc:4600},
-  {n:'Chigoziem Okonkwo',pos:'TE',team:'TEN',age:26,ovr:72,ktc:3800},
-  {n:'Pat Freiermuth',pos:'TE',team:'PIT',age:26,ovr:72,ktc:3600},
-  {n:'Hunter Henry',pos:'TE',team:'NE',age:31,ovr:68,ktc:2800},
-  {n:'Dalton Schultz',pos:'TE',team:'HOU',age:30,ovr:71,ktc:3200},
-  {n:'Jonnu Smith',pos:'TE',team:'MIA',age:30,ovr:69,ktc:2600},
-  // QBs
-  {n:'Kyler Murray',pos:'QB',team:'ARI',age:28,ovr:82,ktc:5800},
-  {n:'Bryce Young',pos:'QB',team:'CAR',age:24,ovr:74,ktc:4600},
-  {n:'Russell Wilson',pos:'QB',team:'NYG',age:37,ovr:66,ktc:2000},
-  {n:'Derek Carr',pos:'QB',team:'NO',age:34,ovr:68,ktc:2200},
-  {n:'Aaron Rodgers',pos:'QB',team:'NYJ',age:43,ovr:65,ktc:1800},
-  // RBs
-  {n:'Saquon Barkley',pos:'RB',team:'PHI',age:28,ovr:88,ktc:7800},
-  {n:'Derrick Henry',pos:'RB',team:'NO',age:31,ovr:82,ktc:5400},
-  {n:'James Cook',pos:'RB',team:'BUF',age:25,ovr:84,ktc:7200},
-  {n:'Josh Jacobs',pos:'RB',team:'GB',age:27,ovr:80,ktc:5800},
-  {n:'Isiah Pacheco',pos:'RB',team:'KC',age:26,ovr:79,ktc:5600},
-  {n:'Raheem Mostert',pos:'RB',team:'MIA',age:33,ovr:68,ktc:2600},
-  {n:'Tony Pollard',pos:'RB',team:'TEN',age:28,ovr:76,ktc:4800},
-  {n:'Zach Charbonnet',pos:'RB',team:'SEA',age:24,ovr:77,ktc:5000},
-  {n:'Brian Robinson',pos:'RB',team:'WAS',age:26,ovr:74,ktc:4200},
-  {n:'Najee Harris',pos:'RB',team:'LAC',age:27,ovr:73,ktc:3800},
-  {n:'AJ Dillon',pos:'RB',team:'GB',age:27,ovr:70,ktc:3200},
-  {n:'Aaron Jones',pos:'RB',team:'MIN',age:31,ovr:70,ktc:3000},
-  {n:'Zamir White',pos:'RB',team:'LV',age:25,ovr:73,ktc:3600},
-  {n:'Dameon Pierce',pos:'RB',team:'HOU',age:25,ovr:72,ktc:3400},
-  {n:'Roschon Johnson',pos:'RB',team:'CHI',age:24,ovr:70,ktc:3000},
-  {n:'Jaylen Warren',pos:'RB',team:'PIT',age:26,ovr:72,ktc:3200},
-  {n:'Tyjae Spears',pos:'RB',team:'TEN',age:24,ovr:74,ktc:4200},
-  {n:'Devin Singletary',pos:'RB',team:'NYG',age:28,ovr:70,ktc:3000},
-  // WRs
-  {n:'Jaxon Smith-Njigba',pos:'WR',team:'SEA',age:23,ovr:84,ktc:7000},
-  {n:'George Pickens',pos:'WR',team:'DAL',age:24,ovr:82,ktc:6400},
-  {n:'Brandon Aiyuk',pos:'WR',team:'SF',age:27,ovr:83,ktc:6600},
-  {n:'Deebo Samuel',pos:'WR',team:'SF',age:29,ovr:78,ktc:5200},
-  {n:'Christian Kirk',pos:'WR',team:'JAX',age:28,ovr:74,ktc:4000},
-  {n:'Courtland Sutton',pos:'WR',team:'NE',age:30,ovr:74,ktc:4200},
-  {n:'Kayshon Boutte',pos:'WR',team:'NE',age:24,ovr:70,ktc:3200},
-  {n:'Rashid Shaheed',pos:'WR',team:'NO',age:26,ovr:74,ktc:4400},
-  {n:'Chris Godwin',pos:'WR',team:'TB',age:29,ovr:76,ktc:4600},
-  {n:'Josh Downs',pos:'WR',team:'IND',age:24,ovr:76,ktc:4800},
-  {n:'Quentin Johnston',pos:'WR',team:'LAC',age:24,ovr:75,ktc:4400},
-  {n:'Michael Wilson',pos:'WR',team:'ARI',age:24,ovr:72,ktc:3600},
-  {n:'Josh Palmer',pos:'WR',team:'LAC',age:26,ovr:70,ktc:3200},
-  {n:'Odell Beckham Jr.',pos:'WR',team:'MIA',age:33,ovr:68,ktc:2800},
-  {n:'Calvin Ridley',pos:'WR',team:'TEN',age:30,ovr:72,ktc:3400},
-  {n:'Darius Slayton',pos:'WR',team:'NYG',age:28,ovr:70,ktc:3000},
-  {n:'Khalil Shakir',pos:'WR',team:'BUF',age:26,ovr:76,ktc:4600},
-  // TEs
-  {n:'Travis Kelce',pos:'TE',team:'KC',age:36,ovr:82,ktc:5200},
-  {n:'George Kittle',pos:'TE',team:'SF',age:37,ovr:80,ktc:5000},
-  {n:'Kyle Pitts',pos:'TE',team:'ATL',age:25,ovr:84,ktc:6800},
-  {n:'David Njoku',pos:'TE',team:'CLE',age:29,ovr:78,ktc:5200},
-  {n:'Evan Engram',pos:'TE',team:'JAX',age:31,ovr:74,ktc:4000},
-  {n:'Luke Musgrave',pos:'TE',team:'GB',age:25,ovr:76,ktc:4800},
-  {n:'Juwan Johnson',pos:'TE',team:'NO',age:29,ovr:70,ktc:3200},
-  {n:'Tyler Higbee',pos:'TE',team:'LAR',age:32,ovr:68,ktc:2600},
-  {n:'Irv Smith Jr.',pos:'TE',team:'CIN',age:27,ovr:70,ktc:3000},
-  {n:'Gerald Everett',pos:'TE',team:'LAC',age:31,ovr:68,ktc:2400},
-  {n:'Mike Gesicki',pos:'TE',team:'NE',age:30,ovr:68,ktc:2600},
-  {n:'Zach Ertz',pos:'TE',team:'WAS',age:35,ovr:65,ktc:2000},
-];const tradePicks = [
-  {label:'2026 Early 1st',yr:2026,rd:1,tier:'Early',ktc:8500,isPick:true},
-  {label:'2026 Mid 1st',yr:2026,rd:1,tier:'Mid',ktc:7000,isPick:true},
-  {label:'2026 Late 1st',yr:2026,rd:1,tier:'Late',ktc:5500,isPick:true},
-  {label:'2026 Early 2nd',yr:2026,rd:2,tier:'Early',ktc:3500,isPick:true},
-  {label:'2026 Mid 2nd',yr:2026,rd:2,tier:'Mid',ktc:2800,isPick:true},
-  {label:'2026 Late 2nd',yr:2026,rd:2,tier:'Late',ktc:2200,isPick:true},
-  {label:'2026 Early 3rd',yr:2026,rd:3,tier:'Early',ktc:1600,isPick:true},
-  {label:'2026 Mid 3rd',yr:2026,rd:3,tier:'Mid',ktc:1200,isPick:true},
-  {label:'2026 Late 3rd',yr:2026,rd:3,tier:'Late',ktc:900,isPick:true},
-  {label:'2026 Early 4th',yr:2026,rd:4,tier:'Early',ktc:700,isPick:true},
-  {label:'2026 Mid 4th',yr:2026,rd:4,tier:'Mid',ktc:550,isPick:true},
-  {label:'2026 Late 4th',yr:2026,rd:4,tier:'Late',ktc:400,isPick:true},
-  {label:'2027 Early 1st',yr:2027,rd:1,tier:'Early',ktc:7200,isPick:true},
-  {label:'2027 Mid 1st',yr:2027,rd:1,tier:'Mid',ktc:6000,isPick:true},
-  {label:'2027 Late 1st',yr:2027,rd:1,tier:'Late',ktc:4800,isPick:true},
-  {label:'2027 Early 2nd',yr:2027,rd:2,tier:'Early',ktc:3000,isPick:true},
-  {label:'2027 Mid 2nd',yr:2027,rd:2,tier:'Mid',ktc:2400,isPick:true},
-  {label:'2027 Late 2nd',yr:2027,rd:2,tier:'Late',ktc:1900,isPick:true},
-  {label:'2027 Early 3rd',yr:2027,rd:3,tier:'Early',ktc:1600,isPick:true},
-  {label:'2027 Mid 3rd',yr:2027,rd:3,tier:'Mid',ktc:1300,isPick:true},
-  {label:'2027 Late 3rd',yr:2027,rd:3,tier:'Late',ktc:1000,isPick:true},
-  {label:'2027 Early 4th',yr:2027,rd:4,tier:'Early',ktc:700,isPick:true},
-  {label:'2027 Mid 4th',yr:2027,rd:4,tier:'Mid',ktc:550,isPick:true},
-  {label:'2027 Late 4th',yr:2027,rd:4,tier:'Late',ktc:400,isPick:true},
-  {label:'2028 Early 1st',yr:2028,rd:1,tier:'Early',ktc:6500,isPick:true},
-  {label:'2028 Mid 1st',yr:2028,rd:1,tier:'Mid',ktc:5400,isPick:true},
-  {label:'2028 Late 1st',yr:2028,rd:1,tier:'Late',ktc:4300,isPick:true},
-  {label:'2028 Early 2nd',yr:2028,rd:2,tier:'Early',ktc:2700,isPick:true},
-  {label:'2028 Mid 2nd',yr:2028,rd:2,tier:'Mid',ktc:2200,isPick:true},
-  {label:'2028 Late 2nd',yr:2028,rd:2,tier:'Late',ktc:1700,isPick:true},
-  {label:'2028 Early 3rd',yr:2028,rd:3,tier:'Early',ktc:1450,isPick:true},
-  {label:'2028 Mid 3rd',yr:2028,rd:3,tier:'Mid',ktc:1150,isPick:true},
-  {label:'2028 Late 3rd',yr:2028,rd:3,tier:'Late',ktc:900,isPick:true},
-  {label:'2028 Early 4th',yr:2028,rd:4,tier:'Early',ktc:650,isPick:true},
-  {label:'2028 Mid 4th',yr:2028,rd:4,tier:'Mid',ktc:500,isPick:true},
-  {label:'2028 Late 4th',yr:2028,rd:4,tier:'Late',ktc:375,isPick:true},
-  {label:'2029 Early 1st',yr:2029,rd:1,tier:'Early',ktc:5800,isPick:true},
-  {label:'2029 Mid 1st',yr:2029,rd:1,tier:'Mid',ktc:4800,isPick:true},
-  {label:'2029 Late 1st',yr:2029,rd:1,tier:'Late',ktc:3800,isPick:true},
-  {label:'2029 Early 2nd',yr:2029,rd:2,tier:'Early',ktc:2400,isPick:true},
-  {label:'2029 Mid 2nd',yr:2029,rd:2,tier:'Mid',ktc:1950,isPick:true},
-  {label:'2029 Late 2nd',yr:2029,rd:2,tier:'Late',ktc:1550,isPick:true},
-  {label:'2029 Early 3rd',yr:2029,rd:3,tier:'Early',ktc:1300,isPick:true},
-  {label:'2029 Mid 3rd',yr:2029,rd:3,tier:'Mid',ktc:1050,isPick:true},
-  {label:'2029 Late 3rd',yr:2029,rd:3,tier:'Late',ktc:800,isPick:true},
-  {label:'2029 Early 4th',yr:2029,rd:4,tier:'Early',ktc:600,isPick:true},
-  {label:'2029 Mid 4th',yr:2029,rd:4,tier:'Mid',ktc:450,isPick:true},
-  {label:'2029 Late 4th',yr:2029,rd:4,tier:'Late',ktc:350,isPick:true},
-];
-
-
-
-
-const TIER_ICON = {Elite:'\ud83d\udfe3',Strong:'\ud83d\udd35',Mid:'\ud83d\udfe1',Flier:'\u26aa'};
-
-// Player Spotlight data
-const SPOTLIGHTS = [
-  {
-    pid:12, week:'WEEK 1 SPOTLIGHT',
-    ovrPrev:77, ovrNew:80,
-    headline:'OVR Bump: 77 \u2192 80',
-    blurb:"Skattebo earned his bump. Back-to-back dominant performances in New York confirmed what scouts saw in rookie tape \u2014 elite contact balance, workhorse mentality, and legitimate receiving upside in a run-first offense. At 25 behind one of the better OLs in the NFC, this could be the start of a long prime. The buy window is still open.",
-    rec:'BUY'
-  },
-  {
-    pid:17, week:'WEEK 1 SPOTLIGHT',
-    ovrPrev:82, ovrNew:82,
-    headline:'Hold vs. Sell Debate',
-    blurb:"The market is split \u2014 some managers are panicking over CB snap counts piling up in Jacksonville. Don't sell a top-10 dynasty asset on early-season noise. At age 22, Hunter\u2019s WR ceiling is unchanged. Track snap share through Weeks 1\u20133 and make a data-driven call. Generational athletes don\u2019t get sold on vibes.",
-    rec:'HOLD'
-  }
-];
-
-let spotlightIdx = 0;
-
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ UTILITY Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
-function ovrTier(o){return o>=95?'S':o>=85?'A':o>=70?'B':'C'}
-function trajIcon(t){return t==='rising'?'\ud83d\udcc8':t==='peak'?'\u26a1':'\ud83d\udcc9'}
-function trajLabel(t){return t==='rising'?'Rising':t==='peak'?'Peak':'Declining'}
-function trajClass(t){return t==='rising'?'traj-rising':t==='peak'?'traj-peak':'traj-declining'}
-
-// Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ PLAYER SPOTLIGHT Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
-function buildSpotlight(){
-  const sp = SPOTLIGHTS[spotlightIdx];
-  const all = [...PLAYERS,...IR,...TAXI];
-  const p = all.find(x=>x.id===sp.pid);
-  if(!p) return;
-  // Player is on our roster — never show BUY for an owned player
-  const rec = sp.rec === 'BUY' ? 'HOLD' : sp.rec;
-  const tier = ovrTier(p.ovr);
-  const deltaNum = sp.ovrNew - sp.ovrPrev;
-  const deltaHtml = deltaNum>0
-    ? `<span class="spotlight-delta delta-up">+${deltaNum} OVR</span>`
-    : `<span class="spotlight-delta delta-neutral">= OVR</span>`;
-  const recBtns = `
-    <div class="spotlight-rec-wrap">
-      <span class="spotlight-rec-badge rec-${rec}">${rec}</span>
-      <span class="spotlight-meta">${p.pos} \xb7 ${p.nfl} \xb7 Age ${p.age} \xb7 KTC ${p.ktc.toLocaleString()}</span>
-    </div>`;
-  const html = `<div class="spotlight-card">
-    <div class="spotlight-header">
-      <span class="spotlight-week">\u2b50 ${sp.week}</span>
-      <div class="spotlight-nav">
-        <button class="spotlight-nav-btn" onclick="prevSpotlight()">&#8592;</button>
-        <button class="spotlight-nav-btn" onclick="nextSpotlight()">&#8594;</button>
-      </div>
-    </div>
-    <div class="spotlight-body">
-      <div class="spotlight-ovr-wrap">
-        <div class="spotlight-ovr ovr-${tier}">${sp.ovrNew}</div>
-        ${deltaHtml}
-      </div>
-      <div class="spotlight-info">
-        <div class="spotlight-name">${p.n}</div>
-        <div class="spotlight-headline">${sp.headline}</div>
-        <div class="spotlight-blurb">${sp.blurb}</div>
-        ${recBtns}
-      </div>
-    </div>
-  </div>`;
-  document.getElementById('spotlight-wrap').innerHTML = html;
-}
-function nextSpotlight(){ spotlightIdx=(spotlightIdx+1)%SPOTLIGHTS.length; buildSpotlight(); }
-function prevSpotlight(){ spotlightIdx=(spotlightIdx-1+SPOTLIGHTS.length)%SPOTLIGHTS.length; buildSpotlight(); }
 
 // Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ PLAYER CARDS Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
-function getFCTrend(p){
-  const fcv=fcData[p.n.toLowerCase()];
-  if(!fcv||!p.ktc) return '';
-  const pct=(fcv-p.ktc)/p.ktc;
-  if(pct>0.03) return '<span class="trend-arrow trend-up">&#9650;</span>';
-  if(pct<-0.03) return '<span class="trend-arrow trend-down">&#9660;</span>';
-  return '';
-}
 function makeCard(p, extra=''){
   const tier = ovrTier(p.ovr);
   const isIR = extra==='ir';
@@ -1737,9 +1081,19 @@ function makeCard(p, extra=''){
   } else {
     avatarHtml = `<div class="player-avatar"><span class="player-avatar-initials">${initials}</span></div>`;
   }
-  const trendArrow = getFCTrend(p);
-  return `<div class="player-card${isIR?' ir-card':''}" onclick="openModal(${p.id})" style="position:relative">
-    ${trendArrow}
+  // FC trending badge
+  let fcBadge = '';
+  if (window.fcLiveValues) {
+    const fcKey = p.n.toLowerCase();
+    const fcVal = window.fcLiveValues[fcKey];
+    if (fcVal != null && p.ktc > 0) {
+      const diff = (fcVal - p.ktc) / p.ktc;
+      if (diff > 0.03) fcBadge = '<span class="fc-badge fc-up">&#9650;</span>';
+      else if (diff < -0.03) fcBadge = '<span class="fc-badge fc-dn">&#9660;</span>';
+    }
+  }
+  return `<div class="player-card${isIR?' ir-card':''}" onclick="openModal(${p.id})">
+    ${fcBadge}
     ${avatarHtml}
     <div class="ovr-badge ovr-${tier}">${p.ovr}</div>
     <div class="player-info">
@@ -1769,8 +1123,6 @@ function buildRoster(){
   document.getElementById('te-list').innerHTML = tes.map(p=>makeCard(p)).join('');
   document.getElementById('ir-list').innerHTML = IR.map(p=>makeCard(p,'ir')).join('');
   document.getElementById('taxi-list').innerHTML = TAXI.map(p=>makeCard(p)).join('');
-  buildSpotlight();
-  buildPicks();
   buildDynastyClock();
 }
 
@@ -1869,97 +1221,20 @@ function buildDynastyClock(){
 
 // Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ MODAL Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
 let currentYT='';
-const PEAK_WINDOWS={QB:[27,32],RB:[24,27],WR:[24,28],TE:[26,30]};
-function getPeakInfo(p){
-  const [ps,pe]=PEAK_WINDOWS[p.pos]||[24,29];
-  if(p.age>=ps&&p.age<=pe) return {status:'In Peak',cls:'peak-in',icon:'⚡',ps,pe};
-  if(p.age<ps) return {status:`Approaching (${ps-p.age}yr)`,cls:'peak-approaching',icon:'📈',ps,pe};
-  return {status:'Past Peak',cls:'peak-past',icon:'📉',ps,pe};
-}
-function getVerdict(p,peakInfo,fcTrend){
-  const{ps,pe}=peakInfo;
-  const inPeak=p.age>=ps&&p.age<=pe;
-  const rising=p.traj==='rising';
-  const declining=p.traj==='declining';
-  const pastPeak=p.age>pe+1;
-  if(rising&&p.age<=ps+2) return{v:'BUY',lbl:'⬆ BUY'};
-  if((declining&&pastPeak)||(pastPeak&&p.age>=pe+3)) return{v:'SELL',lbl:'⬇ SELL'};
-  if(fcTrend>0.06) return{v:'BUY',lbl:'⬆ BUY'};
-  if(fcTrend<-0.06&&declining) return{v:'SELL',lbl:'⬇ SELL'};
-  return{v:'HOLD',lbl:'→ HOLD'};
-}
-function genBullets(p,peakInfo,fcVal){
-  const{ps,pe}=peakInfo;
-  const bullets=[];
-  // Age/peak
-  if(p.age<ps) bullets.push(`Age ${p.age} — ${pe-p.age} years until the ${p.pos} prime window (${ps}–${pe}). Buy-low window is wide open right now.`);
-  else if(p.age<=pe) bullets.push(`Age ${p.age} — right in the ${p.pos} prime window (${ps}–${pe}). This is peak-production territory. Don’t blink.`);
-  else bullets.push(`Age ${p.age} — past the ${p.pos} prime window (${ps}–${pe}). Factor the age cliff into your trade price before it’s too late.`);
-  // Trajectory
-  if(p.traj==='rising') bullets.push(`Value trending UP — the dynasty market is waking up on ${p.n.split(' ')[1]||p.n}. Get in before the price tag explodes.`);
-  else if(p.traj==='declining') bullets.push(`Value trending DOWN — this is your sell signal. Extract maximum return while the market still respects the name.`);
-  else bullets.push(`Value locked at ${p.ktc.toLocaleString()} KTC — established floor, no volatility. A dependable war room anchor piece.`);
-  // FC comparison
-  if(fcVal){
-    const pct=((fcVal-p.ktc)/p.ktc*100).toFixed(1);
-    const sign=parseFloat(pct)>=0?'+':'';
-    if(parseFloat(pct)>3) bullets.push(`FantasyCalc live: ${fcVal.toLocaleString()} (${sign}${pct}% vs stored) — market pricing higher than expected. Momentum building.`);
-    else if(parseFloat(pct)<-3) bullets.push(`FantasyCalc live: ${fcVal.toLocaleString()} (${sign}${pct}% vs stored) — market softening. Overreaction or early warning sign?`);
-    else bullets.push(`FantasyCalc live: ${fcVal.toLocaleString()} (${sign}${pct}%) — market consensus stable. No panic needed, no rush to act.`);
-  } else {
-    bullets.push(`Dynasty value: ${p.ktc.toLocaleString()} KTC (stored). FC live data unavailable — check FantasyCalc for real-time market price.`);
-  }
-  // Roster role
-  const allR=[...PLAYERS,...IR,...TAXI];
-  const posRankArr=allR.filter(x=>x.pos===p.pos).sort((a,b)=>b.ktc-a.ktc);
-  const posRankN=posRankArr.findIndex(x=>x.id===p.id)+1;
-  const posLbl=p.pos+posRankN;
-  if(posRankN===1) bullets.push(`${posLbl} on your roster — your franchise anchor at the position. You don’t trade your best pieces, you build around them.`);
-  else bullets.push(`${posLbl} on your roster — starter-level depth. One injury to the ${p.pos}1 and this slot prints points immediately.`);
-  return bullets.slice(0,4);
-}
 function openModal(id){
   const all=[...PLAYERS,...IR,...TAXI];
   const p=all.find(x=>x.id===id);
   if(!p) return;
   const tier=ovrTier(p.ovr);
-  // Header
   document.getElementById('m-ovr-badge').className=`modal-ovr ovr-${tier}`;
   document.getElementById('m-ovr-badge').textContent=p.ovr;
   document.getElementById('m-name').textContent=p.n;
   document.getElementById('m-sub').textContent=`${p.pos} \xb7 ${p.nfl} \xb7 Age ${p.age}`;
   document.getElementById('m-ovr').textContent=p.ovr+' OVR';
-  // FC trend
-  const fcv=fcData[p.n.toLowerCase()];
-  document.getElementById('m-ktc-val').textContent=p.ktc.toLocaleString();
-  const fcTrend=fcv?(fcv-p.ktc)/p.ktc:0;
-  if(fcv){
-    const pct=(fcTrend*100).toFixed(1);
-    const sign=parseFloat(pct)>=0?'+':'';
-    const cls=parseFloat(pct)>3?'fc-pct-up':parseFloat(pct)<-3?'fc-pct-down':'fc-pct-flat';
-    const arr=parseFloat(pct)>3?'▲ ':parseFloat(pct)<-3?'▼ ':'→ ';
-    document.getElementById('m-fc-pct').innerHTML=`<span class="fc-pct ${cls}">${arr}${sign}${pct}% FC</span>`;
-  } else {
-    document.getElementById('m-fc-pct').innerHTML='<span class="fc-pct fc-pct-flat">→ FC N/A</span>';
-  }
-  // Positional rank
-  const allR=[...PLAYERS,...IR,...TAXI];
-  const posArr=allR.filter(x=>x.pos===p.pos).sort((a,b)=>b.ktc-a.ktc);
-  const posRankN=posArr.findIndex(x=>x.id===p.id)+1;
-  document.getElementById('m-pos-rank').textContent=p.pos+posRankN+' on Roster';
-  // Peak window
-  const pk=getPeakInfo(p);
-  document.getElementById('m-peak-badge').innerHTML=`<span class="peak-badge ${pk.cls}">${pk.icon} ${pk.status}</span>`;
-  // Trajectory
+  document.getElementById('m-rank').textContent=p.rank;
+  document.getElementById('m-ktc').textContent=p.ktc.toLocaleString();
   document.getElementById('m-traj').innerHTML=`<span class="traj-badge ${trajClass(p.traj)}">${trajIcon(p.traj)} ${trajLabel(p.traj)}</span>`;
-  // Verdict
-  const vd=getVerdict(p,pk,fcTrend);
-  const vEl=document.getElementById('m-verdict');
-  vEl.className=`verdict-modal-badge verdict-${vd.v}`;
-  vEl.textContent=vd.lbl;
-  // ESPN bullets
-  const bullets=genBullets(p,pk,fcv);
-  document.getElementById('m-bullets').innerHTML=bullets.map(b=>`<li>${b}</li>`).join('');
+  document.getElementById('m-outlook').textContent=p.outlook;
   currentYT='https://www.youtube.com/results?search_query='+encodeURIComponent(p.ytq);
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -1977,7 +1252,7 @@ function showTab(id){
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+id).classList.add('active');
-  const tabs=['roster','taxi','picks','tradeledger','warroom','reportcard','tradelab','lore','targets'];
+  const tabs=['roster','taxi','picks','tradeledger','warroom','reportcard','tradelab','lore'];
   const idx=tabs.indexOf(id);
   if(idx>=0) document.querySelectorAll('.tab')[idx].classList.add('active');
   document.getElementById('modal').classList.remove('open');
@@ -2188,124 +1463,33 @@ function copyMsg(panel){
   });
 }
 
-// ─── FantasyCalc live values (Upgrade 2) ────────────────────
-let fcData={};
-async function loadFCValues(){
-  try{
-    const res=await fetch('https://api.fantasycalc.com/values/current?isDynasty=true&numQbs=2&ppr=1&includePicksEtc=true',{cache:'default'});
-    if(res.ok){
-      const data=await res.json();
-      if(Array.isArray(data)){
-        data.forEach(entry=>{
-          if(entry&&entry.player&&entry.player.name){
-            fcData[entry.player.name.toLowerCase()]=entry.value;
-            // also feed old fcValueMap for backward compat
-            if(typeof fcValueMap!=='undefined') fcValueMap[entry.player.name.toLowerCase()]=entry.value;
-          }
-        });
-      }
-    }
-  }catch(e){console.log('FC fetch failed (non-fatal):',e);}
-  // Re-render roster with trending arrows now that fcData is populated
-  buildRoster();
-}
-// Render roster immediately (no arrows yet), then re-render with FC arrows when ready
 buildRoster();
-loadFCValues();
 
-// ─── TARGET LIST DATA ───────────────────────────────────────────────────
-const TRADE_TARGETS = [
-  // NEED #1: TE — avg age 28.7 (Andrews 30, Knox 29, Kincaid 27) — no young elite TE
-  {name:'Sam LaPorta',pos:'TE',age:24,ktc:13200,teamName:'LEGETTEITPOPPIN',teamColor:'#006400',
-   needPos:'TE',needPriority:1,
-   reason:"LaPorta AND Kyle Pitts on same roster \u2014 pure TE surplus. LaPorta posted TE1 numbers at 24. Lamario needs exactly this."},
-  {name:'Kyle Pitts',pos:'TE',age:25,ktc:9800,teamName:'LEGETTEITPOPPIN',teamColor:'#006400',
-   needPos:'TE',needPriority:1,
-   reason:"Redundant on LeGetItPoppin with LaPorta ahead of him. Elite upside at 25 \u2014 one good QB away from a breakout season."},
-  {name:'Isaiah Likely',pos:'TE',age:25,ktc:8500,teamName:'LEGION OF BOOM',teamColor:'#002B5C',
-   needPos:'TE',needPriority:1,
-   reason:"LOB has both Likely AND Mason Taylor \u2014 two young TEs, one is redundant. Proven starter, proven target share."},
-  {name:'Mason Taylor',pos:'TE',age:22,ktc:7200,teamName:'LEGION OF BOOM',teamColor:'#002B5C',
-   needPos:'TE',needPriority:1,
-   reason:"Just 22 years old \u2014 youngest TE in the league. LOB rebuilding with Likely ahead; ideal buy-low window right now."},
-  // NEED #2: WR — DJ Moore 29, hot takes confirm "needs one more elite WR"
-  {name:'Rome Odunze',pos:'WR',age:23,ktc:12500,teamName:'YARAKABI',teamColor:'#1A3A5C',
-   needPos:'WR',needPriority:2,
-   reason:"Chase + Nico Collins are untouchable \u2014 Odunze is the 3rd WR on a team with 5 quality receivers. Only 23."},
-  {name:'Brian Thomas Jr.',pos:'WR',age:24,ktc:11800,teamName:'DAVID SHAH',teamColor:'#8B0000',
-   needPos:'WR',needPriority:2,
-   reason:"Shah has ARSB + Jefferson + Rice as his top-3 \u2014 BTJ is the 4th WR on the deepest team in the league. 24, ascending."},
-  {name:'Rashee Rice',pos:'WR',age:24,ktc:10800,teamName:'DAVID SHAH',teamColor:'#8B0000',
-   needPos:'WR',needPriority:2,
-   reason:"Third receiver behind two untouchable WR gods on Shah's roster. KC WR1 at 24 with elite chemistry \u2014 deal-able surplus."},
-  {name:'Puka Nacua',pos:'WR',age:24,ktc:11000,teamName:'CKHOSHOR',teamColor:'#2F4F7F',
-   needPos:'WR',needPriority:2,
-   reason:"Ckhoshor has JSN + Pickens + Nacua \u2014 three untouchable/star WRs under 24. Rebuilding team. One is moveable."}
-];
-
-function renderTargetList(){
-  const wrap=document.getElementById('target-list-wrap');
-  if(!wrap)return;
-  const ownedNames=new Set([...PLAYERS,...IR,...TAXI].map(p=>p.n.toLowerCase()));
-  const posColors={TE:'#fb923c',WR:'#60a5fa',RB:'#34d399',QB:'#a855f7'};
-  const groups=[
-    {priority:1,pos:'TE',label:'#1 NEED \u2014 TIGHT END (Avg age 28.7 \u2014 upgrade window now)'},
-    {priority:2,pos:'WR',label:'#2 NEED \u2014 WIDE RECEIVER (DJ Moore 29, need elite upgrade)'}
-  ];
-  let html='';
-  groups.forEach(g=>{
-    const items=TRADE_TARGETS.filter(t=>t.needPriority===g.priority && !ownedNames.has(t.name.toLowerCase()));
-    if(!items.length)return;
-    html+=`<div class="target-group-label">${g.label}</div>`;
-    items.forEach(t=>{
-      const accentColor=posColors[t.pos]||'#94a3b8';
-      html+=`<div class="target-card">
-        <div class="target-card-accent" style="background:${accentColor}"></div>
-        <div style="padding-left:4px">
-          <div class="target-card-top">
-            <span class="target-pos-badge target-pos-${t.pos}">${t.pos}</span>
-            <span class="target-player-name">${t.name}</span>
-            <span class="target-age-chip">Age ${t.age}</span>
-            <span class="target-ktc">${t.ktc.toLocaleString()} KTC</span>
-          </div>
-          <div class="target-team-row">
-            <div class="target-team-dot" style="background:${t.teamColor}"></div>
-            <span class="target-team-name">${t.teamName}</span>
-          </div>
-          <div class="target-reason">${t.reason}</div>
-        </div>
-      </div>`;
+// ─── FANTASYCALC LIVE VALUES FETCH ────────────────────────────────────────
+window.fcLiveValues = null;
+fetch('https://api.fantasycalc.com/values/current?isDynasty=true&numQbs=2&ppr=1&includePicksEtc=true')
+  .then(r => r.json())
+  .then(data => {
+    const vals = {};
+    data.forEach(item => {
+      if (item.player && item.player.name) {
+        vals[item.player.name.toLowerCase()] = item.value;
+      }
     });
-  });
-  wrap.innerHTML=html;
-}
-
-// ─── FANTASYCALC TRENDING ARROWS ────────────────────────────────────────
-let fcValueMap={};
-async function loadFantasyCalcValues(){
-  try{
-    const res=await fetch('https://api.fantasycalc.com/values/current?isDynasty=true&numQbs=2&ppr=1&includePicksEtc=true');
-    if(!res.ok)return;
-    const data=await res.json();
-    data.forEach(entry=>{
-      const name=(entry.player&&entry.player.name)||entry.playerName||'';
-      if(name)fcValueMap[name.toLowerCase()]=entry.value;
-    });
-    applyTrendArrows();
-  }catch(e){/* graceful fallback */}
-}
-// applyTrendArrows: superseded by makeCard getFCTrend() — arrows are now
-// rendered as absolute-positioned badges at card build time (Upgrade 2).
-// This stub kept for backward-compat reference only.
-function applyTrendArrows(){ /* no-op: handled by makeCard + loadFCValues */ }
-
-// init on page ready
-if(document.readyState==='loading'){
-  document.addEventListener('DOMContentLoaded',()=>{renderTargetList();loadFantasyCalcValues();});
-}else{
-  renderTargetList();
-  loadFantasyCalcValues();
-}
+    window.fcLiveValues = vals;
+    // Re-render roster cards so arrows appear
+    const qbs = PLAYERS.filter(p=>p.pos==='QB').sort((a,b)=>b.ovr-a.ovr);
+    const rbs = PLAYERS.filter(p=>p.pos==='RB').sort((a,b)=>b.ovr-a.ovr);
+    const wrs = PLAYERS.filter(p=>p.pos==='WR').sort((a,b)=>b.ovr-a.ovr);
+    const tes = PLAYERS.filter(p=>p.pos==='TE').sort((a,b)=>b.ovr-a.ovr);
+    document.getElementById('qb-list').innerHTML = qbs.map(p=>makeCard(p)).join('');
+    document.getElementById('rb-list').innerHTML = rbs.map(p=>makeCard(p)).join('');
+    document.getElementById('wr-list').innerHTML = wrs.map(p=>makeCard(p)).join('');
+    document.getElementById('te-list').innerHTML = tes.map(p=>makeCard(p)).join('');
+    document.getElementById('ir-list').innerHTML = IR.map(p=>makeCard(p,'ir')).join('');
+    document.getElementById('taxi-list').innerHTML = TAXI.map(p=>makeCard(p)).join('');
+  })
+  .catch(e => console.warn('FantasyCalc fetch failed:', e));
 
 // ─── HERO QUICK STATS ─────────────────────────────────────────────────────
 (function(){
