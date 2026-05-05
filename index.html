@@ -1360,6 +1360,11 @@ const SPOTLIGHTS = [
 
 let spotlightIdx = 0;
 
+function ovrTier(o){return o>=95?'S':o>=85?'A':o>=70?'B':'C'}
+function trajIcon(t){return t==='rising'?'📈':t==='peak'?'⚡':'📉'}
+function trajLabel(t){return t==='rising'?'Rising':t==='peak'?'Peak':'Declining'}
+function trajClass(t){return t==='rising'?'traj-rising':t==='peak'?'traj-peak':'traj-declining'}
+
 function makeCard(p, extra=''){
   const tier = ovrTier(p.ovr);
   const isIR = extra==='ir';
