@@ -1685,7 +1685,7 @@ function getOvrProjection(ovr,age){
 function getScoutBlurb(p,curve){
   var posLabel={'QB':'quarterback','RB':'running back','WR':'wide receiver','TE':'tight end'}[p.pos]||p.pos;
   var tier=getDynastyTier(p.ovr);
-  var first=p.name.split(' ')[0];
+  var first=p.n.split(' ')[0];
   var blurbs={
     'ascending': first+' is an ascending '+posLabel+' at age '+p.age+' with a '+p.ovr+' OVR — buy window is now. Dynasty upside is real and the ceiling is still being discovered.',
     'prime': first+' is in the heart of his prime at '+p.age+' years old, posting a '+p.ovr+' OVR. A '+tier.label+'-tier '+posLabel+' and cornerstone of any contending roster.',
@@ -1738,7 +1738,7 @@ function getWindowAlignment(ovr,age){
 
 function getBoldPrediction(p){
   var proj=getOvrProjection(p.ovr,p.age);
-  var first=p.name.split(' ')[0];
+  var first=p.n.split(' ')[0];
   var preds=[
     first+' finishes as a top-5 '+p.pos+' in 2025 fantasy scoring.',
     first+' posts a career-high OVR of '+(p.ovr+2)+' by mid-season 2025.',
@@ -1762,10 +1762,10 @@ function openModal(id){
   var posColors={'QB':'mav-QB','RB':'mav-RB','WR':'mav-WR','TE':'mav-TE'};
   var av=document.getElementById('m-avatar');
   av.className='modal-avatar '+(posColors[p.pos]||'mav-QB');
-  av.textContent=(p.name||'?').split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
+  av.textContent=(p.n||'?').split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
 
-  document.getElementById('m-name').textContent=p.name||'';
-  document.getElementById('m-sub').textContent=(p.pos||'')+' · '+(p.team||'FA')+' · Age '+(p.age||'--');
+  document.getElementById('m-name').textContent=p.n||'';
+  document.getElementById('m-sub').textContent=(p.pos||'')+' · '+(p.nfl||'FA')+' · Age '+(p.age||'--');
 
   var tierEl=document.getElementById('m-tier');
   tierEl.textContent=tier.label;
