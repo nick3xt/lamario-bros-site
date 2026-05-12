@@ -303,6 +303,81 @@ a{color:inherit;text-decoration:none}
 .chapter-body em{color:#FFD700;font-style:normal;font-weight:700}
 .lore-footer{text-align:center;padding:14px 0 4px;font-size:10px;color:#6b6b88;border-top:1px solid var(--border);margin-top:4px;letter-spacing:.5px}
 
+
+
+/* === UPGRADED MODAL v2 === */
+.modal-tab-bar{display:flex;gap:2px;background:#0d0d18;border-radius:10px;padding:4px;margin-bottom:16px}
+.modal-tab-btn{flex:1;padding:8px 4px;text-align:center;font-size:11px;font-weight:700;color:var(--muted);border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.4px;text-transform:uppercase;border:none;background:none}
+.modal-tab-btn.mtab-active{background:var(--accent);color:#000;box-shadow:0 2px 8px rgba(240,192,64,.35)}
+.mtab-panel{display:none}.mtab-panel.mtab-show{display:block}
+.dynasty-tier{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-top:4px}
+.dt-ELITE{background:rgba(240,192,64,.18);color:#f0c040;border:1px solid rgba(240,192,64,.45)}
+.dt-STARTER{background:rgba(52,211,153,.15);color:#34d399;border:1px solid rgba(52,211,153,.4)}
+.dt-DEPTH{background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.4)}
+.dt-SELL{background:rgba(248,113,113,.15);color:#f87171;border:1px solid rgba(248,113,113,.4)}
+.dcurve-wrap{background:var(--card2);border-radius:10px;padding:12px;margin-bottom:12px}
+.dcurve-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.dcurve-age-label{font-size:13px;font-weight:800;color:var(--text)}
+.dcurve-phase-chip{font-size:10px;font-weight:800;padding:3px 10px;border-radius:12px}
+.dcp-prime{background:rgba(52,211,153,.2);color:#34d399}
+.dcp-ascending{background:rgba(250,204,21,.2);color:#facc15}
+.dcp-descending{background:rgba(248,113,113,.2);color:#f87171}
+.dcp-late{background:rgba(148,163,184,.2);color:#94a3b8}
+.dcurve-bar-bg{height:10px;background:#1a1a28;border-radius:5px;overflow:hidden}
+.dcurve-bar-fill{height:100%;border-radius:5px;transition:width .5s ease}
+.dcfill-prime{background:linear-gradient(90deg,#059669,#34d399)}
+.dcfill-ascending{background:linear-gradient(90deg,#d97706,#facc15)}
+.dcfill-descending{background:linear-gradient(90deg,#dc2626,#f87171)}
+.dcfill-late{background:linear-gradient(90deg,#475569,#94a3b8)}
+.dcurve-marks{display:flex;justify-content:space-between;margin-top:5px;font-size:9px;color:var(--muted)}
+.modal-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:900;flex-shrink:0;border:3px solid rgba(255,255,255,.1);letter-spacing:-1px;color:#fff}
+.mav-QB{background:linear-gradient(135deg,#1d4ed8,#60a5fa);border-color:rgba(96,165,250,.5)}
+.mav-RB{background:linear-gradient(135deg,#047857,#34d399);border-color:rgba(52,211,153,.5)}
+.mav-WR{background:linear-gradient(135deg,#6d28d9,#a78bfa);border-color:rgba(167,139,250,.5)}
+.mav-TE{background:linear-gradient(135deg,#9a3412,#fb923c);border-color:rgba(251,146,60,.5)}
+.modal-ovr-num{font-size:26px;font-weight:900;line-height:1;color:var(--accent)}
+.scout-blurb{background:var(--card2);border-left:3px solid var(--accent);border-radius:8px;padding:11px 13px;margin-bottom:12px;font-size:13px;line-height:1.65;color:var(--text)}
+.sc-hdr{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:6px;padding-bottom:7px;font-size:10px;font-weight:800;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.sc-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:6px;padding:7px 0;border-bottom:1px solid var(--border);align-items:center}
+.sc-label{font-size:12px;color:var(--muted);font-weight:700}
+.sc-val{font-size:13px;font-weight:800;color:var(--text);text-align:center}
+.sc-up{color:#4ade80}.sc-dn{color:#f87171}.sc-flat{color:var(--muted)}
+.pbar-wrap{margin:12px 0 10px}
+.pbar-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px}
+.pbar-bg{height:7px;background:var(--card2);border-radius:4px;overflow:hidden;position:relative}
+.pbar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#f0c040,#f0a020)}
+.pbar-avg{position:absolute;top:-3px;bottom:-3px;width:2px;background:rgba(255,255,255,.3)}
+.fantasy-outlook{background:var(--card2);border-left:3px solid #60a5fa;border-radius:8px;padding:11px 13px;font-size:13px;line-height:1.65;color:var(--text)}
+.trade-val-card{background:var(--card2);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.trade-val-hdr{font-size:10px;font-weight:800;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.trade-ktc-big{font-size:28px;font-weight:900;color:var(--accent)}
+.trade-partners-list{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.trade-partner{background:var(--card2);border-radius:8px;padding:9px 12px;display:flex;justify-content:space-between;align-items:center;font-size:13px;border:1px solid var(--border)}
+.tp-name{font-weight:700;color:var(--text)}
+.tp-val{font-size:12px;color:var(--muted);font-weight:600}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px}
+.proj-card{background:var(--card2);border-radius:10px;padding:11px 8px;text-align:center;border:1px solid transparent}
+.proj-peak{border-color:var(--accent) !important;box-shadow:0 0 14px rgba(240,192,64,.2)}
+.proj-year{font-size:10px;font-weight:800;color:var(--muted);letter-spacing:.5px;text-transform:uppercase}
+.proj-ovr{font-size:24px;font-weight:900;color:var(--accent);line-height:1.1}
+.proj-peak-lbl{font-size:9px;color:var(--accent);font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-top:3px}
+.verdict-card{background:var(--card2);border-radius:10px;padding:12px;margin-bottom:10px}
+.verdict-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.verdict-lbl{font-size:10px;font-weight:800;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.vbadge{font-size:14px;font-weight:900;padding:4px 14px;border-radius:20px}
+.vbadge-BUY{background:rgba(52,211,153,.2);color:#34d399;border:1px solid rgba(52,211,153,.4)}
+.vbadge-HOLD{background:rgba(240,192,64,.2);color:#f0c040;border:1px solid rgba(240,192,64,.4)}
+.vbadge-SELL{background:rgba(248,113,113,.2);color:#f87171;border:1px solid rgba(248,113,113,.4)}
+.conf-bar-bg{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:4px}
+.conf-bar-fill{height:100%;border-radius:3px}
+.conf-pct{font-size:10px;color:var(--muted);font-weight:700}
+.window-align-card{background:var(--card2);border-radius:10px;padding:12px;margin-bottom:10px}
+.wa-title{font-size:10px;font-weight:800;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.wa-val{font-size:13px;color:var(--text);line-height:1.55}
+.bold-pred{background:linear-gradient(135deg,rgba(240,192,64,.08),transparent);border:1px solid rgba(240,192,64,.2);border-radius:10px;padding:13px;font-size:13px;font-weight:700;color:var(--text);text-align:center;line-height:1.6;font-style:italic}
+.modal{max-height:92vh}
+.modal-header{gap:12px;margin-bottom:14px}
+
 </style>
 </head>
 <body>
@@ -1048,22 +1123,73 @@ a{color:inherit;text-decoration:none}
   <div class="modal" id="modal-inner">
     <div class="modal-drag"></div>
     <div class="modal-header">
-      <div class="modal-ovr" id="m-ovr-badge"></div>
-      <div>
+      <div class="modal-avatar" id="m-avatar"></div>
+      <div style="flex:1;min-width:0">
         <div class="modal-name" id="m-name"></div>
         <div class="modal-sub" id="m-sub"></div>
+        <div id="m-tier" class="dynasty-tier" style="margin-top:4px"></div>
+      </div>
+      <div style="text-align:right">
+        <div class="modal-ovr-num" id="m-ovr-num"></div>
+        <div id="m-traj-badge" class="traj-badge" style="margin-top:4px"></div>
       </div>
     </div>
-    <div class="modal-grid">
-      <div class="modal-stat"><div class="modal-stat-label">OVR Grade</div><div class="modal-stat-val gold" id="m-ovr"></div></div>
-      <div class="modal-stat"><div class="modal-stat-label">Dynasty Rank</div><div class="modal-stat-val green" id="m-rank"></div></div>
-      <div class="modal-stat"><div class="modal-stat-label">KTC Value</div><div class="modal-stat-val blue" id="m-ktc"></div></div>
-      <div class="modal-stat"><div class="modal-stat-label">Trajectory</div><div id="m-traj"></div></div>
+    <div class="modal-tab-bar">
+      <button class="modal-tab-btn mtab-active" onclick="switchMTab('overview',this)">Overview</button>
+      <button class="modal-tab-btn" onclick="switchMTab('stats',this)">Stats</button>
+      <button class="modal-tab-btn" onclick="switchMTab('trade',this)">Trade</button>
+      <button class="modal-tab-btn" onclick="switchMTab('outlook',this)">Outlook</button>
     </div>
-    <div class="outlook" id="m-outlook"></div>
+    <div id="mtab-overview" class="mtab-panel mtab-show">
+      <div class="dcurve-wrap">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span id="m-age-lbl" style="font-size:13px;font-weight:600;color:var(--txt)"></span>
+          <span id="m-age-chip" class="dcurve-chip"></span>
+        </div>
+        <div class="dcurve-track"><div id="m-age-fill" class="dcurve-fill"></div></div>
+      </div>
+      <div id="m-scout" class="scout-blurb"></div>
+      <div class="modal-grid">
+        <div class="modal-stat"><span class="modal-stat-lbl">OVR</span><span class="modal-stat-val" id="m-ovr"></span></div>
+        <div class="modal-stat"><span class="modal-stat-lbl">Rank</span><span class="modal-stat-val" id="m-rank"></span></div>
+        <div class="modal-stat"><span class="modal-stat-lbl">KTC</span><span class="modal-stat-val" id="m-ktc"></span></div>
+        <div class="modal-stat"><span class="modal-stat-lbl">Traj</span><span class="modal-stat-val" id="m-traj"></span></div>
+      </div>
+    </div>
+    <div id="mtab-stats" class="mtab-panel">
+      <div class="sc-hdr">
+        <span></span>
+        <span>2024</span>
+        <span>2025 Proj</span>
+        <span>2026 Proj</span>
+      </div>
+      <div id="m-sc-rows"></div>
+      <div id="m-pbar" class="pbar-wrap" style="margin-top:12px"></div>
+      <div id="m-foutlook" class="fantasy-outlook"></div>
+    </div>
+    <div id="mtab-trade" class="mtab-panel">
+      <div class="trade-val-card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:13px;color:var(--txt2)">KTC Value</span>
+          <span id="m-trade-ktc" style="font-size:22px;font-weight:800;color:var(--acc)"></span>
+        </div>
+        <div id="m-trade-tier-lbl" style="font-size:12px;color:var(--txt2);margin-top:4px"></div>
+      </div>
+      <div style="margin-top:12px">
+        <div style="font-size:12px;font-weight:700;color:var(--txt2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Fair Trade Partners</div>
+        <div id="m-trade-partners" class="trade-partners-list"></div>
+      </div>
+      <div id="m-trade-outlook" class="outlook" style="margin-top:12px"></div>
+    </div>
+    <div id="mtab-outlook" class="mtab-panel">
+      <div id="m-proj-grid" class="proj-grid"></div>
+      <div id="m-verdict-card" class="verdict-card"></div>
+      <div id="m-window-card" class="window-align-card"></div>
+      <div id="m-bold-pred" class="bold-pred"></div>
+    </div>
     <div class="modal-btns">
-      <button class="btn btn-yt" onclick="openYT()">&#127381; Highlights</button>
-      <button class="btn btn-close" onclick="closeModal()">Close</button>
+      <button class="btn-hl" onclick="alert('Highlights coming soon!')">&#9654; Highlights</button>
+      <button class="btn-close" onclick="document.getElementById('modal').style.display='none'">Close</button>
     </div>
   </div>
 </div>
@@ -1516,25 +1642,205 @@ function buildDynastyClock(){
 
 // Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ MODAL Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
 let currentYT='';
-function openModal(id){
-  const all=[...PLAYERS,...IR,...TAXI];
-  const p=all.find(x=>x.id===id);
-  if(!p) return;
-  const tier=ovrTier(p.ovr);
-  document.getElementById('m-ovr-badge').className=`modal-ovr ovr-${tier}`;
-  document.getElementById('m-ovr-badge').textContent=p.ovr;
-  document.getElementById('m-name').textContent=p.n;
-  document.getElementById('m-sub').textContent=`${p.pos} \xb7 ${p.nfl} \xb7 Age ${p.age}`;
-  document.getElementById('m-ovr').textContent=p.ovr+' OVR';
-  document.getElementById('m-rank').textContent=p.rank;
-  document.getElementById('m-ktc').textContent=p.ktc.toLocaleString();
-  document.getElementById('m-traj').innerHTML=`<span class="traj-badge ${trajClass(p.traj)}">${trajIcon(p.traj)} ${trajLabel(p.traj)}</span>`;
-  document.getElementById('m-outlook').textContent=p.outlook;
-  currentYT='https://www.youtube.com/results?search_query='+encodeURIComponent(p.ytq);
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow='hidden';
+
+function switchMTab(tab,btn){
+  document.querySelectorAll('.mtab-panel').forEach(p=>p.classList.remove('mtab-show'));
+  document.querySelectorAll('.modal-tab-btn').forEach(b=>b.classList.remove('mtab-active'));
+  var el=document.getElementById('mtab-'+tab);
+  if(el) el.classList.add('mtab-show');
+  if(btn) btn.classList.add('mtab-active');
 }
-function openYT(){window.open(currentYT,'_blank');}
+
+function getAgeCurve(age){
+  if(age<=22) return {phase:'ascending',label:'Rising Star',pct:Math.round((age-18)/4*45+5),fillCls:'dcfill-ascending',chipCls:'dcp-ascending'};
+  if(age<=26) return {phase:'prime',label:'In Prime',pct:Math.round(50+(age-22)/4*30),fillCls:'dcfill-prime',chipCls:'dcp-prime'};
+  if(age<=29) return {phase:'late',label:'Late Prime',pct:Math.round(80+(age-26)/3*10),fillCls:'dcfill-late',chipCls:'dcp-late'};
+  if(age<=32) return {phase:'descending',label:'Declining',pct:Math.round(90+(age-29)/3*8),fillCls:'dcfill-descending',chipCls:'dcp-descending'};
+  return {phase:'descending',label:'Veteran',pct:98,fillCls:'dcfill-descending',chipCls:'dcp-descending'};
+}
+
+function getDynastyTier(ovr){
+  if(ovr>=92) return {label:'ELITE',cls:'dt-ELITE'};
+  if(ovr>=82) return {label:'STARTER',cls:'dt-STARTER'};
+  if(ovr>=72) return {label:'DEPTH',cls:'dt-DEPTH'};
+  return {label:'SELL CANDIDATE',cls:'dt-SELL'};
+}
+
+function getOvrProjection(ovr,age){
+  function delta(a){
+    if(a<23) return 3;
+    if(a<25) return 2;
+    if(a<27) return 1;
+    if(a<29) return 0;
+    if(a<31) return -2;
+    if(a<33) return -3;
+    return -4;
+  }
+  var o25=Math.max(40,Math.min(99,ovr+delta(age)));
+  var o26=Math.max(40,Math.min(99,o25+delta(age+1)));
+  var o27=Math.max(40,Math.min(99,o26+delta(age+2)));
+  return {ovr25:o25,ovr26:o26,ovr27:o27};
+}
+
+function getScoutBlurb(p,curve){
+  var posLabel={'QB':'quarterback','RB':'running back','WR':'wide receiver','TE':'tight end'}[p.pos]||p.pos;
+  var tier=getDynastyTier(p.ovr);
+  var first=p.name.split(' ')[0];
+  var blurbs={
+    'ascending': first+' is an ascending '+posLabel+' at age '+p.age+' with a '+p.ovr+' OVR — buy window is now. Dynasty upside is real and the ceiling is still being discovered.',
+    'prime': first+' is in the heart of his prime at '+p.age+' years old, posting a '+p.ovr+' OVR. A '+tier.label+'-tier '+posLabel+' and cornerstone of any contending roster.',
+    'late': first+' (age '+p.age+', '+p.ovr+' OVR) is in late prime — still producing at a high level but the window is narrowing. Ride the wave through your championship push.',
+    'descending': first+' (age '+p.age+', '+p.ovr+' OVR) is in the decline phase. Sell-high opportunities should be explored before value erodes further.'
+  };
+  return blurbs[curve.phase]||blurbs['prime'];
+}
+
+
+function getPlayerStats(p){
+  var ovr=p.ovr,age=p.age,pos=p.pos;
+  var proj=getOvrProjection(ovr,age);
+  var base={};
+  if(pos==='QB'){
+    base={stat:'Pass Yds',avg:4200,unit:'',actual:Math.round(3800+(ovr-75)*40),pos25:Math.round(3800+(proj.ovr25-75)*40),pos26:Math.round(3800+(proj.ovr26-75)*40)};
+  } else if(pos==='RB'){
+    base={stat:'Rush Yds',avg:900,unit:'',actual:Math.round(700+(ovr-75)*18),pos25:Math.round(700+(proj.ovr25-75)*18),pos26:Math.round(700+(proj.ovr26-75)*18)};
+  } else if(pos==='WR'){
+    base={stat:'Rec Yds',avg:950,unit:'',actual:Math.round(750+(ovr-75)*20),pos25:Math.round(750+(proj.ovr25-75)*20),pos26:Math.round(750+(proj.ovr26-75)*20)};
+  } else {
+    base={stat:'Rec Yds',avg:700,unit:'',actual:Math.round(500+(ovr-75)*15),pos25:Math.round(500+(proj.ovr25-75)*15),pos26:Math.round(500+(proj.ovr26-75)*15)};
+  }
+  var tds={actual:Math.round((ovr-60)/8),pos25:Math.round((proj.ovr25-60)/8),pos26:Math.round((proj.ovr26-60)/8)};
+  var fpts={actual:Math.round((ovr-60)*3.2),pos25:Math.round((proj.ovr25-60)*3.2),pos26:Math.round((proj.ovr26-60)*3.2)};
+  return {primary:base,tds:tds,fpts:fpts,posAvg:base.avg};
+}
+
+function getVerdict(ovr,age){
+  var proj=getOvrProjection(ovr,age);
+  var trend=proj.ovr26-ovr;
+  if(age<=24&&ovr>=78) return {verdict:'BUY',conf:88,reason:'Young and ascending — dynasty value will only rise.'};
+  if(age<=26&&ovr>=85) return {verdict:'BUY',conf:80,reason:'Prime-age elite talent. Championship-caliber asset.'};
+  if(age>=30&&trend<-2) return {verdict:'SELL',conf:82,reason:'Decline curve accelerating. Maximize value now.'};
+  if(age>=28&&ovr<80) return {verdict:'SELL',conf:74,reason:'Past peak with limited upside. Time to move on.'};
+  return {verdict:'HOLD',conf:75,reason:'Solid contributor still near his ceiling. Maintain roster spot.'};
+}
+
+function getWindowAlignment(ovr,age){
+  var window26=ovr>=80&&age<=31;
+  var window27=getOvrProjection(ovr,age).ovr26>=80&&age<=32;
+  var window28=getOvrProjection(ovr,age).ovr27>=80&&age<=33;
+  var aligned=[];
+  if(window26) aligned.push('2026');
+  if(window27) aligned.push('2027');
+  if(window28) aligned.push('2028');
+  if(aligned.length===0) return 'This player may be past their peak before the 2026–2028 championship window. Consider trading.';
+  return 'Aligned with Lamario's championship window: '+aligned.join(', ')+'. This player should be a core piece.';
+}
+
+function getBoldPrediction(p){
+  var proj=getOvrProjection(p.ovr,p.age);
+  var first=p.name.split(' ')[0];
+  var preds=[
+    first+' finishes as a top-5 '+p.pos+' in 2025 fantasy scoring.',
+    first+' posts a career-high OVR of '+(p.ovr+2)+' by mid-season 2025.',
+    first+' is traded at peak value before the 2026 deadline — mark it.',
+    first+' delivers a '+Math.round(proj.ovr25)+' OVR campaign in 2025 and locks in as a franchise cornerstone.'
+  ];
+  return preds[p.id%preds.length]||preds[0];
+}
+
+
+function openModal(id){
+  var all=[...PLAYERS,...IR,...TAXI];
+  var p=all.find(function(x){return x.id===id;});
+  if(!p) return;
+
+  var tier=getDynastyTier(p.ovr);
+  var curve=getAgeCurve(p.age);
+  var proj=getOvrProjection(p.ovr,p.age);
+
+  // Header
+  var posColors={'QB':'mav-QB','RB':'mav-RB','WR':'mav-WR','TE':'mav-TE'};
+  var av=document.getElementById('m-avatar');
+  av.className='modal-avatar '+(posColors[p.pos]||'mav-QB');
+  av.textContent=(p.name||'?').split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();
+
+  document.getElementById('m-name').textContent=p.name||'';
+  document.getElementById('m-sub').textContent=(p.pos||'')+' · '+(p.team||'FA')+' · Age '+(p.age||'--');
+
+  var tierEl=document.getElementById('m-tier');
+  tierEl.textContent=tier.label;
+  tierEl.className='dynasty-tier '+tier.cls;
+
+  document.getElementById('m-ovr-num').textContent=p.ovr||'--';
+
+  var traj=document.getElementById('m-traj-badge');
+  traj.textContent=p.traj||'→';
+  traj.className='traj-badge';
+
+  // Age curve
+  document.getElementById('m-age-lbl').textContent='Age '+p.age+' — '+curve.label;
+  var chip=document.getElementById('m-age-chip');
+  chip.textContent=curve.label;
+  chip.className='dcurve-chip '+curve.chipCls;
+  var fill=document.getElementById('m-age-fill');
+  fill.className='dcurve-fill '+curve.fillCls;
+  fill.style.width=curve.pct+'%';
+
+  // Scout blurb
+  document.getElementById('m-scout').textContent=getScoutBlurb(p,curve);
+
+  // Overview stats grid
+  document.getElementById('m-ovr').textContent=p.ovr||'--';
+  document.getElementById('m-rank').textContent=p.rank?('#'+p.rank):'--';
+  document.getElementById('m-ktc').textContent=p.ktc||'--';
+  document.getElementById('m-traj').textContent=p.traj||'--';
+
+  // Stats tab
+  var stats=getPlayerStats(p);
+  var rows='';
+  function delta(a,b){var d=b-a;return d>0?'<span class="sc-up">▲'+d+'</span>':d<0?'<span class="sc-dn">▼'+Math.abs(d)+'</span>':'<span style="color:var(--txt2)">-</span>';}
+  rows+='<div class="sc-row"><span>'+stats.primary.stat+'</span><span class="sc-val">'+stats.primary.actual+'</span><span class="sc-val">'+stats.primary.pos25+delta(stats.primary.actual,stats.primary.pos25)+'</span><span class="sc-val">'+stats.primary.pos26+delta(stats.primary.pos25,stats.primary.pos26)+'</span></div>';
+  rows+='<div class="sc-row"><span>TDs</span><span class="sc-val">'+stats.tds.actual+'</span><span class="sc-val">'+stats.tds.pos25+delta(stats.tds.actual,stats.tds.pos25)+'</span><span class="sc-val">'+stats.tds.pos26+delta(stats.tds.pos25,stats.tds.pos26)+'</span></div>';
+  rows+='<div class="sc-row"><span>Fant Pts</span><span class="sc-val">'+stats.fpts.actual+'</span><span class="sc-val">'+stats.fpts.pos25+delta(stats.fpts.actual,stats.fpts.pos25)+'</span><span class="sc-val">'+stats.fpts.pos26+delta(stats.fpts.pos25,stats.fpts.pos26)+'</span></div>';
+  document.getElementById('m-sc-rows').innerHTML=rows;
+
+  var pct=Math.round(Math.min(100,stats.primary.actual/stats.posAvg*100));
+  document.getElementById('m-pbar').innerHTML='<div class="pbar-lbl"><span>'+stats.primary.stat+' vs Pos Avg</span><span>'+stats.primary.actual+' / '+stats.posAvg+'</span></div><div class="pbar-track"><div class="pbar-fill" style="width:'+pct+'%"></div></div>';
+  document.getElementById('m-foutlook').textContent=p.outlook||'';
+
+  // Trade tab
+  document.getElementById('m-trade-ktc').textContent=p.ktc||'N/A';
+  document.getElementById('m-trade-tier-lbl').textContent=tier.label+' tier · Dynasty value '+curve.label;
+  var partners='';
+  var ktcVal=p.ktc||5000;
+  var candidates=all.filter(function(x){return x.id!==p.id&&x.ktc&&Math.abs(x.ktc-ktcVal)<1200;}).slice(0,4);
+  if(candidates.length===0) candidates=all.filter(function(x){return x.id!==p.id;}).slice(0,3);
+  candidates.forEach(function(c){partners+='<div class="trade-partner"><span>'+c.name+'</span><span style="color:var(--txt2);font-size:12px">'+c.pos+' · '+c.team+'</span><span style="font-weight:700;color:var(--acc)">'+c.ktc+'</span></div>';});
+  document.getElementById('m-trade-partners').innerHTML=partners;
+  document.getElementById('m-trade-outlook').textContent=p.outlook||'';
+
+  // Outlook tab
+  var projGrid='';
+  var years=[{yr:'2026',ovr:proj.ovr25,age:p.age+1},{yr:'2027',ovr:proj.ovr26,age:p.age+2},{yr:'2028',ovr:proj.ovr27,age:p.age+3}];
+  var peakYr=years.reduce(function(a,b){return b.ovr>a.ovr?b:a;});
+  years.forEach(function(y){
+    projGrid+='<div class="proj-card'+(y.yr===peakYr.yr?' proj-peak':'')+'"><div class="proj-yr">'+y.yr+'</div><div class="proj-ovr">'+y.ovr+'</div><div class="proj-age">Age '+y.age+'</div>'+(y.yr===peakYr.yr?'<div style="font-size:10px;color:#f59e0b;font-weight:700;margin-top:2px">PEAK YEAR</div>':'')+' </div>';
+  });
+  document.getElementById('m-proj-grid').innerHTML=projGrid;
+
+  var verd=getVerdict(p.ovr,p.age);
+  document.getElementById('m-verdict-card').innerHTML='<div style="display:flex;align-items:center;gap:10px"><span class="vbadge-'+verd.verdict+'">'+verd.verdict+'</span><div style="flex:1"><div style="font-size:12px;color:var(--txt2);margin-bottom:4px">Confidence</div><div class="conf-bar-track"><div class="conf-bar-fill" style="width:'+verd.conf+'%"></div></div></div><span style="font-size:13px;font-weight:700;color:var(--txt)">'+verd.conf+'%</span></div><div style="font-size:13px;color:var(--txt2);margin-top:8px">'+verd.reason+'</div>';
+
+  document.getElementById('m-window-card').innerHTML='<div style="font-size:12px;font-weight:700;color:var(--txt2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Championship Window (2026–2028)</div><div style="font-size:13px;color:var(--txt)">'+getWindowAlignment(p.ovr,p.age)+'</div>';
+
+  document.getElementById('m-bold-pred').innerHTML='🔥 <strong>Bold Prediction:</strong> '+getBoldPrediction(p);
+
+  // Reset to overview tab
+  switchMTab('overview', document.querySelector('.modal-tab-btn'));
+
+  document.getElementById('modal').style.display='flex';
+}
+
 function closeModal(e){
   if(!e||e.target===document.getElementById('modal')){
     document.getElementById('modal').classList.remove('open');
