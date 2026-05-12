@@ -51,6 +51,7 @@ a{color:inherit;text-decoration:none}
 
 /* PLAYER CARD */
 .player-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:6px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s;box-shadow:var(--card-shadow);position:relative}
+.pc-team-logo{position:absolute;top:7px;right:7px;width:28px;height:28px;border-radius:4px;object-fit:contain;opacity:.8;pointer-events:none}
 .player-card:hover{background:var(--card2);border-color:#3a3a52;transform:translateX(2px)}
 .fc-badge{position:absolute;top:6px;right:8px;font-size:10px;font-weight:800;padding:1px 5px;border-radius:4px;line-height:1.4}
 .fc-up{background:rgba(74,222,128,.2);color:#4ade80;border:1px solid rgba(74,222,128,.4)}
@@ -274,7 +275,7 @@ a{color:inherit;text-decoration:none}
 .hero-score-num{font-size:20px;font-weight:900;color:#FFD700}
 .hero-score-track{height:8px;background:var(--border);border-radius:4px;overflow:hidden}
 .hero-score-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#f87171 0%,#FFD700 40%,#00C851 70%,#a855f7 100%)}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .hero-stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 8px;text-align:center;box-shadow:var(--card-shadow)}
 .hero-stat-val{font-size:22px;font-weight:900;color:#FFD700;display:block;line-height:1.2}
 .hero-stat-label{font-size:9px;font-weight:700;letter-spacing:1px;color:#6b6b88;text-transform:uppercase;margin-top:3px;display:block}
@@ -417,7 +418,11 @@ a{color:inherit;text-decoration:none}
       <span class="hero-stat-label">Avg Age</span>
     </div>
   </div>
-</div>
+</
+    <div class="hero-stat">
+      <span class="hero-stat-val" style="font-size:15px">2026&ndash;28</span>
+      <span class="hero-stat-label">Champ Window</span>
+    </div>div>
 
 <div class="hdr">
   <div class="hdr-top">
@@ -899,6 +904,10 @@ a{color:inherit;text-decoration:none}
 
 <!-- TRADE LAB TAB -->
 <div id="tab-reportcard" class="tab-panel">
+<div id="radar-wrap" style="padding:16px 0 4px">
+  <div style="font-size:10px;font-weight:800;letter-spacing:2px;color:#6b6b88;margin-bottom:10px;text-align:center">DYNASTY RADAR</div>
+  <div id="team-radar" style="display:flex;justify-content:center;align-items:center"></div>
+</div>
 <div style="padding:20px 0 6px">
   <h2 style="margin:0 0 4px;font-size:1.2rem;letter-spacing:2px;color:var(--accent)">&#128202; ROSTER REPORT CARD</h2>
   <div style="font-size:.73rem;color:#64748b">GM Dashboard &#183; ColonelSanders4 &#183; LAMARIO BROS</div>
@@ -1525,6 +1534,8 @@ function makeCard(p, extra=''){
     <div class="player-right">
       <span class="traj">${trajIcon(p.traj)}</span>
       <span class="ktc-val">${p.ktc.toLocaleString()}</span>
+
+  <img class="pc-team-logo" src="https://sleepercdn.com/images/team_logos/nfl/${p.nfl.toLowerCase()}.jpg" onerror="this.style.display='none'" alt="">
     </div>
   </div>`;
 }
@@ -1856,6 +1867,45 @@ function showTab(id){
   if(idx>=0) document.querySelectorAll('.tab')[idx].classList.add('active');
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow='';
+  if(id==='reportcard')setTimeout(buildRadar,50);
+}
+function buildRadar(){
+  var ps=PLAYERS.slice().sort(function(a,b){return b.ovr-a.ovr;});
+  var top10=ps.slice(0,10);
+  var avgAge=top10.reduce(function(s,p){return s+p.age;},0)/top10.length;
+  var youth=Math.round(Math.max(0,Math.min(100,(32-avgAge)*6)));
+  var depth=Math.round(Math.min(100,ps.filter(function(p){return p.ovr>=70;}).length/17*100));
+  var winNow=Math.round(ps.slice(0,5).reduce(function(s,p){return s+p.ovr;},0)/5);
+  var picks=50;
+  var pos4=['QB','RB','WR','TE'];
+  var balance=Math.round(pos4.reduce(function(s,pos){return s+(ps.filter(function(p){return p.pos===pos&&p.ovr>=70;}).length>0?25:0);},0));
+  var scores=[youth,depth,winNow,picks,balance];
+  var labels=['Youth','Depth','Win-Now','Picks','Balance'];
+  var cx=140,cy=140,maxR=95;
+  var degs=[-90,-18,54,126,198];
+  var rad=function(d){return d*Math.PI/180;};
+  var px=function(i,r){return (cx+r*Math.cos(rad(degs[i]))).toFixed(1);};
+  var py=function(i,r){return (cy+r*Math.sin(rad(degs[i]))).toFixed(1);};
+  var rings=[25,50,75,100].map(function(pct){
+    var r=maxR*pct/100;
+    var pts=degs.map(function(_,i){return px(i,r)+','+py(i,r);}).join(' ');
+    return '<polygon points="'+pts+'" fill="none" stroke="#2a2a3e" stroke-width="1" stroke-dasharray="3,2"/>';
+  }).join('');
+  var axes=degs.map(function(_,i){return '<line x1="'+cx+'" y1="'+cy+'" x2="'+px(i,maxR)+'" y2="'+py(i,maxR)+'" stroke="#2a2a3e" stroke-width="1"/>';}).join('');
+  var dataPts=scores.map(function(s,i){return px(i,maxR*s/100)+','+py(i,maxR*s/100);}).join(' ');
+  var fill='<polygon points="'+dataPts+'" fill="#a855f7" fill-opacity="0.3" stroke="#a855f7" stroke-width="2"/>';
+  var dots=scores.map(function(s,i){return '<circle cx="'+px(i,maxR*s/100)+'" cy="'+py(i,maxR*s/100)+'" r="4" fill="#a855f7" stroke="#fff" stroke-width="1"/>';}).join('');
+  var labs=labels.map(function(lab,i){
+    var lo=22;
+    var lx=cx+(maxR+lo)*Math.cos(rad(degs[i]));
+    var ly=cy+(maxR+lo)*Math.sin(rad(degs[i]));
+    var anch=lx<cx-5?'end':lx>cx+5?'start':'middle';
+    return '<text x="'+lx.toFixed(1)+'" y="'+(ly-2).toFixed(1)+'" text-anchor="'+anch+'" font-size="9" font-weight="700" letter-spacing="0.5" fill="#8888aa">'+lab+'</text>'+
+      '<text x="'+lx.toFixed(1)+'" y="'+(ly+10).toFixed(1)+'" text-anchor="'+anch+'" font-size="13" font-weight="900" fill="#fff">'+scores[i]+'</text>';
+  }).join('');
+  var svg='<svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="display:block"><rect width="280" height="280" rx="14" fill="#0d0d1a"/>'+rings+axes+fill+dots+labs+'</svg>';
+  var el=document.getElementById('team-radar');
+  if(el)el.innerHTML=svg;
 }
 
 // \u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080 TRADE LAB \u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080\u00C3\u00A2\u00C2\u0094\u00C2\u0080
