@@ -535,7 +535,7 @@ a{color:inherit;text-decoration:none}
 .pl-pos-te{background:rgba(217,119,6,.2);color:#fcd34d}
 .pl-sfr{font-size:11px;font-weight:700;color:#94a3b8;white-space:nowrap}
 .pl-floor{font-size:11px;color:#64748b;font-style:italic;white-space:nowrap}
-.pl-stance{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px}
+.pl-stance{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px}
 .pl-stance-steal{background:rgba(132,204,22,.2);color:#84cc16}
 .pl-stance-value{background:rgba(34,197,94,.2);color:#4ade80}
 .pl-stance-fair{background:rgba(251,191,36,.2);color:#fbbf24}
@@ -554,10 +554,8 @@ a{color:inherit;text-decoration:none}
 .rp.rp-gr{background:rgba(100,116,139,.15);color:#94a3b8;border:1px solid rgba(100,116,139,.25)}
 .pl-sec2-note{background:#0d0f1a;border:1px solid #1e2035;border-radius:8px;padding:12px 16px;margin-bottom:14px;color:#475569;font-size:12px}
 .pl-sec2-note strong{color:#818cf8}
-
 .tl-wrap{padding:0 0 40px}
-.tl-hero{background:linear-gradient(135deg,#0a0a14 0%,#12121f 50%,#0d0d18 100%);border:1px solid #1e2035;border-radius:14px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden}
-.tl-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(16,185,129,.12) 0%,transparent 70%);pointer-events:none}
+.tl-hero{background:linear-gradient(135deg,#0a0a14,#12121f);border:1px solid #1e2035;border-radius:14px;padding:28px 32px;margin-bottom:24px}
 .tl-hero-tag{display:inline-block;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:#34d399;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:4px 10px;border-radius:4px;margin-bottom:12px}
 .tl-hero-title{font-size:26px;font-weight:800;color:#f1f5f9;margin:0 0 6px;letter-spacing:-.5px}
 .tl-hero-sub{color:#64748b;font-size:13px;margin:0}
@@ -572,16 +570,14 @@ a{color:inherit;text-decoration:none}
 .tl-g-am{background:rgba(34,197,94,.15);color:#6ee7b7}
 .tl-g-bp{background:rgba(99,102,241,.2);color:#a5b4fc}
 .tl-g-b{background:rgba(148,163,184,.15);color:#94a3b8}
-.tl-body{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;padding:14px 16px;align-items:start}
+.tl-body{display:grid;grid-template-columns:1fr 40px 1fr;padding:14px 16px;align-items:start}
 .tl-col-lbl{font-size:10px;font-weight:800;letter-spacing:1px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #1e2035}
 .tl-col-lbl.out{color:#f87171}
 .tl-col-lbl.in{color:#4ade80}
-.tl-item{font-size:12px;color:#64748b;padding:3px 0;line-height:1.4}
+.tl-item{font-size:12px;color:#64748b;padding:3px 0}
 .tl-item.hi{color:#e2e8f0;font-weight:600}
 .tl-arrow{display:flex;align-items:center;justify-content:center;font-size:20px;color:#334155;padding-top:24px}
 .tl-why{background:#080a11;border-top:1px solid #151824;padding:12px 16px;font-size:12px;color:#475569;line-height:1.6;font-style:italic}
-.tl-why::before{content:'"';color:#1e2035;font-size:24px;line-height:0;vertical-align:-.4em;margin-right:4px}
-
 .player-card{background:linear-gradient(135deg,var(--tc,#111520) 0%,#0d0d0d 100%)!important}
 </style>
 </head>
@@ -776,237 +772,17 @@ a{color:inherit;text-decoration:none}
 <div id="tab-tradeledger" class="tab-panel">
 
 <div class="tl-wrap">
-<div class="tl-hero">
-  <div class="tl-hero-tag">&#x1f4c8; TRADE LEDGER</div>
-  <h2 class="tl-hero-title">Season Trade History</h2>
-  <p class="tl-hero-sub">10 trades &middot; Overall grade: <span class="tl-overall">A&minus;</span></p>
-</div>
-
-<div class="tl-card">
-  <div class="tl-card-hdr">
-    <span class="tl-tid">T1</span>
-    <span class="tl-partner">vs NXBOSTA</span>
-    <span class="tl-grade tl-g-ap">A+</span>
-  </div>
-  <div class="tl-body">
-    <div class="tl-col tl-out">
-      <div class="tl-col-lbl out">SENT OUT</div>
-      <div class="tl-item">David Montgomery</div>
-      <div class="tl-item">2027 3rd Round</div>
-    </div>
-    <div class="tl-arrow">&#x21c4;</div>
-    <div class="tl-col tl-in">
-      <div class="tl-col-lbl in">GOT IN</div>
-      <div class="tl-item hi">Jameson Williams</div>
-      <div class="tl-item hi">2027 4th Round</div>
-    </div>
-  </div>
-  <div class="tl-why">Moved a declining RB for an ascending deep-threat WR1 who was breaking out. Williams immediately became a top-15 WR. Textbook buy-low strike.</div>
-</div>
-
-<div class="tl-card">
-  <div class="tl-card-hdr">
-    <span class="tl-tid">T2</span>
-    <span class="tl-partner">vs DAVIDSHAH</span>
-    <span class="tl-grade tl-g-bp">B+</span>
-  </div>
-  <div class="tl-body">
-    <div class="tl-col tl-out">
-      <div class="tl-col-lbl out">SENT OUT</div>
-      <div class="tl-item">Christian McCaffrey</div>
-      <div class="tl-item">2026 2nd (2.05)</div>
-    </div>
-    <div class="tl-arrow">&#x21c4;</div>
-    <div class="tl-col tl-in">
-      <div class="tl-col-lbl in">GOT IN</div>
-      <div class="tl-item hi">Tee Higgins</div>
-      <div class="tl-item hi">Travis Etienne</div>
-    </div>
-  </div>
-  <div class="tl-why">CMC was aging off a major injury. Got two high-floor veterans to stabilize the roster. Higgins became trade bait; Etienne locked down an RB2 role.</div>
-</div>
-
-<div class="tl-card">
-  <div class="tl-card-hdr">
-    <span class="tl-tid">T3</span>
-    <span class="tl-partner">vs NXBOSTA</span>
-    <span class="tl-grade tl-g-bp">B+</span>
-  </div>
-  <div class="tl-body">
-    <div class="tl-col tl-out">
-      <div class="tl-col-lbl out">SENT OUT</div>
-      <div class="tl-item">Hunter Henry</div>
-    </div>
-    <div class="tl-arrow">&#x21c4;</div>
-    <div class="tl-col tl-in">
-      <div class="tl-col-lbl in">GOT IN</div>
-      <div class="tl-item hi">Dawson Knox</div>
-      <div class="tl-item hi">2026 4th (4.05)</div>
-    </div>
-  </div>
-  <div class="tl-why">Upgraded TE depth and collected an extra pick. Knox brings superior upside at the same position. Smart consolidation of aging assets into future flexibility.</div>
-</div>
-
-<div class="tl-card">
-  <div class="tl-card-hdr">
-    <span class="tl-tid">T4</span>
-    <span class="tl-partner">vs NXBOSTA</span>
-    <span class="tl-grade tl-g-am">A&minus;</span>
-  </div>
-  <div class="tl-body">
-    <div class="tl-col tl-out">
-      <div class="tl-col-lbl out">SENT OUT</div>
-      <div class="tl-item">Trevor Lawrence</div>
-      <div class="tl-item">Jahmyr Gibbs</div>
-    </div>
-    <div class="tl-arrow">&#x21c4;</div>
-    <div class="tl-col tl-in">
-      <div class="tl-col-lbl in">GOT IN</div>
-      <div class="tl-item hi">C.J. Stroud</div>
-      <div class="tl-item hi">Malik Nabers</div>
-      <div class="tl-item">Javonte Williams</div>
-      <div class="tl-item hi">2027 1st Round</div>
-      <div class="tl-item hi">2027 3rd Round</div>
-    </div>
-  </div>
-  <div class="tl-why">Sold high on a volatile QB and a boom/bust RB. Nabers alone makes this trade elite &mdash; landing a WR1 with top-3 upside while stacking two 2027 picks is exactly the win-now + rebuild balance this team needed.</div>
-</div>
-
-<div class="tl-card">
-  <div class="tl-card-hdr">
-    <span class="tl-tid">T5</span>
-    <span class="tl-partner">vs CKHOSHOR89</span>
-    <span class="tl-grade tl-g-bp">B+</span>
-  </div>
-  <div class="tl-body">
-    <div class="tl-col tl-out">
-      <div class="tl-col-lbl out">SENT OUT</div>
-      <div class="tl-item">Chris Godwin</div>
-    </div>
-    <div class="tl-arrow">&#x21c4;</div>
-    <div class="tl-col tl-in">
-      <div class="tl-col-lbl in">GOT IN</div>
-      <div class="tl-item hi">Chris Rodriguez</div>
-      <div class="tl-item hi">2026 3rd (3.05)</div>
-    </div>
-  </div>
-  <div class="tl-why">Godwin was injury-prone and aging. Rodriguez brings RB depth with high upside in a run-heavy system. The 3.05 pick turned into Carson Beck &mdash; long-term SF capital at almost no cost.</div>
-</div>
-
-<div class="tl-card">
-  <div class="tl-card-hdr">
-    <span class="tl-tid">T6</span>
-    <span class="tl-partner">vs CKHOSHOR89</span>
-    <span class="tl-grade tl-g-b">B</span>
-  </div>
-  <div class="tl-body">
-    <div class="tl-col tl-out">
-      <div class="tl-col-lbl out">SENT OUT</div>
-      <div class="tl-item">LeQuint Allen</div>
-    </div>
-    <div class="tl-arrow">&#x21c4;</div>
-    <div class="tl-col tl-in">
-      <div class="tl-col-lbl in">GOT IN</div>
-      <div class="tl-item hi">Eli Heidenreich</div>
-      <div class="tl-item hi">2026 4th (4.10)</div>
-    </div>
-  </div>
-  <div class="tl-why">Classic rebuild pivot &mdash; flip a depth piece for a hybrid prospect plus extra capital. Heidenreich&#x2019;s CMC-lite versatility is a high-upside lottery ticket. Acceptable value.</div>
-</div>
-
-<div class="tl-card">
-  <div class="tl-card-hdr">
-    <span class="tl-tid">T7</span>
-    <span class="tl-partner">vs LEGETTEITPOPPIN</span>
-    <span class="tl-grade tl-g-bp">B+</span>
-  </div>
-  <div class="tl-body">
-    <div class="tl-col tl-out">
-      <div class="tl-col-lbl out">SENT OUT</div>
-      <div class="tl-item">Tee Higgins</div>
-      <div class="tl-item">Javonte Williams</div>
-      <div class="tl-item">2027 1st (Nxbosta)</div>
-      <div class="tl-item">2027 4th (Nxbosta)</div>
-    </div>
-    <div class="tl-arrow">&#x21c4;</div>
-    <div class="tl-col tl-in">
-      <div class="tl-col-lbl in">GOT IN</div>
-      <div class="tl-item hi">&#x2605; Ashton Jeanty</div>
-      <div class="tl-item hi">2027 2nd Early</div>
-    </div>
-  </div>
-  <div class="tl-why">The crown jewel deal. Packaging two traded-in players plus a 2027 1st to land the 2026 #1 overall pick is elite asset management. Jeanty is a dynasty RB1 for the next decade. The 2027 Early 2nd is pure bonus at this point.</div>
-</div>
-
-<div class="tl-card">
-  <div class="tl-card-hdr">
-    <span class="tl-tid">T8</span>
-    <span class="tl-partner">vs YARAKABI</span>
-    <span class="tl-grade tl-g-a">A</span>
-  </div>
-  <div class="tl-body">
-    <div class="tl-col tl-out">
-      <div class="tl-col-lbl out">SENT OUT</div>
-      <div class="tl-item">Ricky Pearsall</div>
-      <div class="tl-item">2026 3rd Round</div>
-      <div class="tl-item">2027 2nd Round</div>
-    </div>
-    <div class="tl-arrow">&#x21c4;</div>
-    <div class="tl-col tl-in">
-      <div class="tl-col-lbl in">GOT IN</div>
-      <div class="tl-item hi">Travis Hunter</div>
-      <div class="tl-item hi">Alec Pierce</div>
-    </div>
-  </div>
-  <div class="tl-why">Converted two mid-round picks and a depth WR into a generational dual-threat athlete. Travis Hunter at any price is a win. Pierce adds WR depth. This was a surgical roster upgrade.</div>
-</div>
-
-<div class="tl-card">
-  <div class="tl-card-hdr">
-    <span class="tl-tid">T9</span>
-    <span class="tl-partner">vs ROHO</span>
-    <span class="tl-grade tl-g-bp">B+</span>
-  </div>
-  <div class="tl-body">
-    <div class="tl-col tl-out">
-      <div class="tl-col-lbl out">SENT OUT</div>
-      <div class="tl-item">Ricky Pearsall</div>
-      <div class="tl-item">2027 3rd (Nxbosta)</div>
-    </div>
-    <div class="tl-arrow">&#x21c4;</div>
-    <div class="tl-col tl-in">
-      <div class="tl-col-lbl in">GOT IN</div>
-      <div class="tl-item hi">Mike Washington Jr.</div>
-      <div class="tl-item hi">Chris Brazzell II</div>
-      <div class="tl-item hi">2027 4th Round</div>
-    </div>
-  </div>
-  <div class="tl-why">Moved depth WR + a pick for two upside receivers and extra capital. Washington and Brazzell are young lottery tickets with legitimate starting upside. Good volume for the position group.</div>
-</div>
-
-<div class="tl-card" style="border-color:#4f46e5">
-  <div class="tl-card-hdr">
-    <span class="tl-tid" style="background:rgba(79,70,229,.3);color:#a5b4fc">SWAP</span>
-    <span class="tl-partner">vs ROHO &mdash; Draft Day</span>
-    <span class="tl-grade tl-g-a">A</span>
-  </div>
-  <div class="tl-body">
-    <div class="tl-col tl-out">
-      <div class="tl-col-lbl out">SENT OUT</div>
-      <div class="tl-item">2026 3rd (3.07)</div>
-    </div>
-    <div class="tl-arrow">&#x21c4;</div>
-    <div class="tl-col tl-in">
-      <div class="tl-col-lbl in">GOT IN</div>
-      <div class="tl-item hi">2026 3rd (3.08)</div>
-      <div class="tl-item hi">2026 4th (4.04)</div>
-    </div>
-  </div>
-  <div class="tl-why">Masterclass draft-day maneuvering. Sacrificed one slot on pick 3.08 (nabbed Claiborne anyway) and gained an entire extra 4th round pick. Raridon at 4.04 is free capital extracted from a minor positional swap.</div>
-</div>
-
-</div>
-</div>
+<div class="tl-hero"><div class="tl-hero-tag">&#x1f4c8; TRADE LEDGER</div><h2 class="tl-hero-title">Season Trade History</h2><p class="tl-hero-sub">10 trades &middot; Overall grade: <span class="tl-overall">A&minus;</span></p></div>
+<div class="tl-card"><div class="tl-card-hdr"><span class="tl-tid">T1</span><span class="tl-partner">vs NXBOSTA</span><span class="tl-grade tl-g-ap">A+</span></div><div class="tl-body"><div class="tl-col tl-out"><div class="tl-col-lbl out">SENT OUT</div><div class="tl-item">David Montgomery</div><div class="tl-item">2027 3rd Round</div></div><div class="tl-arrow">&#x21c4;</div><div class="tl-col tl-in"><div class="tl-col-lbl in">GOT IN</div><div class="tl-item hi">Jameson Williams</div><div class="tl-item hi">2027 4th Round</div></div></div><div class="tl-why">Moved a declining RB for an ascending deep-threat WR1. Williams immediately became a top-15 WR. Textbook buy-low strike.</div></div>
+<div class="tl-card"><div class="tl-card-hdr"><span class="tl-tid">T2</span><span class="tl-partner">vs DAVIDSHAH</span><span class="tl-grade tl-g-bp">B+</span></div><div class="tl-body"><div class="tl-col tl-out"><div class="tl-col-lbl out">SENT OUT</div><div class="tl-item">Christian McCaffrey</div><div class="tl-item">2026 2nd (2.05)</div></div><div class="tl-arrow">&#x21c4;</div><div class="tl-col tl-in"><div class="tl-col-lbl in">GOT IN</div><div class="tl-item hi">Tee Higgins</div><div class="tl-item hi">Travis Etienne</div></div></div><div class="tl-why">CMC was aging off a major injury. Got two high-floor veterans to stabilize. Higgins became trade bait; Etienne locked down RB2 duties.</div></div>
+<div class="tl-card"><div class="tl-card-hdr"><span class="tl-tid">T3</span><span class="tl-partner">vs NXBOSTA</span><span class="tl-grade tl-g-bp">B+</span></div><div class="tl-body"><div class="tl-col tl-out"><div class="tl-col-lbl out">SENT OUT</div><div class="tl-item">Hunter Henry</div></div><div class="tl-arrow">&#x21c4;</div><div class="tl-col tl-in"><div class="tl-col-lbl in">GOT IN</div><div class="tl-item hi">Dawson Knox</div><div class="tl-item hi">2026 4th (4.05)</div></div></div><div class="tl-why">Upgraded TE depth and collected an extra pick. Knox brings superior upside. Smart asset consolidation.</div></div>
+<div class="tl-card"><div class="tl-card-hdr"><span class="tl-tid">T4</span><span class="tl-partner">vs NXBOSTA</span><span class="tl-grade tl-g-am">A&minus;</span></div><div class="tl-body"><div class="tl-col tl-out"><div class="tl-col-lbl out">SENT OUT</div><div class="tl-item">Trevor Lawrence</div><div class="tl-item">Jahmyr Gibbs</div></div><div class="tl-arrow">&#x21c4;</div><div class="tl-col tl-in"><div class="tl-col-lbl in">GOT IN</div><div class="tl-item hi">C.J. Stroud</div><div class="tl-item hi">Malik Nabers</div><div class="tl-item">Javonte Williams</div><div class="tl-item hi">2027 1st Round</div><div class="tl-item hi">2027 3rd Round</div></div></div><div class="tl-why">Sold high on a volatile QB and boom/bust RB. Nabers alone makes this elite &mdash; landing a WR1 with top-3 upside while stacking two 2027 picks is the perfect win-now + rebuild balance.</div></div>
+<div class="tl-card"><div class="tl-card-hdr"><span class="tl-tid">T5</span><span class="tl-partner">vs CKHOSHOR89</span><span class="tl-grade tl-g-bp">B+</span></div><div class="tl-body"><div class="tl-col tl-out"><div class="tl-col-lbl out">SENT OUT</div><div class="tl-item">Chris Godwin</div></div><div class="tl-arrow">&#x21c4;</div><div class="tl-col tl-in"><div class="tl-col-lbl in">GOT IN</div><div class="tl-item hi">Chris Rodriguez</div><div class="tl-item hi">2026 3rd (3.05)</div></div></div><div class="tl-why">Godwin was injury-prone and aging. Rodriguez brings RB depth in a run-heavy system. The 3.05 pick became Carson Beck &mdash; long-term SF capital at almost no cost.</div></div>
+<div class="tl-card"><div class="tl-card-hdr"><span class="tl-tid">T6</span><span class="tl-partner">vs CKHOSHOR89</span><span class="tl-grade tl-g-b">B</span></div><div class="tl-body"><div class="tl-col tl-out"><div class="tl-col-lbl out">SENT OUT</div><div class="tl-item">LeQuint Allen</div></div><div class="tl-arrow">&#x21c4;</div><div class="tl-col tl-in"><div class="tl-col-lbl in">GOT IN</div><div class="tl-item hi">Eli Heidenreich</div><div class="tl-item hi">2026 4th (4.10)</div></div></div><div class="tl-why">Classic rebuild pivot &mdash; flip a depth piece for a hybrid prospect plus extra capital. Heidenreich&#x2019;s CMC-lite versatility is a high-upside lottery ticket.</div></div>
+<div class="tl-card"><div class="tl-card-hdr"><span class="tl-tid">T7</span><span class="tl-partner">vs LEGETTEITPOPPIN</span><span class="tl-grade tl-g-bp">B+</span></div><div class="tl-body"><div class="tl-col tl-out"><div class="tl-col-lbl out">SENT OUT</div><div class="tl-item">Tee Higgins</div><div class="tl-item">Javonte Williams</div><div class="tl-item">2027 1st (Nxbosta)</div><div class="tl-item">2027 4th (Nxbosta)</div></div><div class="tl-arrow">&#x21c4;</div><div class="tl-col tl-in"><div class="tl-col-lbl in">GOT IN</div><div class="tl-item hi">&#x2605; Ashton Jeanty</div><div class="tl-item hi">2027 2nd Early</div></div></div><div class="tl-why">The crown jewel deal. Packaging two traded-in players plus a 2027 1st to land the 2026 #1 overall pick is elite asset management. Jeanty is a dynasty RB1 for the next decade.</div></div>
+<div class="tl-card"><div class="tl-card-hdr"><span class="tl-tid">T8</span><span class="tl-partner">vs YARAKABI</span><span class="tl-grade tl-g-a">A</span></div><div class="tl-body"><div class="tl-col tl-out"><div class="tl-col-lbl out">SENT OUT</div><div class="tl-item">Ricky Pearsall</div><div class="tl-item">2026 3rd Round</div><div class="tl-item">2027 2nd Round</div></div><div class="tl-arrow">&#x21c4;</div><div class="tl-col tl-in"><div class="tl-col-lbl in">GOT IN</div><div class="tl-item hi">Travis Hunter</div><div class="tl-item hi">Alec Pierce</div></div></div><div class="tl-why">Converted two mid-round picks and a depth WR into a generational dual-threat athlete. Travis Hunter at any price is a win. Pierce adds WR depth.</div></div>
+<div class="tl-card"><div class="tl-card-hdr"><span class="tl-tid">T9</span><span class="tl-partner">vs ROHO</span><span class="tl-grade tl-g-bp">B+</span></div><div class="tl-body"><div class="tl-col tl-out"><div class="tl-col-lbl out">SENT OUT</div><div class="tl-item">Ricky Pearsall</div><div class="tl-item">2027 3rd (Nxbosta)</div></div><div class="tl-arrow">&#x21c4;</div><div class="tl-col tl-in"><div class="tl-col-lbl in">GOT IN</div><div class="tl-item hi">Mike Washington Jr.</div><div class="tl-item hi">Chris Brazzell II</div><div class="tl-item hi">2027 4th Round</div></div></div><div class="tl-why">Moved depth WR + a pick for two upside receivers and extra capital. Washington and Brazzell are young lottery tickets with legitimate starting upside.</div></div>
+<div class="tl-card" style="border-color:#4f46e5"><div class="tl-card-hdr"><span class="tl-tid" style="background:rgba(79,70,229,.3);color:#a5b4fc">SWAP</span><span class="tl-partner">vs ROHO &mdash; Draft Day</span><span class="tl-grade tl-g-a">A</span></div><div class="tl-body"><div class="tl-col tl-out"><div class="tl-col-lbl out">SENT OUT</div><div class="tl-item">2026 3rd (3.07)</div></div><div class="tl-arrow">&#x21c4;</div><div class="tl-col tl-in"><div class="tl-col-lbl in">GOT IN</div><div class="tl-item hi">2026 3rd (3.08)</div><div class="tl-item hi">2026 4th (4.04)</div></div></div><div class="tl-why">Masterclass draft-day move. Sacrificed one slot (grabbed Claiborne at 3.08 anyway) and gained a free 4th round pick. Raridon at 4.04 is pure extracted capital.</div></div>
 </div>
 <div id="tab-warroom" class="tab-panel">
   <!-- DYNASTY CLOCK -->
@@ -1367,347 +1143,157 @@ a{color:inherit;text-decoration:none}
 
 
 <div id="tab-picklab" class="tab-panel">
-<div class="section-header"><h2>PICK LAB</h2><p class="section-sub">Dynasty scouting intelligence &middot; risk matrix analysis &middot; draft capital projections</p></div>
-<nav class="pl2-toc"><a href="#pl2-2026">2026 Archive</a><a href="#pl2-2027">2027 Class</a><a href="#pl2-2028">2028 Class</a></nav>
-<div style="display:flex;gap:14px;margin-bottom:16px;flex-wrap:wrap;padding:10px 14
 
+<div class="pl-hero">
+  <div class="pl-hero-tag">&#x26A1; PICK LAB 2.0</div>
+  <h2 class="pl-hero-title">Dynasty Draft Intelligence</h2>
+  <p class="pl-hero-sub">Full risk matrix &middot; 2026 class assessment + 2027&ndash;2028 future capital</p>
+</div>
 <div class="pl-sec-hdr">
   <div class="pl-sec-num">01</div>
-  <div>
-    <div class="pl-sec-label">2026 DRAFT CLASS</div>
-    <div class="pl-sec-sub">Picks already used &middot; Post-landing dynasty assessment</div>
-  </div>
+  <div><div class="pl-sec-label">2026 DRAFT CLASS</div><div class="pl-sec-sub">Picks already used &middot; Post-landing dynasty assessment</div></div>
 </div>
-<div class="pl-tbl-wrap">
-<table class="pl-tbl">
+<div class="pl-tbl-wrap"><table class="pl-tbl">
 <thead><tr>
   <th class="th-left" style="min-width:70px">PICK</th>
   <th class="th-left" style="min-width:170px">PLAYER</th>
   <th>TEAM</th><th>POS</th><th>SF RANK</th>
-  <th title="Injury Risk">INJ</th>
-  <th title="Scheme Fit">SCH FIT</th>
-  <th title="Bad Offense Risk">OFF RISK</th>
-  <th title="QB Play Risk">QB RISK</th>
-  <th title="Competition Risk">COMP</th>
-  <th title="Year 1 Impact">YR1 IMP</th>
-  <th title="Production Upside">PROD UP</th>
-  <th title="Dynasty Value Upside">DYN UP</th>
-  <th title="Pre-Draft Stance">STANCE</th>
-  <th title="Dynasty Floor">FLOOR</th>
-  <th>VERDICT</th>
+  <th>INJ</th><th>SCH FIT</th><th>OFF RISK</th><th>QB RISK</th><th>COMP</th>
+  <th>YR1 IMP</th><th>PROD UP</th><th>DYN UP</th><th>STANCE</th><th>FLOOR</th><th>VERDICT</th>
 </tr></thead>
 <tbody>
 <tr class="pl-vl-target">
   <td class="pl-td-pick"><span class="pl-yr">2026</span><span class="pl-slot">2.08</span></td>
   <td class="pl-td-player"><span class="pl-pname">Elijah Sarratt</span><span class="pl-ppos">WR &middot; Baltimore Ravens</span></td>
-  <td><span class="pl-team-badge">BAL</span></td>
-  <td><span class="pl-pos pl-pos-wr">WR</span></td>
-  <td><span class="pl-sfr">WR22 / Rising</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="pl-stance pl-stance-steal">STEAL</span></td>
-  <td><span class="pl-floor">WR3 / Flex</span></td>
-  <td><span class="pl-verd pv-target">TARGET</span></td>
+  <td><span class="pl-team-badge">BAL</span></td><td><span class="pl-pos pl-pos-wr">WR</span></td><td><span class="pl-sfr">WR22 / Rising</span></td>
+  <td><span class="rp rp-g">LOW</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">LOW</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="rp rp-y">MED</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">HIGH</span></td>
+  <td><span class="pl-stance pl-stance-steal">STEAL</span></td><td><span class="pl-floor">WR3 / Flex</span></td><td><span class="pl-verd pv-target">TARGET</span></td>
 </tr>
 <tr class="pl-vl-monitor">
   <td class="pl-td-pick"><span class="pl-yr">2026</span><span class="pl-slot">3.05</span></td>
   <td class="pl-td-player"><span class="pl-pname">Carson Beck</span><span class="pl-ppos">QB &middot; Arizona Cardinals</span></td>
-  <td><span class="pl-team-badge">ARI</span></td>
-  <td><span class="pl-pos pl-pos-qb">QB</span></td>
-  <td><span class="pl-sfr">QB12+ Dev</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-gr">N/A</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="pl-stance pl-stance-value">VALUE</span></td>
-  <td><span class="pl-floor">QB2 / Stream</span></td>
-  <td><span class="pl-verd pv-monitor">MONITOR</span></td>
+  <td><span class="pl-team-badge">ARI</span></td><td><span class="pl-pos pl-pos-qb">QB</span></td><td><span class="pl-sfr">QB12+ Dev</span></td>
+  <td><span class="rp rp-g">LOW</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-gr">N/A</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">HIGH</span></td>
+  <td><span class="pl-stance pl-stance-value">VALUE</span></td><td><span class="pl-floor">QB2 / Stream</span></td><td><span class="pl-verd pv-monitor">MONITOR</span></td>
 </tr>
 <tr class="pl-vl-target">
   <td class="pl-td-pick"><span class="pl-yr">2026</span><span class="pl-slot">3.08</span></td>
   <td class="pl-td-player"><span class="pl-pname">Demond Claiborne</span><span class="pl-ppos">RB &middot; Minnesota Vikings</span></td>
-  <td><span class="pl-team-badge">MIN</span></td>
-  <td><span class="pl-pos pl-pos-rb">RB</span></td>
-  <td><span class="pl-sfr">RB30 / Climbing</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="pl-stance pl-stance-steal">STEAL</span></td>
-  <td><span class="pl-floor">PPR Specialist</span></td>
-  <td><span class="pl-verd pv-target">TARGET</span></td>
+  <td><span class="pl-team-badge">MIN</span></td><td><span class="pl-pos pl-pos-rb">RB</span></td><td><span class="pl-sfr">RB30 / Climbing</span></td>
+  <td><span class="rp rp-g">LOW</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">LOW</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="rp rp-y">MED</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">HIGH</span></td>
+  <td><span class="pl-stance pl-stance-steal">STEAL</span></td><td><span class="pl-floor">PPR Specialist</span></td><td><span class="pl-verd pv-target">TARGET</span></td>
 </tr>
 <tr class="pl-vl-monitor">
   <td class="pl-td-pick"><span class="pl-yr">2026</span><span class="pl-slot">4.04</span></td>
   <td class="pl-td-player"><span class="pl-pname">Matt Raridon</span><span class="pl-ppos">TE &middot; Dev / Taxi Squad</span></td>
-  <td><span class="pl-team-badge">TBD</span></td>
-  <td><span class="pl-pos pl-pos-te">TE</span></td>
-  <td><span class="pl-sfr">TE-Dev</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-o">HIGH</span></td>
-  <td><span class="rp rp-o">HIGH</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="pl-stance pl-stance-fair">LOTTERY</span></td>
-  <td><span class="pl-floor">Dev / Cut Risk</span></td>
-  <td><span class="pl-verd pv-monitor">MONITOR</span></td>
+  <td><span class="pl-team-badge">DEV</span></td><td><span class="pl-pos pl-pos-te">TE</span></td><td><span class="pl-sfr">TE-Dev</span></td>
+  <td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-o">HIGH</span></td><td><span class="rp rp-o">HIGH</span></td><td><span class="rp rp-g">LOW</span></td>
+  <td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="pl-stance pl-stance-fair">LOTTERY</span></td><td><span class="pl-floor">Dev / Cut Risk</span></td><td><span class="pl-verd pv-monitor">MONITOR</span></td>
 </tr>
 <tr class="pl-vl-fade">
   <td class="pl-td-pick"><span class="pl-yr">2026</span><span class="pl-slot">4.05</span></td>
   <td class="pl-td-player"><span class="pl-pname">Kaleb Johnson</span><span class="pl-ppos">RB &middot; Houston Texans</span></td>
-  <td><span class="pl-team-badge">HOU</span></td>
-  <td><span class="pl-pos pl-pos-rb">RB</span></td>
-  <td><span class="pl-sfr">RB-Dev</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="rp rp-o">HIGH</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="pl-stance pl-stance-fair">FAIR</span></td>
-  <td><span class="pl-floor">Waiver Wire</span></td>
-  <td><span class="pl-verd pv-fade">FADE</span></td>
+  <td><span class="pl-team-badge">HOU</span></td><td><span class="pl-pos pl-pos-rb">RB</span></td><td><span class="pl-sfr">RB-Dev</span></td>
+  <td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-g">LOW</span></td><td><span class="rp rp-g">LOW</span></td><td><span class="rp rp-o">HIGH</span></td>
+  <td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="pl-stance pl-stance-fair">FAIR</span></td><td><span class="pl-floor">Waiver Wire</span></td><td><span class="pl-verd pv-fade">FADE</span></td>
 </tr>
 <tr class="pl-vl-monitor">
   <td class="pl-td-pick"><span class="pl-yr">2026</span><span class="pl-slot">4.10</span></td>
   <td class="pl-td-player"><span class="pl-pname">Eli Heidenreich</span><span class="pl-ppos">WR &middot; Pittsburgh Steelers</span></td>
-  <td><span class="pl-team-badge">PIT</span></td>
-  <td><span class="pl-pos pl-pos-wr">WR</span></td>
-  <td><span class="pl-sfr">WR-Dev</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-o">HIGH</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="pl-stance pl-stance-value">LOTTERY</span></td>
-  <td><span class="pl-floor">Dev Stash</span></td>
-  <td><span class="pl-verd pv-monitor">MONITOR</span></td>
+  <td><span class="pl-team-badge">PIT</span></td><td><span class="pl-pos pl-pos-wr">WR</span></td><td><span class="pl-sfr">WR-Dev</span></td>
+  <td><span class="rp rp-g">LOW</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-o">HIGH</span></td>
+  <td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="pl-stance pl-stance-value">LOTTERY</span></td><td><span class="pl-floor">Dev Stash</span></td><td><span class="pl-verd pv-monitor">MONITOR</span></td>
 </tr>
 </tbody></table></div>
-
 <div class="pl-sec-hdr" style="margin-top:36px">
   <div class="pl-sec-num">02</div>
-  <div>
-    <div class="pl-sec-label">FUTURE CAPITAL</div>
-    <div class="pl-sec-sub">2027&ndash;2028 picks &middot; Dynasty war chest &middot; Hold vs. flip analysis</div>
-  </div>
+  <div><div class="pl-sec-label">FUTURE CAPITAL</div><div class="pl-sec-sub">2027&ndash;2028 picks &middot; Hold vs. flip analysis</div></div>
 </div>
-<div class="pl-sec2-note">
-  <strong>NOTE:</strong> Future pick projections based on current roster outlook and historical dynasty class strength.
-  Pick slots are estimates &mdash; final positioning depends on team performance. All 2028 picks currently unencumbered.
-</div>
-<div class="pl-tbl-wrap">
-<table class="pl-tbl">
+<div class="pl-sec2-note"><strong>NOTE:</strong> Future pick projections based on current roster trajectory. Slots are estimates based on projected finish.</div>
+<div class="pl-tbl-wrap"><table class="pl-tbl">
 <thead><tr>
-  <th class="th-left" style="min-width:120px">PICK</th>
+  <th class="th-left" style="min-width:130px">PICK</th>
   <th class="th-left" style="min-width:160px">PROJECTED TARGET</th>
-  <th>POS</th>
-  <th>EST SLOT</th>
-  <th>CLASS DEPTH</th>
-  <th title="Trade Value of this pick">TRADE VAL</th>
-  <th title="Pick Strength (based on projected record)">PICK STR</th>
-  <th title="Hold vs Flip recommendation">HOLD / FLIP</th>
-  <th title="Expected Year 1 Impact">YR1 EXP</th>
-  <th title="Production Upside">PROD UP</th>
-  <th title="Dynasty Value Upside">DYN UP</th>
-  <th title="Roster Need">NEED FIT</th>
-  <th title="Risk of pick losing value">SLIP RISK</th>
-  <th title="Strategy recommendation">STRATEGY</th>
-  <th>VERDICT</th>
+  <th>POS</th><th>EST SLOT</th><th>CLASS DEPTH</th><th>TRADE VAL</th><th>PICK STR</th>
+  <th>HOLD/FLIP</th><th>YR1 EXP</th><th>PROD UP</th><th>DYN UP</th><th>NEED FIT</th><th>SLIP RISK</th><th>VERDICT</th>
 </tr></thead>
 <tbody>
 <tr class="pl-vl-priority">
-  <td class="pl-td-pick" style="min-width:130px">
-    <span class="pl-yr">2027</span>
-    <span class="pl-slot" style="font-size:14px">2nd Early</span>
-    <span style="font-size:10px;color:#475569;display:block">&sim;2.02&ndash;2.04</span>
-  </td>
-  <td class="pl-td-player">
-    <span class="pl-pname">Elite WR / RB Prospect</span>
-    <span class="pl-ppos">Premium 2nd-rounder &middot; High ceiling</span>
-  </td>
-  <td><span class="pl-pos pl-pos-wr">WR/RB</span></td>
-  <td><span class="pl-sfr">~2.02&ndash;04</span></td>
-  <td><span class="rp rp-g">DEEP</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">STRONG</span></td>
-  <td><span class="rp rp-b">HOLD</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">YES</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="pl-stance pl-stance-steal">USE IT</span></td>
-  <td><span class="pl-verd pv-priority">PRIORITY</span></td>
+  <td class="pl-td-pick"><span class="pl-yr">2027</span><span class="pl-slot" style="font-size:14px">2nd Early</span><span style="font-size:10px;color:#475569;display:block">&sim;2.02&ndash;2.04</span></td>
+  <td class="pl-td-player"><span class="pl-pname">Elite WR / RB Prospect</span><span class="pl-ppos">Premium 2nd &middot; High ceiling</span></td>
+  <td><span class="pl-pos pl-pos-wr">WR/RB</span></td><td><span class="pl-sfr">~2.02&ndash;04</span></td>
+  <td><span class="rp rp-g">DEEP</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">STRONG</span></td>
+  <td><span class="rp rp-b">HOLD</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">HIGH</span></td>
+  <td><span class="rp rp-g">YES</span></td><td><span class="rp rp-g">LOW</span></td><td><span class="pl-verd pv-priority">PRIORITY</span></td>
 </tr>
 <tr class="pl-vl-target">
-  <td class="pl-td-pick">
-    <span class="pl-yr">2027</span>
-    <span class="pl-slot" style="font-size:14px">3rd Late</span>
-    <span style="font-size:10px;color:#475569;display:block">&sim;3.09&ndash;3.12</span>
-  </td>
-  <td class="pl-td-player">
-    <span class="pl-pname">Late-Round Gem / Speed WR</span>
-    <span class="pl-ppos">Dart throw &middot; Day 3 upside</span>
-  </td>
-  <td><span class="pl-pos pl-pos-wr">WR/RB</span></td>
-  <td><span class="pl-sfr">~3.09&ndash;12</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-b">HOLD</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MAYBE</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="pl-stance pl-stance-value">STASH</span></td>
-  <td><span class="pl-verd pv-target">TARGET</span></td>
+  <td class="pl-td-pick"><span class="pl-yr">2027</span><span class="pl-slot" style="font-size:14px">3rd Late</span><span style="font-size:10px;color:#475569;display:block">&sim;3.09&ndash;3.12</span></td>
+  <td class="pl-td-player"><span class="pl-pname">Late-Round Gem / Speed WR</span><span class="pl-ppos">Dart throw &middot; Day 3 upside</span></td>
+  <td><span class="pl-pos pl-pos-wr">WR/RB</span></td><td><span class="pl-sfr">~3.09&ndash;12</span></td>
+  <td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="rp rp-b">HOLD</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="rp rp-y">MAYBE</span></td><td><span class="rp rp-y">MED</span></td><td><span class="pl-verd pv-target">TARGET</span></td>
 </tr>
 <tr class="pl-vl-monitor">
-  <td class="pl-td-pick">
-    <span class="pl-yr">2027</span>
-    <span class="pl-slot" style="font-size:14px">4th Own</span>
-    <span style="font-size:10px;color:#475569;display:block">Mid-late 4th</span>
-  </td>
-  <td class="pl-td-player">
-    <span class="pl-pname">Dev Stash / Deep Sleeper</span>
-    <span class="pl-ppos">Lottery ticket &middot; Any position</span>
-  </td>
-  <td><span class="pl-pos pl-pos-wr">ANY</span></td>
-  <td><span class="pl-sfr">Mid-4th</span></td>
-  <td><span class="rp rp-gr">UNKNOWN</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-r">WEAK</span></td>
-  <td><span class="rp rp-o">FLIP</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-o">HIGH</span></td>
-  <td><span class="pl-stance pl-stance-fair">PACKAGE</span></td>
-  <td><span class="pl-verd pv-monitor">MONITOR</span></td>
+  <td class="pl-td-pick"><span class="pl-yr">2027</span><span class="pl-slot" style="font-size:14px">4th Own</span><span style="font-size:10px;color:#475569;display:block">Mid-late 4th</span></td>
+  <td class="pl-td-player"><span class="pl-pname">Dev Stash / Deep Sleeper</span><span class="pl-ppos">Lottery ticket &middot; Any position</span></td>
+  <td><span class="pl-pos pl-pos-wr">ANY</span></td><td><span class="pl-sfr">Mid-4th</span></td>
+  <td><span class="rp rp-gr">UNKNWN</span></td><td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-r">WEAK</span></td>
+  <td><span class="rp rp-o">FLIP</span></td><td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-o">HIGH</span></td><td><span class="pl-verd pv-monitor">MONITOR</span></td>
 </tr>
 <tr class="pl-vl-priority">
-  <td class="pl-td-pick">
-    <span class="pl-yr">2028</span>
-    <span class="pl-slot" style="font-size:14px">1st Own</span>
-    <span style="font-size:10px;color:#475569;display:block">&sim;1.04&ndash;1.08 proj</span>
-  </td>
-  <td class="pl-td-player">
-    <span class="pl-pname">Top QB / RB Stud</span>
-    <span class="pl-ppos">Core dynasty asset &middot; Untouchable</span>
-  </td>
-  <td><span class="pl-pos pl-pos-qb">QB/RB</span></td>
-  <td><span class="pl-sfr">Top-10 Proj</span></td>
-  <td><span class="rp rp-gr">TBD</span></td>
-  <td><span class="rp rp-g">ELITE</span></td>
-  <td><span class="rp rp-g">STRONG</span></td>
-  <td><span class="rp rp-b">HOLD</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">YES</span></td>
-  <td><span class="rp rp-g">LOW</span></td>
-  <td><span class="pl-stance pl-stance-steal">HOLD FIRM</span></td>
-  <td><span class="pl-verd pv-priority">PRIORITY</span></td>
+  <td class="pl-td-pick"><span class="pl-yr">2028</span><span class="pl-slot" style="font-size:14px">1st Own</span><span style="font-size:10px;color:#475569;display:block">&sim;1.04&ndash;1.08 proj</span></td>
+  <td class="pl-td-player"><span class="pl-pname">Top QB / RB Stud</span><span class="pl-ppos">Core dynasty asset &middot; Untouchable</span></td>
+  <td><span class="pl-pos pl-pos-qb">QB/RB</span></td><td><span class="pl-sfr">Top-10 Proj</span></td>
+  <td><span class="rp rp-gr">TBD</span></td><td><span class="rp rp-g">ELITE</span></td><td><span class="rp rp-g">STRONG</span></td>
+  <td><span class="rp rp-b">HOLD</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">HIGH</span></td>
+  <td><span class="rp rp-g">YES</span></td><td><span class="rp rp-g">LOW</span></td><td><span class="pl-verd pv-priority">PRIORITY</span></td>
 </tr>
 <tr class="pl-vl-target">
-  <td class="pl-td-pick">
-    <span class="pl-yr">2028</span>
-    <span class="pl-slot" style="font-size:14px">2nd Own</span>
-    <span style="font-size:10px;color:#475569;display:block">&sim;2.04&ndash;2.08 proj</span>
-  </td>
-  <td class="pl-td-player">
-    <span class="pl-pname">Solid WR / RB Starter</span>
-    <span class="pl-ppos">Proven 2nd-round upside floor</span>
-  </td>
-  <td><span class="pl-pos pl-pos-wr">WR/RB</span></td>
-  <td><span class="pl-sfr">~2.04&ndash;08</span></td>
-  <td><span class="rp rp-gr">TBD</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">STRONG</span></td>
-  <td><span class="rp rp-b">HOLD</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">HIGH</span></td>
-  <td><span class="rp rp-g">YES</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="pl-stance pl-stance-value">HOLD</span></td>
-  <td><span class="pl-verd pv-target">TARGET</span></td>
+  <td class="pl-td-pick"><span class="pl-yr">2028</span><span class="pl-slot" style="font-size:14px">2nd Own</span><span style="font-size:10px;color:#475569;display:block">&sim;2.04&ndash;2.08 proj</span></td>
+  <td class="pl-td-player"><span class="pl-pname">Solid WR / RB Starter</span><span class="pl-ppos">2nd-round floor upside</span></td>
+  <td><span class="pl-pos pl-pos-wr">WR/RB</span></td><td><span class="pl-sfr">~2.04&ndash;08</span></td>
+  <td><span class="rp rp-gr">TBD</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">STRONG</span></td>
+  <td><span class="rp rp-b">HOLD</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-g">HIGH</span></td><td><span class="rp rp-g">HIGH</span></td>
+  <td><span class="rp rp-g">YES</span></td><td><span class="rp rp-y">MED</span></td><td><span class="pl-verd pv-target">TARGET</span></td>
 </tr>
 <tr class="pl-vl-monitor">
-  <td class="pl-td-pick">
-    <span class="pl-yr">2028</span>
-    <span class="pl-slot" style="font-size:14px">3rd Own</span>
-    <span style="font-size:10px;color:#475569;display:block">Mid-3rd proj</span>
-  </td>
-  <td class="pl-td-player">
-    <span class="pl-pname">Depth / Trade Chip</span>
-    <span class="pl-ppos">Flexible asset &middot; 2028 capital</span>
-  </td>
-  <td><span class="pl-pos pl-pos-rb">ANY</span></td>
-  <td><span class="pl-sfr">Mid-3rd</span></td>
-  <td><span class="rp rp-gr">TBD</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-o">EVALUATE</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="rp rp-y">MAYBE</span></td>
-  <td><span class="rp rp-y">MED</span></td>
-  <td><span class="pl-stance pl-stance-fair">PACKAGE</span></td>
-  <td><span class="pl-verd pv-monitor">MONITOR</span></td>
+  <td class="pl-td-pick"><span class="pl-yr">2028</span><span class="pl-slot" style="font-size:14px">3rd Own</span><span style="font-size:10px;color:#475569;display:block">Mid-3rd proj</span></td>
+  <td class="pl-td-player"><span class="pl-pname">Depth / Trade Chip</span><span class="pl-ppos">Flexible asset &middot; 2028 capital</span></td>
+  <td><span class="pl-pos pl-pos-rb">ANY</span></td><td><span class="pl-sfr">Mid-3rd</span></td>
+  <td><span class="rp rp-gr">TBD</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="rp rp-o">EVALUATE</span></td><td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-y">MED</span></td><td><span class="rp rp-y">MED</span></td>
+  <td><span class="rp rp-y">MAYBE</span></td><td><span class="rp rp-y">MED</span></td><td><span class="pl-verd pv-monitor">MONITOR</span></td>
 </tr>
 <tr class="pl-vl-fade">
-  <td class="pl-td-pick">
-    <span class="pl-yr">2028</span>
-    <span class="pl-slot" style="font-size:14px">4th Own</span>
-    <span style="font-size:10px;color:#475569;display:block">Mid-late 4th</span>
-  </td>
-  <td class="pl-td-player">
-    <span class="pl-pname">Deep Lottery / Package Piece</span>
-    <span class="pl-ppos">Throw-in for bigger deal</span>
-  </td>
-  <td><span class="pl-pos pl-pos-te">ANY</span></td>
-  <td><span class="pl-sfr">Mid-4th</span></td>
-  <td><span class="rp rp-gr">TBD</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-r">WEAK</span></td>
-  <td><span class="rp rp-o">FLIP</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-r">LOW</span></td>
-  <td><span class="rp rp-o">HIGH</span></td>
-  <td><span class="pl-stance pl-stance-miss">PACKAGE</span></td>
-  <td><span class="pl-verd pv-fade">FADE</span></td>
+  <td class="pl-td-pick"><span class="pl-yr">2028</span><span class="pl-slot" style="font-size:14px">4th Own</span><span style="font-size:10px;color:#475569;display:block">Mid-late 4th</span></td>
+  <td class="pl-td-player"><span class="pl-pname">Deep Lottery / Package Piece</span><span class="pl-ppos">Throw-in for bigger deal</span></td>
+  <td><span class="pl-pos pl-pos-te">ANY</span></td><td><span class="pl-sfr">Mid-4th</span></td>
+  <td><span class="rp rp-gr">TBD</span></td><td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-r">WEAK</span></td>
+  <td><span class="rp rp-o">FLIP</span></td><td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-r">LOW</span></td>
+  <td><span class="rp rp-r">LOW</span></td><td><span class="rp rp-o">HIGH</span></td><td><span class="pl-verd pv-fade">FADE</span></td>
 </tr>
 </tbody></table></div>
-modal-sub" id="m-sub"></div>
+</div>
+</div>
+</div><!-- /content -->
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal" id="modal-inner">
+    <div class="modal-drag"></div>
+    <div class="modal-header">
+      <div class="modal-avatar" id="m-avatar"></div>
+      <div style="flex:1;min-width:0">
+        <div class="modal-name" id="m-name"></div>
+        <div class="modal-sub" id="m-sub"></div>
         <div id="m-tier" class="dynasty-tier" style="margin-top:4px"></div>
       </div>
       <div style="text-align:right">
@@ -2068,7 +1654,7 @@ function trajIcon(t){return t==='rising'?'\uD83D\uDCC8':t==='peak'?'\u26A1':'\uD
 function trajLabel(t){return t==='rising'?'Rising':t==='peak'?'Peak':'Declining'}
 function trajClass(t){return t==='rising'?'traj-rising':t==='peak'?'traj-peak':'traj-declining'}
 
-const NFL_TC={ARI:'#4a1020',ATL:'#3d0a12',BAL:'#0f0b2e',BUF:'#001a4d',CAR:'#003d5c',CHI:'#050b14',CIN:'#7a2a08',CLE:'#180e00',DAL:'#00173d',DEN:'#00112a',DET:'#003d66',GB:'#0e1c16',HOU:'#01101a',IND:'#001630',JAX:'#080d0f',KC:'#6a0a17',LAC:'#00406a',LAR:'#001a4d',LV:'#050505',MIA:'#00474c',MIN:'#250e3a',NE:'#00112a',NO:'#4d4225',NYG:'#050f2e',NYJ:'#082b1e',PHI:'#00232a',PIT:'#080d0f',SEA:'#001127',SF:'#4f0000',TB:'#5c0404',TEN:'#061624',WAS:'#280707'};
+const NFL_TC={ARI:'#4a1020',BAL:'#0f0b2e',BUF:'#001a4d',CHI:'#050b14',CIN:'#7a2a08',CLE:'#180e00',DET:'#003d66',HOU:'#01101a',IND:'#001630',JAX:'#080d0f',KC:'#6a0a17',LV:'#050505',MIA:'#00474c',MIN:'#250e3a',NE:'#00112a',NYG:'#050f2e',PHI:'#00232a',PIT:'#080d0f',SF:'#4f0000',TB:'#5c0404',WAS:'#280707'};
 function makeCard(p, extra=''){
   const tier = ovrTier(p.ovr);
   const isIR = extra==='ir';
