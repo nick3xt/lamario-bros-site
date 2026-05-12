@@ -1939,7 +1939,7 @@ function showTab(id){
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+id).classList.add('active');
-  const tabs=['roster','taxi','picks','tradeledger','warroom','reportcard','tradelab','lore','picklab'];
+  const tabs=['roster','taxi','picks','tradeledger','warroom','reportcard','lore','picklab'];
   const idx=tabs.indexOf(id);
   if(idx>=0) document.querySelectorAll('.tab')[idx].classList.add('active');
   document.getElementById('modal').classList.remove('open');
