@@ -441,6 +441,63 @@ a{color:inherit;text-decoration:none}
 .pc-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .pc-traj{font-size:13px;line-height:1}
 .pc-ktc{font-size:13px;font-weight:700;color:#c4b5fd}
+
+/* PICK LAB 2.0 */
+.pl2-toc{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+.pl2-toc a{padding:5px 14px;border-radius:16px;border:1px solid #333;background:#0d0d0d;color:#9ca3af;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:.4px;transition:all .15s}
+.pl2-toc a:hover{border-color:#7c3aed;color:#c4b5fd;background:#1a0a2e}
+.pl2-section{margin-bottom:32px}
+.pl2-yr-hdr{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e1e2e}
+.pl2-yr{font-size:26px;font-weight:900;color:#c4b5fd;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.pl2-badge{font-size:9px;padding:3px 9px;border-radius:6px;font-weight:800;text-transform:uppercase;letter-spacing:.8px}
+.pl2-b-archived{background:#1f2937;color:#4b5563}
+.pl2-b-live{background:#0a2010;color:#4ade80;border:1px solid #166534}
+.pl2-b-future{background:#0c0a1f;color:#818cf8;border:1px solid #3730a3}
+.pl2-arc-toggle{cursor:pointer;color:#4b5563;font-size:12px;padding:8px 14px;background:#0d0d0d;border:1px solid #1e1e1e;border-radius:8px;margin-bottom:14px;display:inline-flex;align-items:center;gap:8px;transition:all .15s;user-select:none}
+.pl2-arc-toggle:hover{color:#9ca3af;border-color:#333}
+.pl2-arc-body{display:none}
+.pl2-arc-body.pl2-open{display:block}
+.pl2-arc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;margin-bottom:4px}
+.pl2-arc-card{background:#0d0d0d;border:1px solid #1e1e1e;border-radius:8px;padding:11px 13px;border-left:3px solid #374151}
+.pl2-arc-slot{font-size:9px;color:#4b5563;font-weight:800;letter-spacing:.8px;margin-bottom:3px;text-transform:uppercase}
+.pl2-arc-name{font-size:13px;font-weight:700;color:#e5e7eb;margin-bottom:2px}
+.pl2-arc-meta{font-size:11px;color:#4b5563}
+.pl2-arc-ktc{font-size:11px;color:#6366f1;margin-top:3px;font-weight:600}
+.pl2-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid #1e1e2e}
+.pl2-tbl{width:100%;border-collapse:collapse;font-size:11px;min-width:1000px}
+.pl2-tbl thead tr{background:#07070f}
+.pl2-tbl th{color:#4b5563;font-weight:700;font-size:9px;text-transform:uppercase;letter-spacing:.7px;padding:10px 10px;white-space:nowrap;border-bottom:1px solid #1e1e2e;text-align:left}
+.pl2-tbl td{padding:10px 10px;border-bottom:1px solid #0f0f1a;vertical-align:middle;white-space:nowrap}
+.pl2-tbl tr:last-child td{border-bottom:none}
+.pl2-tbl tbody tr{border-left:4px solid transparent;transition:background .1s}
+.pl2-tbl tbody tr:hover{background:#0a0a12}
+.vl-priority{border-left-color:#4ade80 !important}
+.vl-target{border-left-color:#60a5fa !important}
+.vl-monitor{border-left-color:#fbbf24 !important}
+.vl-fade{border-left-color:#f97316 !important}
+.vl-tbd{border-left-color:#374151 !important}
+.pl2-pick{font-size:11px;font-weight:800;color:#818cf8;min-width:55px}
+.pl2-pick-via{font-size:9px;color:#374151;font-weight:400;display:block;margin-top:1px}
+.pl2-player-name{font-size:13px;font-weight:800;color:#f9fafb;min-width:140px}
+.pl2-player-sub{font-size:10px;color:#4b5563;margin-top:2px}
+.pl2-dynrank{font-size:11px;font-weight:700;color:#c4b5fd;min-width:50px}
+.rp{display:inline-flex;align-items:center;padding:3px 8px;border-radius:20px;font-size:9px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.rp-g{background:#052e16;color:#4ade80}
+.rp-y{background:#1c1407;color:#fbbf24}
+.rp-o{background:#1c0a03;color:#f97316}
+.rp-r{background:#1c0505;color:#f87171}
+.rp-b{background:#0a1628;color:#60a5fa}
+.rp-p{background:#150a28;color:#c4b5fd}
+.rp-gr{background:#111;color:#4b5563}
+.pl2-ktc{font-size:13px;font-weight:800;color:#c4b5fd;min-width:50px}
+.pl2-ktc-sub{font-size:9px;color:#374151;font-weight:400}
+.pl2-verd{display:inline-flex;align-items:center;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
+.pv-priority{background:#052e16;color:#4ade80;box-shadow:0 0 8px rgba(74,222,128,.2)}
+.pv-target{background:#0c1a3a;color:#60a5fa}
+.pv-monitor{background:#1c1407;color:#fbbf24}
+.pv-fade{background:#1c0a03;color:#f97316}
+.pv-tbd{background:#111;color:#374151}
+.pl2-tbd-row td{opacity:.45}
 </style>
 </head>
 <body><script>window.__errors=[];window.onerror=function(m,s,l,c,e){window.__errors.push({m:m,l:l,c:c,stack:e?e.stack:""});return false;};</script>
@@ -1190,24 +1247,22 @@ a{color:inherit;text-decoration:none}
 
 
 <div id="tab-picklab" class="tab-panel">
-<div class="section-header"><h2>PICK LAB</h2><p class="section-sub">Full draft pick portfolio &middot; risk matrix &middot; dynasty value analysis</p></div>
-<nav class="pl-toc"><a href="#pl-2026">2026 Archive</a><a href="#pl-2027">2027 Picks</a><a href="#pl-2028">2028 Picks</a></nav>
-<div style="display:flex;gap:16px;margin-top:8px;margin-bottom:4px;flex-wrap:wrap"><span style="font-size:11px;color:#4ade80">&#9646; PRIORITY</span><span style="font-size:11px;color:#60a5fa">&#9646; TARGET</span><span style="font-size:11px;color:#fbbf24">&#9646; MONITOR</span><span style="font-size:11px;color:#374151">&#9646; TBD</span></div>
-<div class="pl-section" id="pl-2026">
-<div class="pl-yr-hdr"><span class="pl-yr-num">2026</span><span class="pl-yr-badge pl-used">Archive &mdash; All Drafted</span></div>
-<div class="pl-arc-toggle" onclick="var b=document.getElementById('pl-arc26');b.classList.toggle('pl-open');this.querySelector('span').textContent=b.classList.contains('pl-open')?'&#9660; Hide picks':'&#9658; Show 6 used picks'">
-<span>&#9658; Show 6 used picks</span></div>
-<div class="pl-arc-body" id="pl-arc26"><div class="pl-arc-grid">
-<div class="pl-arc-card"><div class="pl-arc-slot">2026 2.08</div><div class="pl-arc-name">Elijah Sarratt</div><div class="pl-arc-meta">WR &middot; BAL</div><div class="pl-arc-ktc">KTC ~3,500</div></div><div class="pl-arc-card"><div class="pl-arc-slot">2026 3.05</div><div class="pl-arc-name">Carson Beck</div><div class="pl-arc-meta">QB &middot; ARI<br>via Nxbosta</div><div class="pl-arc-ktc">KTC ~2,200</div></div><div class="pl-arc-card"><div class="pl-arc-slot">2026 3.08</div><div class="pl-arc-name">Demond Claiborne</div><div class="pl-arc-meta">RB &middot; MIN</div><div class="pl-arc-ktc">KTC ~2,800</div></div><div class="pl-arc-card"><div class="pl-arc-slot">2026 4.04</div><div class="pl-arc-name">Eli Raridon</div><div class="pl-arc-meta">TE &middot; NE<br>via DrChama</div><div class="pl-arc-ktc">KTC ~1,200</div></div><div class="pl-arc-card"><div class="pl-arc-slot">2026 4.05</div><div class="pl-arc-name">Cade Klubnik</div><div class="pl-arc-meta">QB &middot; NYJ<br>via Nxbosta</div><div class="pl-arc-ktc">KTC ~1,800</div></div><div class="pl-arc-card"><div class="pl-arc-slot">2026 4.10</div><div class="pl-arc-name">Eli Heidenreich</div><div class="pl-arc-meta">RB/WR &middot; PIT<br>via ckhoshor89</div><div class="pl-arc-ktc">KTC ~900</div></div>
-</div></div></div>
-<div class="pl-section" id="pl-2027">
-<div class="pl-yr-hdr"><span class="pl-yr-num">2027</span><span class="pl-yr-badge pl-live">3 Picks &mdash; Active</span></div>
-<div class="pl-wrap"><table class="pl-tbl"><thead><tr><th>Pick</th><th>Player</th><th>Dy Rank</th><th>Inj Risk</th><th>Scheme Fit</th><th>Bust / Fly %</th><th>QB Dep</th><th>Prod Ceiling</th><th>Yr1 Impact</th><th>KTC Value</th><th>Floor</th><th>Verdict</th><th>Notes</th></tr></thead><tbody><tr class="pl-row-priority"><td><div style="font-size:11px;color:#818cf8;font-weight:700">2027 1st</div><div style="font-size:10px;color:#4b5563">via Nxbosta (~1.03)</div></td><td><div class="pl-pname">Arch Manning</div><div class="pl-psub">QB &middot; Texas</div></td><td style="font-weight:700;color:#e5e7eb">#2 Dy QB</td><td><span class="pl-rL">Low</span></td><td><span class="pl-rL">High</span></td><td>15% bust / 85% fly</td><td>High</td><td><span class="pl-cE">Elite</span></td><td>Yr2 starter</td><td class="pl-ktcv">6,000</td><td>Solid QB2</td><td><span class="pl-verd vd-priority">PRIORITY</span></td><td class="pl-notes">Elite bloodline, clean mechanics, NFL-ready IQ. Top-3 pick consensus. Lock for Lamario's QB future.</td></tr><tr class="pl-row-target"><td><div style="font-size:11px;color:#818cf8;font-weight:700">2027 3rd</div><div style="font-size:10px;color:#4b5563">via Nxbosta (~3.03)</div></td><td><div class="pl-pname">Tetairoa McMillan</div><div class="pl-psub">WR &middot; Arizona</div></td><td style="font-weight:700;color:#e5e7eb">#4 Dy WR</td><td><span class="pl-rL">Low</span></td><td><span class="pl-rL">High</span></td><td>20% bust / 80% fly</td><td>Low</td><td><span class="pl-cH">High</span></td><td>Yr1 role player</td><td class="pl-ktcv">1,500</td><td>WR3 floor</td><td><span class="pl-verd vd-target">TARGET</span></td><td class="pl-notes">6'4 monster with elite hands and route diversity. Low QB reliance, rare size/speed. ADP rising fast.</td></tr><tr class="pl-row-monitor"><td><div style="font-size:11px;color:#818cf8;font-weight:700">2027 4th</div><div style="font-size:10px;color:#4b5563">via Nxbosta (~4.09)</div></td><td><div class="pl-pname">Elic Ayomanor</div><div class="pl-psub">WR &middot; Stanford</div></td><td style="font-weight:700;color:#e5e7eb">#18 Dy WR</td><td><span class="pl-rL">Low</span></td><td><span class="pl-rM">Med</span></td><td>35% bust / 65% fly</td><td>High</td><td><span class="pl-cS">Solid</span></td><td>Yr1 depth</td><td class="pl-ktcv">800</td><td>WR4 flex</td><td><span class="pl-verd vd-monitor">MONITOR</span></td><td class="pl-notes">Big-play ability but Stanford CB scheme limits stats. Needs right NFL landing spot to hit ceiling.</td></tr></tbody></table></div>
+<div class="section-header"><h2>PICK LAB</h2><p class="section-sub">Dynasty scouting intelligence &middot; risk matrix analysis &middot; draft capital projections</p></div>
+<nav class="pl2-toc"><a href="#pl2-2026">2026 Archive</a><a href="#pl2-2027">2027 Class</a><a href="#pl2-2028">2028 Class</a></nav>
+<div style="display:flex;gap:14px;margin-bottom:16px;flex-wrap:wrap;padding:10px 14px;background:#07070f;border-radius:8px;border:1px solid #1e1e2e"><span style="font-size:10px;color:#6b7280;font-weight:700;letter-spacing:.5px">RISK SCALE:</span><span class="rp rp-g">Low / Safe</span><span class="rp rp-y">Medium / Moderate</span><span class="rp rp-o">High / Boom-Bust</span><span class="rp rp-r">Critical</span><span style="margin-left:8px;font-size:10px;color:#6b7280;font-weight:700;letter-spacing:.5px">VERDICT:</span><span class="pl2-verd pv-priority">PRIORITY</span><span class="pl2-verd pv-target">TARGET</span><span class="pl2-verd pv-monitor">MONITOR</span><span class="pl2-verd pv-fade">FADE</span></div>
+<div class="pl2-section" id="pl2-2026">
+<div class="pl2-yr-hdr"><span class="pl2-yr">2026</span><span class="pl2-badge pl2-b-archived">All Drafted</span></div>
+<div class="pl2-arc-toggle" onclick="var b=document.getElementById('pl2-arc26');b.classList.toggle('pl2-open');this.querySelector('span').textContent=b.classList.contains('pl2-open')?'&#9660; Hide picks':'&#9658; Show 6 drafted picks'"><span>&#9658; Show 6 drafted picks</span></div>
+<div class="pl2-arc-body" id="pl2-arc26"><div class="pl2-arc-grid"><div class="pl2-arc-card"><div class="pl2-arc-slot">2026 2.08</div><div class="pl2-arc-name">Elijah Sarratt</div><div class="pl2-arc-meta">WR &middot; BAL</div><div class="pl2-arc-ktc">KTC ~3,500</div></div><div class="pl2-arc-card"><div class="pl2-arc-slot">2026 3.05</div><div class="pl2-arc-name">Carson Beck</div><div class="pl2-arc-meta">QB &middot; ARI &middot; via Nxbosta</div><div class="pl2-arc-ktc">KTC ~2,200</div></div><div class="pl2-arc-card"><div class="pl2-arc-slot">2026 3.08</div><div class="pl2-arc-name">Demond Claiborne</div><div class="pl2-arc-meta">RB &middot; MIN</div><div class="pl2-arc-ktc">KTC ~2,800</div></div><div class="pl2-arc-card"><div class="pl2-arc-slot">2026 4.04</div><div class="pl2-arc-name">Eli Raridon</div><div class="pl2-arc-meta">TE &middot; NE &middot; via DrChama</div><div class="pl2-arc-ktc">KTC ~1,200</div></div><div class="pl2-arc-card"><div class="pl2-arc-slot">2026 4.05</div><div class="pl2-arc-name">Cade Klubnik</div><div class="pl2-arc-meta">QB &middot; NYJ &middot; via Nxbosta</div><div class="pl2-arc-ktc">KTC ~1,800</div></div><div class="pl2-arc-card"><div class="pl2-arc-slot">2026 4.10</div><div class="pl2-arc-name">Eli Heidenreich</div><div class="pl2-arc-meta">RB/WR &middot; PIT &middot; via ckhoshor89</div><div class="pl2-arc-ktc">KTC ~900</div></div></div></div>
 </div>
-<div class="pl-section" id="pl-2028">
-<div class="pl-yr-hdr"><span class="pl-yr-num">2028</span><span class="pl-yr-badge pl-future">4 Own Picks &mdash; Future</span></div>
-<p style="font-size:12px;color:#4b5563;margin-bottom:12px">Own full stack. Class projections available closer to 2027 season.</p>
-<div class="pl-wrap"><table class="pl-tbl"><thead><tr><th>Pick</th><th>Player</th><th>Dy Rank</th><th>Inj Risk</th><th>Scheme Fit</th><th>Bust / Fly %</th><th>QB Dep</th><th>Prod Ceiling</th><th>Yr1 Impact</th><th>KTC Value</th><th>Floor</th><th>Verdict</th><th>Notes</th></tr></thead><tbody><tr class="pl-row-tbd pl-tbd-row"><td style="font-size:11px;color:#4b5563;font-weight:700">2028 Own 1st</td><td><div class="pl-pname" style="color:#374151">TBD</div><div class="pl-psub">Class unknown</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pl-ktcv" style="color:#374151">—</td><td>—</td><td><span class="pl-verd vd-tbd">TBD</span></td><td class="pl-notes" style="color:#374151">2028 class not yet ranked — revisit 2027 season.</td></tr><tr class="pl-row-tbd pl-tbd-row"><td style="font-size:11px;color:#4b5563;font-weight:700">2028 Own 2nd</td><td><div class="pl-pname" style="color:#374151">TBD</div><div class="pl-psub">Class unknown</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pl-ktcv" style="color:#374151">—</td><td>—</td><td><span class="pl-verd vd-tbd">TBD</span></td><td class="pl-notes" style="color:#374151">2028 class not yet ranked — revisit 2027 season.</td></tr><tr class="pl-row-tbd pl-tbd-row"><td style="font-size:11px;color:#4b5563;font-weight:700">2028 Own 3rd</td><td><div class="pl-pname" style="color:#374151">TBD</div><div class="pl-psub">Class unknown</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pl-ktcv" style="color:#374151">—</td><td>—</td><td><span class="pl-verd vd-tbd">TBD</span></td><td class="pl-notes" style="color:#374151">2028 class not yet ranked — revisit 2027 season.</td></tr><tr class="pl-row-tbd pl-tbd-row"><td style="font-size:11px;color:#4b5563;font-weight:700">2028 Own 4th</td><td><div class="pl-pname" style="color:#374151">TBD</div><div class="pl-psub">Class unknown</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pl-ktcv" style="color:#374151">—</td><td>—</td><td><span class="pl-verd vd-tbd">TBD</span></td><td class="pl-notes" style="color:#374151">2028 class not yet ranked — revisit 2027 season.</td></tr></tbody></table></div>
+<div class="pl2-section" id="pl2-2027">
+<div class="pl2-yr-hdr"><span class="pl2-yr">2027</span><span class="pl2-badge pl2-b-live">3 Active Picks</span></div>
+<div class="pl2-scroll"><table class="pl2-tbl"><thead><tr><th>Pick</th><th>Prospect</th><th>Inj Risk</th><th>Scheme Fit</th><th>Bad Offense</th><th>QB Dep</th><th>Competition</th><th>Year 1</th><th>Ceiling</th><th>Dynasty Val</th><th>Floor</th><th>KTC</th><th>Verdict</th></tr></thead><tbody><tr class="vl-priority"><td><div class="pl2-pick">2027 1st</div><span class="pl2-pick-via">via Nxbosta ~1.03</span></td><td><div class="pl2-player-name">Arch Manning</div><div class="pl2-player-sub">QB &middot; Texas</div><div class="pl2-player-sub">#1 Overall Dynasty</div></td><td><span class="rp rp-g">Low</span></td><td><span class="rp rp-g">Low</span></td><td><span class="rp rp-g">Low</span></td><td><span class="rp rp-gr">N/A</span></td><td><span class="rp rp-g">Low</span></td><td><span class="rp rp-g">Yr 2 Starter</span></td><td><span class="rp rp-p">QB1 Ceiling</span></td><td><span class="rp rp-p">Dynasty Darling</span></td><td><span class="rp rp-g">Safe</span></td><td><div class="pl2-ktc">6,000</div></td><td><span class="pl2-verd pv-priority">PRIORITY</span></td></tr><tr class="vl-target"><td><div class="pl2-pick">2027 3rd</div><span class="pl2-pick-via">via Nxbosta ~3.03</span></td><td><div class="pl2-player-name">Tetairoa McMillan</div><div class="pl2-player-sub">WR &middot; Arizona</div><div class="pl2-player-sub">#4 WR Dynasty</div></td><td><span class="rp rp-g">Low</span></td><td><span class="rp rp-g">Low</span></td><td><span class="rp rp-y">Medium</span></td><td><span class="rp rp-g">Low</span></td><td><span class="rp rp-y">Medium</span></td><td><span class="rp rp-g">Yr 1 Producer</span></td><td><span class="rp rp-b">WR1 Ceiling</span></td><td><span class="rp rp-b">Core Piece</span></td><td><span class="rp rp-g">Safe</span></td><td><div class="pl2-ktc">1,500</div></td><td><span class="pl2-verd pv-target">TARGET</span></td></tr><tr class="vl-monitor"><td><div class="pl2-pick">2027 4th</div><span class="pl2-pick-via">via Nxbosta ~4.09</span></td><td><div class="pl2-player-name">Elic Ayomanor</div><div class="pl2-player-sub">WR &middot; Stanford</div><div class="pl2-player-sub">#18 WR Dynasty</div></td><td><span class="rp rp-g">Low</span></td><td><span class="rp rp-y">Medium</span></td><td><span class="rp rp-y">Medium</span></td><td><span class="rp rp-o">High</span></td><td><span class="rp rp-y">Medium</span></td><td><span class="rp rp-o">Developmental</span></td><td><span class="rp rp-b">Top 12</span></td><td><span class="rp rp-y">Solid Starter</span></td><td><span class="rp rp-y">Moderate</span></td><td><div class="pl2-ktc">800</div></td><td><span class="pl2-verd pv-monitor">MONITOR</span></td></tr></tbody></table></div>
+</div>
+<div class="pl2-section" id="pl2-2028">
+<div class="pl2-yr-hdr"><span class="pl2-yr">2028</span><span class="pl2-badge pl2-b-future">4 Own Picks</span></div>
+<p style="font-size:11px;color:#374151;margin-bottom:12px">Full own stack. Class rankings release closer to the 2027 season — revisit after preseason.</p>
+<div class="pl2-scroll"><table class="pl2-tbl"><thead><tr><th>Pick</th><th>Prospect</th><th>Inj Risk</th><th>Scheme Fit</th><th>Bad Offense</th><th>QB Dep</th><th>Competition</th><th>Year 1</th><th>Ceiling</th><th>Dynasty Val</th><th>Floor</th><th>KTC</th><th>Verdict</th></tr></thead><tbody><tr class="vl-tbd pl2-tbd-row"><td><div class="pl2-pick">2028 Own 1st</div></td><td><div class="pl2-player-name" style="color:#374151">TBD — 2028 Class</div><div class="pl2-player-sub">Prospect not yet ranked</div></td><td><div class="pl2-dynrank" style="color:#374151">—</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><div class="pl2-ktc" style="color:#374151">—</div></td><td><span class="pl2-verd pv-tbd">TBD</span></td></tr><tr class="vl-tbd pl2-tbd-row"><td><div class="pl2-pick">2028 Own 2nd</div></td><td><div class="pl2-player-name" style="color:#374151">TBD — 2028 Class</div><div class="pl2-player-sub">Prospect not yet ranked</div></td><td><div class="pl2-dynrank" style="color:#374151">—</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><div class="pl2-ktc" style="color:#374151">—</div></td><td><span class="pl2-verd pv-tbd">TBD</span></td></tr><tr class="vl-tbd pl2-tbd-row"><td><div class="pl2-pick">2028 Own 3rd</div></td><td><div class="pl2-player-name" style="color:#374151">TBD — 2028 Class</div><div class="pl2-player-sub">Prospect not yet ranked</div></td><td><div class="pl2-dynrank" style="color:#374151">—</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><div class="pl2-ktc" style="color:#374151">—</div></td><td><span class="pl2-verd pv-tbd">TBD</span></td></tr><tr class="vl-tbd pl2-tbd-row"><td><div class="pl2-pick">2028 Own 4th</div></td><td><div class="pl2-player-name" style="color:#374151">TBD — 2028 Class</div><div class="pl2-player-sub">Prospect not yet ranked</div></td><td><div class="pl2-dynrank" style="color:#374151">—</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><div class="pl2-ktc" style="color:#374151">—</div></td><td><span class="pl2-verd pv-tbd">TBD</span></td></tr></tbody></table></div>
 </div>
 </div>
 </div><!-- /content -->
@@ -1298,8 +1353,7 @@ const PLAYERS = [
   {id:5,slid:3294,n:'Joe Flacco',pos:'QB',nfl:'CIN',age:41,ovr:57,rank:'QB20 \xb7 Emergency',ktc:1200,traj:'declining',outlook:'Veteran depth only. At 41 this is pure insurance \u2014 not a dynasty investment.',ytq:'Joe Flacco 2025 NFL highlights'},
   {id:6,slid:9484,n:"De'Von Achane",pos:'RB',nfl:'MIA',age:24,ovr:92,rank:'RB2 \xb7 #10 Overall',ktc:8200,traj:'rising',outlook:"Lightning in a bottle. Elite receiving RB in Miami \u2014 massive in PPR/TEP. Age 24, clean injury history. Top-3 dynasty RB in SF\xd72/PPR/TEP.",ytq:"De'Von Achane 2025 highlights"},
   {id:7,slid:6790,n:'Travis Etienne',pos:'RB',nfl:'JAX',age:27,ovr:81,rank:'RB8 \xb7 #31 Overall',ktc:6600,traj:'peak',outlook:'Back in Jacksonville as the lead back. Three-down workhorse with pass-catching ability. Age 27 in his prime  -  dynasty asset.',ytq:'Travis Etienne 2025 Jacksonville Jaguars highlights'},
-  {id:8,slid:7564,n:'Javonte Williams',pos:'RB',nfl:'DAL',age:24,ovr:78,rank:'RB11 \xb7 #42 Overall',ktc:5800,traj:'peak',outlook:'Finally healthy in Dallas. Explosive runner, real bell-cow upside. Sell high if Cowboys commit to him.',ytq:'Javonte Williams 2025 Dallas highlights'},
-  {id:9,slid:10230,n:'Jaylen Wright',pos:'RB',nfl:'MIA',age:23,ovr:69,rank:'RB14 \xb7 #50 Overall',ktc:5600,traj:'rising',outlook:"Achane handcuff with independent upside. Young enough to hold dynasty value \u2014 massive if Achane misses time.",ytq:'Jaylen Wright 2025 Miami Dolphins highlights'},
+    {id:9,slid:10230,n:'Jaylen Wright',pos:'RB',nfl:'MIA',age:23,ovr:69,rank:'RB14 \xb7 #50 Overall',ktc:5600,traj:'rising',outlook:"Achane handcuff with independent upside. Young enough to hold dynasty value \u2014 massive if Achane misses time.",ytq:'Jaylen Wright 2025 Miami Dolphins highlights'},
   {id:10,slid:3970,n:'James Conner',pos:'RB',nfl:'ARI',age:30,ovr:64,rank:'RB15 \xb7 #55 Overall',ktc:4200,traj:'declining',outlook:'Workhorse in Arizona but 30 years old. Solid RB2 production in PPR but value is current not future.',ytq:'James Conner 2025 Arizona highlights'},
   {id:11,slid:9486,n:'Tank Bigsby',pos:'RB',nfl:'PHI',age:23,ovr:68,rank:'RB17 \xb7 #61 Overall',ktc:4900,traj:'rising',outlook:"Young RB behind Philly's elite OL. Limited receiving hurts PPR, but the run game keeps him relevant.",ytq:'Tank Bigsby 2025 Philadelphia highlights'},
   {id:12,slid:11565,n:'Cam Skattebo',pos:'RB',nfl:'NYG',age:25,ovr:80,rank:'RB18 \xb7 #64 Overall',ktc:6000,traj:'rising',outlook:"Dynasty darling who exploded into the NYG starting role. Physical runner with receiving upside in a workhorse role. Age 25, buy window still open.",ytq:'Cam Skattebo 2025 New York Giants highlights'},
@@ -1308,8 +1362,7 @@ const PLAYERS = [
   {id:15,slid:7526,n:'Kenneth Gainwell',pos:'RB',nfl:'TB',age:27,ovr:67,rank:'RB30 \xb7 Stash',ktc:2600,traj:'peak',outlook:'Change-of-pace back in Tampa Bay. Occasional receiving value but deep league stash only.',ytq:'Kenneth Gainwell 2025 Tampa Bay highlights'},
   {id:16,slid:10222,n:'Malik Nabers',pos:'WR',nfl:'NYG',age:22,ovr:95,rank:'WR3 \xb7 #9 Overall',ktc:9200,traj:'rising',outlook:"Year-2 elite. Top-3 dynasty WR in SF\xd72/PPR/TEP. Giants are building around him at age 23. Don't touch.",ytq:'Malik Nabers 2025 New York Giants highlights'},
   {id:17,slid:11566,n:'Travis Hunter',pos:'WR',nfl:'JAX',age:22,ovr:82,rank:'WR11 \xb7 Top-10 Overall',ktc:5200,traj:'peak',outlook:"CB usage at JAX is worth monitoring \u2014 track snap share Weeks 1\u20133 before any decision. At KTC top-10 overall, don't sell a generational athlete on early noise. Hold and watch how Jacksonville deploys him.",ytq:'Travis Hunter 2025 NFL highlights'},
-  {id:18,slid:6904,n:'Tee Higgins',pos:'WR',nfl:'CIN',age:27,ovr:85,rank:'WR6 \xb7 #14 Overall',ktc:7800,traj:'peak',outlook:"Prime-age WR2 with Burrow throwing him the ball. When healthy, top-10 WR in SF\xd72/PPR/TEP. Core piece, don't move him.",ytq:'Tee Higgins 2025 Cincinnati Bengals highlights'},
-  {id:19,slid:8150,n:'Jameson Williams',pos:'WR',nfl:'DET',age:25,ovr:81,rank:'WR9 \xb7 #21 Overall',ktc:7200,traj:'rising',outlook:"Breakout ascending. Detroit's WR1, explosive in any format at age 25 with massive ceiling.",ytq:'Jameson Williams 2025 Detroit Lions highlights'},
+    {id:19,slid:8150,n:'Jameson Williams',pos:'WR',nfl:'DET',age:25,ovr:81,rank:'WR9 \xb7 #21 Overall',ktc:7200,traj:'rising',outlook:"Breakout ascending. Detroit's WR1, explosive in any format at age 25 with massive ceiling.",ytq:'Jameson Williams 2025 Detroit Lions highlights'},
   {id:20,slid:3164,n:'Mike Evans',pos:'WR',nfl:'SF',age:32,ovr:73,rank:'WR10 \xb7 #25 Overall',ktc:6600,traj:'declining',outlook:"Still producing at a high level in SF's offense. At 32 the age discount is real. Sell window is now.",ytq:'Mike Evans 2025 San Francisco 49ers highlights'},
   {id:21,slid:5870,n:'DJ Moore',pos:'WR',nfl:'BUF',age:29,ovr:74,rank:'WR12 \xb7 #32 Overall',ktc:6400,traj:'peak',outlook:"Prime-age WR in Buffalo's elite offense. Consistent WR1/2 production with excellent target share.",ytq:'DJ Moore 2025 Buffalo Bills highlights'},
   {id:22,slid:7528,n:'Michael Pittman',pos:'WR',nfl:'PIT',age:27,ovr:74,rank:'WR15 \xb7 #38 Overall',ktc:5600,traj:'peak',outlook:"Target hog in Pittsburgh with PPR-friendly route tree. Age 27 means 3-4 more peak years. Strong hold.",ytq:'Michael Pittman 2025 Pittsburgh Steelers highlights'},
@@ -1421,13 +1474,11 @@ const leaguePlayers = [
   {n:'Stefon Diggs',pos:'WR',team:'NE',age:32,ovr:72,ktc:3200},
   {n:'Jaylen Waddle',pos:'WR',team:'MIA',age:26,ovr:82,ktc:6400},
   {n:'Mike Evans',pos:'WR',team:'TB',age:32,ovr:73,ktc:4200},
-  {n:'Tee Higgins',pos:'WR',team:'CIN',age:27,ovr:88,ktc:7200},
-  {n:'Jalen McMillan',pos:'WR',team:'TB',age:23,ovr:74,ktc:4200},
+    {n:'Jalen McMillan',pos:'WR',team:'TB',age:23,ovr:74,ktc:4200},
   {n:'Marvin Harrison Jr.',pos:'WR',team:'ARI',age:23,ovr:85,ktc:7400},
   {n:'Ladd McConkey',pos:'WR',team:'LAC',age:24,ovr:79,ktc:5400},
   {n:'Jameson Williams',pos:'WR',team:'DET',age:25,ovr:85,ktc:6800},
-  {n:'Javonte Williams',pos:'RB',team:'DAL',age:26,ovr:78,ktc:5800},
-  {n:'Travis Etienne',pos:'RB',team:'NO',age:27,ovr:81,ktc:6600},
+    {n:'Travis Etienne',pos:'RB',team:'NO',age:27,ovr:81,ktc:6600},
   {n:"De'Von Achane",pos:'RB',team:'MIA',age:24,ovr:92,ktc:8200},
   {n:'Cam Skattebo',pos:'RB',team:'NYG',age:25,ovr:80,ktc:6000},
   {n:'Travis Hunter',pos:'WR',team:'JAX',age:22,ovr:82,ktc:4100},
