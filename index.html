@@ -337,8 +337,8 @@ a{color:inherit;text-decoration:none}
 .mav-TE{background:linear-gradient(135deg,#9a3412,#fb923c);border-color:rgba(251,146,60,.5)}
 .modal-ovr-num{font-size:26px;font-weight:900;line-height:1;color:var(--accent)}
 .scout-blurb{background:var(--card2);border-left:3px solid var(--accent);border-radius:8px;padding:11px 13px;margin-bottom:12px;font-size:13px;line-height:1.65;color:var(--text)}
-.sc-hdr{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:6px;padding-bottom:7px;font-size:10px;font-weight:800;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border)}
-.sc-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:6px;padding:7px 0;border-bottom:1px solid var(--border);align-items:center}
+.sc-hdr{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:6px;padding-bottom:7px;font-size:10px;font-weight:800;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.sc-row{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:6px;padding:7px 0;border-bottom:1px solid var(--border);align-items:center}
 .sc-label{font-size:12px;color:var(--muted);font-weight:700}
 .sc-val{font-size:13px;font-weight:800;color:var(--text);text-align:center}
 .sc-up{color:#4ade80}.sc-dn{color:#f87171}.sc-flat{color:var(--muted)}
@@ -1159,8 +1159,7 @@ a{color:inherit;text-decoration:none}
     <div id="mtab-stats" class="mtab-panel">
       <div class="sc-hdr">
         <span></span>
-        <span>2024</span>
-        <span>2025 Proj</span>
+        <span>2025</span>
         <span>2026 Proj</span>
       </div>
       <div id="m-sc-rows"></div>
@@ -1697,6 +1696,7 @@ function getScoutBlurb(p,curve){
 }
 
 
+var ROOKIES_2025={17:true,38:true,40:true,41:true,45:true};
 function getPlayerStats(p){
   var ovr=p.ovr,age=p.age,pos=p.pos;
   var proj=getOvrProjection(ovr,age);
@@ -1798,11 +1798,12 @@ function openModal(id){
 
   // Stats tab
   var stats=getPlayerStats(p);
+  var isRookie=ROOKIES_2025[p.id]||false;
   var rows='';
   function delta(a,b){var d=b-a;return d>0?'<span class="sc-up">\u25B2'+d+'</span>':d<0?'<span class="sc-dn">\u25BC'+Math.abs(d)+'</span>':'<span style="color:var(--txt2)">-</span>';}
-  rows+='<div class="sc-row"><span>'+stats.primary.stat+'</span><span class="sc-val">'+stats.primary.actual+'</span><span class="sc-val">'+stats.primary.pos25+delta(stats.primary.actual,stats.primary.pos25)+'</span><span class="sc-val">'+stats.primary.pos26+delta(stats.primary.pos25,stats.primary.pos26)+'</span></div>';
-  rows+='<div class="sc-row"><span>TDs</span><span class="sc-val">'+stats.tds.actual+'</span><span class="sc-val">'+stats.tds.pos25+delta(stats.tds.actual,stats.tds.pos25)+'</span><span class="sc-val">'+stats.tds.pos26+delta(stats.tds.pos25,stats.tds.pos26)+'</span></div>';
-  rows+='<div class="sc-row"><span>Fant Pts</span><span class="sc-val">'+stats.fpts.actual+'</span><span class="sc-val">'+stats.fpts.pos25+delta(stats.fpts.actual,stats.fpts.pos25)+'</span><span class="sc-val">'+stats.fpts.pos26+delta(stats.fpts.pos25,stats.fpts.pos26)+'</span></div>';
+  rows+='<div class="sc-row"><span>'+stats.primary.stat+'</span><span class="sc-val">'+(isRookie?'Rookie':stats.primary.actual)+'</span><span class="sc-val">'+(isRookie?'—':stats.primary.pos26+delta(stats.primary.actual,stats.primary.pos26))+'</span></div>';
+  rows+='<div class="sc-row"><span>TDs</span><span class="sc-val">'+(isRookie?'Rookie':stats.tds.actual)+'</span><span class="sc-val">'+(isRookie?'—':stats.tds.pos26+delta(stats.tds.actual,stats.tds.pos26))+'</span></div>';
+  rows+='<div class="sc-row"><span>Fant Pts</span><span class="sc-val">'+(isRookie?'Rookie':stats.fpts.actual)+'</span><span class="sc-val">'+(isRookie?'—':stats.fpts.pos26+delta(stats.fpts.actual,stats.fpts.pos26))+'</span></div>';
   document.getElementById('m-sc-rows').innerHTML=rows;
 
   var pct=Math.round(Math.min(100,stats.primary.actual/stats.posAvg*100));
