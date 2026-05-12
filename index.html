@@ -379,6 +379,54 @@ a{color:inherit;text-decoration:none}
 .modal{max-height:92vh}
 .modal-header{gap:12px;margin-bottom:14px}
 
+
+/* PICK LAB TAB */
+.pl-toc{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;padding:0 4px}
+.pl-toc a{padding:5px 15px;border-radius:16px;border:1px solid #444;background:#111;color:#9ca3af;cursor:pointer;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:.4px}
+.pl-toc a:hover{background:#3b0764;border-color:#7c3aed;color:#c4b5fd}
+.pl-section{margin-bottom:36px}
+.pl-yr-hdr{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #2a2a2a}
+.pl-yr-num{font-size:24px;font-weight:900;color:#c4b5fd;letter-spacing:-1px}
+.pl-yr-badge{font-size:10px;padding:3px 9px;border-radius:8px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
+.pl-used{background:#1f2937;color:#6b7280}
+.pl-live{background:#052e16;color:#4ade80}
+.pl-future{background:#0c1a3a;color:#818cf8}
+.pl-arc-toggle{cursor:pointer;color:#6b7280;font-size:12px;padding:8px 14px;background:#111;border:1px solid #2a2a2a;border-radius:8px;margin-bottom:14px;display:inline-flex;align-items:center;gap:8px;user-select:none}
+.pl-arc-toggle:hover{border-color:#444;color:#aaa}
+.pl-arc-body{display:none}
+.pl-arc-body.pl-open{display:block}
+.pl-arc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-bottom:8px}
+.pl-arc-card{background:#111;border:1px solid #252525;border-radius:8px;padding:11px 13px;border-left:3px solid #374151}
+.pl-arc-slot{font-size:10px;color:#6b7280;font-weight:700;letter-spacing:.5px;margin-bottom:3px}
+.pl-arc-name{font-size:13px;font-weight:700;color:#e5e7eb;margin-bottom:2px}
+.pl-arc-meta{font-size:11px;color:#6b7280}
+.pl-arc-ktc{font-size:11px;color:#818cf8;margin-top:3px;font-weight:600}
+.pl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid #252525;margin-bottom:6px}
+.pl-tbl{width:100%;border-collapse:collapse;font-size:12px;min-width:960px}
+.pl-tbl th{background:#0d0d0d;color:#6b7280;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.5px;padding:9px 10px;white-space:nowrap;border-bottom:1px solid #252525;text-align:left}
+.pl-tbl td{padding:10px 10px;border-bottom:1px solid #181818;vertical-align:top;color:#d1d5db;white-space:nowrap}
+.pl-tbl tr:last-child td{border-bottom:none}
+.pl-tbl td.pl-notes{white-space:normal;min-width:160px;max-width:200px;font-size:11px;color:#9ca3af;line-height:1.4}
+.pl-row-priority{border-left:4px solid #4ade80 !important}
+.pl-row-target{border-left:4px solid #60a5fa !important}
+.pl-row-monitor{border-left:4px solid #fbbf24 !important}
+.pl-row-tbd{border-left:4px solid #374151 !important}
+.pl-verd{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.vd-priority{background:#052e16;color:#4ade80}
+.vd-target{background:#0c1a3a;color:#60a5fa}
+.vd-monitor{background:#1c1407;color:#fbbf24}
+.vd-tbd{background:#1a1a1a;color:#4b5563}
+.pl-rL{color:#4ade80;font-weight:600}
+.pl-rM{color:#fbbf24;font-weight:600}
+.pl-rH{color:#f87171;font-weight:600}
+.pl-cE{color:#c4b5fd;font-weight:700}
+.pl-cH{color:#818cf8}
+.pl-cS{color:#60a5fa}
+.pl-cF{color:#9ca3af}
+.pl-ktcv{color:#c4b5fd;font-weight:700}
+.pl-pname{font-weight:700;color:#f9fafb;font-size:13px}
+.pl-psub{font-size:10px;color:#6b7280;margin-top:1px}
+.pl-tbd-row td{color:#374151 !important;font-style:italic}
 </style>
 </head>
 <body><script>window.__errors=[];window.onerror=function(m,s,l,c,e){window.__errors.push({m:m,l:l,c:c,stack:e?e.stack:""});return false;};</script>
@@ -444,6 +492,7 @@ a{color:inherit;text-decoration:none}
     <div class="tab" onclick="showTab('tradeledger')">Trade Ledger</div>
     <div class="tab" onclick="showTab('warroom')">War Room</div>
     <div class="tab" onclick="showTab('reportcard')">Report Card</div><div class="tab" onclick="showTab('tradelab')">&#129302; Trade</div><div class="tab" onclick="showTab('lore')">&#128218; Lore</div>
+  <div class="tab" onclick="showTab('picklab')">&#128202; PICK LAB</div>
   </div>
 </div>
 
@@ -1200,6 +1249,28 @@ a{color:inherit;text-decoration:none}
       <button class="btn-close" onclick="document.getElementById('modal').style.display='none'">Close</button>
     </div>
   </div>
+
+<div id="tab-picklab" class="tab-panel" style="display:none">
+<div class="section-header"><h2>PICK LAB</h2><p class="section-sub">Full draft pick portfolio &middot; risk matrix &middot; dynasty value analysis</p></div>
+<nav class="pl-toc"><a href="#pl-2026">2026 Archive</a><a href="#pl-2027">2027 Picks</a><a href="#pl-2028">2028 Picks</a></nav>
+<div style="display:flex;gap:16px;margin-top:8px;margin-bottom:4px;flex-wrap:wrap"><span style="font-size:11px;color:#4ade80">&#9646; PRIORITY</span><span style="font-size:11px;color:#60a5fa">&#9646; TARGET</span><span style="font-size:11px;color:#fbbf24">&#9646; MONITOR</span><span style="font-size:11px;color:#374151">&#9646; TBD</span></div>
+<div class="pl-section" id="pl-2026">
+<div class="pl-yr-hdr"><span class="pl-yr-num">2026</span><span class="pl-yr-badge pl-used">Archive &mdash; All Drafted</span></div>
+<div class="pl-arc-toggle" onclick="var b=document.getElementById('pl-arc26');b.classList.toggle('pl-open');this.querySelector('span').textContent=b.classList.contains('pl-open')?'&#9660; Hide picks':'&#9658; Show 6 used picks'">
+<span>&#9658; Show 6 used picks</span></div>
+<div class="pl-arc-body" id="pl-arc26"><div class="pl-arc-grid">
+<div class="pl-arc-card"><div class="pl-arc-slot">2026 2.08</div><div class="pl-arc-name">Elijah Sarratt</div><div class="pl-arc-meta">WR &middot; BAL</div><div class="pl-arc-ktc">KTC ~3,500</div></div><div class="pl-arc-card"><div class="pl-arc-slot">2026 3.05</div><div class="pl-arc-name">Carson Beck</div><div class="pl-arc-meta">QB &middot; ARI<br>via Nxbosta</div><div class="pl-arc-ktc">KTC ~2,200</div></div><div class="pl-arc-card"><div class="pl-arc-slot">2026 3.08</div><div class="pl-arc-name">Demond Claiborne</div><div class="pl-arc-meta">RB &middot; MIN</div><div class="pl-arc-ktc">KTC ~2,800</div></div><div class="pl-arc-card"><div class="pl-arc-slot">2026 4.04</div><div class="pl-arc-name">Eli Raridon</div><div class="pl-arc-meta">TE &middot; NE<br>via DrChama</div><div class="pl-arc-ktc">KTC ~1,200</div></div><div class="pl-arc-card"><div class="pl-arc-slot">2026 4.05</div><div class="pl-arc-name">Cade Klubnik</div><div class="pl-arc-meta">QB &middot; NYJ<br>via Nxbosta</div><div class="pl-arc-ktc">KTC ~1,800</div></div><div class="pl-arc-card"><div class="pl-arc-slot">2026 4.10</div><div class="pl-arc-name">Eli Heidenreich</div><div class="pl-arc-meta">RB/WR &middot; PIT<br>via ckhoshor89</div><div class="pl-arc-ktc">KTC ~900</div></div>
+</div></div></div>
+<div class="pl-section" id="pl-2027">
+<div class="pl-yr-hdr"><span class="pl-yr-num">2027</span><span class="pl-yr-badge pl-live">3 Picks &mdash; Active</span></div>
+<div class="pl-wrap"><table class="pl-tbl"><thead><tr><th>Pick</th><th>Player</th><th>Dy Rank</th><th>Inj Risk</th><th>Scheme Fit</th><th>Bust / Fly %</th><th>QB Dep</th><th>Prod Ceiling</th><th>Yr1 Impact</th><th>KTC Value</th><th>Floor</th><th>Verdict</th><th>Notes</th></tr></thead><tbody><tr class="pl-row-priority"><td><div style="font-size:11px;color:#818cf8;font-weight:700">2027 1st</div><div style="font-size:10px;color:#4b5563">via Nxbosta (~1.03)</div></td><td><div class="pl-pname">Arch Manning</div><div class="pl-psub">QB &middot; Texas</div></td><td style="font-weight:700;color:#e5e7eb">#2 Dy QB</td><td><span class="pl-rL">Low</span></td><td><span class="pl-rL">High</span></td><td>15% bust / 85% fly</td><td>High</td><td><span class="pl-cE">Elite</span></td><td>Yr2 starter</td><td class="pl-ktcv">6,000</td><td>Solid QB2</td><td><span class="pl-verd vd-priority">PRIORITY</span></td><td class="pl-notes">Elite bloodline, clean mechanics, NFL-ready IQ. Top-3 pick consensus. Lock for Lamario's QB future.</td></tr><tr class="pl-row-target"><td><div style="font-size:11px;color:#818cf8;font-weight:700">2027 3rd</div><div style="font-size:10px;color:#4b5563">via Nxbosta (~3.03)</div></td><td><div class="pl-pname">Tetairoa McMillan</div><div class="pl-psub">WR &middot; Arizona</div></td><td style="font-weight:700;color:#e5e7eb">#4 Dy WR</td><td><span class="pl-rL">Low</span></td><td><span class="pl-rL">High</span></td><td>20% bust / 80% fly</td><td>Low</td><td><span class="pl-cH">High</span></td><td>Yr1 role player</td><td class="pl-ktcv">1,500</td><td>WR3 floor</td><td><span class="pl-verd vd-target">TARGET</span></td><td class="pl-notes">6'4 monster with elite hands and route diversity. Low QB reliance, rare size/speed. ADP rising fast.</td></tr><tr class="pl-row-monitor"><td><div style="font-size:11px;color:#818cf8;font-weight:700">2027 4th</div><div style="font-size:10px;color:#4b5563">via Nxbosta (~4.09)</div></td><td><div class="pl-pname">Elic Ayomanor</div><div class="pl-psub">WR &middot; Stanford</div></td><td style="font-weight:700;color:#e5e7eb">#18 Dy WR</td><td><span class="pl-rL">Low</span></td><td><span class="pl-rM">Med</span></td><td>35% bust / 65% fly</td><td>High</td><td><span class="pl-cS">Solid</span></td><td>Yr1 depth</td><td class="pl-ktcv">800</td><td>WR4 flex</td><td><span class="pl-verd vd-monitor">MONITOR</span></td><td class="pl-notes">Big-play ability but Stanford CB scheme limits stats. Needs right NFL landing spot to hit ceiling.</td></tr></tbody></table></div>
+</div>
+<div class="pl-section" id="pl-2028">
+<div class="pl-yr-hdr"><span class="pl-yr-num">2028</span><span class="pl-yr-badge pl-future">4 Own Picks &mdash; Future</span></div>
+<p style="font-size:12px;color:#4b5563;margin-bottom:12px">Own full stack. Class projections available closer to 2027 season.</p>
+<div class="pl-wrap"><table class="pl-tbl"><thead><tr><th>Pick</th><th>Player</th><th>Dy Rank</th><th>Inj Risk</th><th>Scheme Fit</th><th>Bust / Fly %</th><th>QB Dep</th><th>Prod Ceiling</th><th>Yr1 Impact</th><th>KTC Value</th><th>Floor</th><th>Verdict</th><th>Notes</th></tr></thead><tbody><tr class="pl-row-tbd pl-tbd-row"><td style="font-size:11px;color:#4b5563;font-weight:700">2028 Own 1st</td><td><div class="pl-pname" style="color:#374151">TBD</div><div class="pl-psub">Class unknown</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pl-ktcv" style="color:#374151">—</td><td>—</td><td><span class="pl-verd vd-tbd">TBD</span></td><td class="pl-notes" style="color:#374151">2028 class not yet ranked — revisit 2027 season.</td></tr><tr class="pl-row-tbd pl-tbd-row"><td style="font-size:11px;color:#4b5563;font-weight:700">2028 Own 2nd</td><td><div class="pl-pname" style="color:#374151">TBD</div><div class="pl-psub">Class unknown</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pl-ktcv" style="color:#374151">—</td><td>—</td><td><span class="pl-verd vd-tbd">TBD</span></td><td class="pl-notes" style="color:#374151">2028 class not yet ranked — revisit 2027 season.</td></tr><tr class="pl-row-tbd pl-tbd-row"><td style="font-size:11px;color:#4b5563;font-weight:700">2028 Own 3rd</td><td><div class="pl-pname" style="color:#374151">TBD</div><div class="pl-psub">Class unknown</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pl-ktcv" style="color:#374151">—</td><td>—</td><td><span class="pl-verd vd-tbd">TBD</span></td><td class="pl-notes" style="color:#374151">2028 class not yet ranked — revisit 2027 season.</td></tr><tr class="pl-row-tbd pl-tbd-row"><td style="font-size:11px;color:#4b5563;font-weight:700">2028 Own 4th</td><td><div class="pl-pname" style="color:#374151">TBD</div><div class="pl-psub">Class unknown</div></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="pl-ktcv" style="color:#374151">—</td><td>—</td><td><span class="pl-verd vd-tbd">TBD</span></td><td class="pl-notes" style="color:#374151">2028 class not yet ranked — revisit 2027 season.</td></tr></tbody></table></div>
+</div>
+</div>
 </div>
 
 <script>
@@ -1862,7 +1933,7 @@ function showTab(id){
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+id).classList.add('active');
-  const tabs=['roster','taxi','picks','tradeledger','warroom','reportcard','tradelab','lore'];
+  const tabs=['roster','taxi','picks','tradeledger','warroom','reportcard','tradelab','lore','picklab'];
   const idx=tabs.indexOf(id);
   if(idx>=0) document.querySelectorAll('.tab')[idx].classList.add('active');
   document.getElementById('modal').classList.remove('open');
